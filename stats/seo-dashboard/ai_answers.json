@@ -15,7 +15,7 @@
   "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "pwc.de, bc-advisory.de, bilarna.com"
+  "sources": "bc-advisory.de, pwc.de, bilarna.com"
  },
  {
   "key": "gemini:Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
@@ -31,27 +31,27 @@
   "provider": "perplexity",
   "lang": "DE",
   "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": "conet.de, salesforce.com, manras.com"
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de"
  },
  {
   "key": "google_ai_mode:Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
   "provider": "google_ai_mode",
   "lang": "DE",
   "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": "appexchange.salesforce.com, vectrsolutions.com"
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, de.linkedin.com, fratch.io"
  },
  {
   "key": "chat_gpt:Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
   "provider": "chat_gpt",
   "lang": "DE",
   "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": ""
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, gulp.de, freelance.de"
  },
  {
   "key": "claude:Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
@@ -76,18 +76,18 @@
   "provider": "perplexity",
   "lang": "DE",
   "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "ja",
-  "sources": "freelancermap.de, gulp.de, fratch.io"
+  "sources": "fk-sd.de, freelance.de, gulp.de"
  },
  {
   "key": "google_ai_mode:Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
   "provider": "google_ai_mode",
   "lang": "DE",
   "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": "freelancermap.de, jeet-singh.com, jobs.voith.com"
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, freelancermap.de, freelance.de"
  },
  {
   "key": "chat_gpt:Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
@@ -121,9 +121,9 @@
   "provider": "perplexity",
   "lang": "DE",
   "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, trailhead.salesforce.com, salesforce.com"
+  "sources": "fk-sd.de, help.salesforce.com, salesforce.com"
  },
  {
   "key": "google_ai_mode:Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
@@ -132,7 +132,7 @@
   "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, jetbi.com, hikko.com"
+  "sources": "salesforce.com"
  },
  {
   "key": "chat_gpt:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
@@ -141,16 +141,16 @@
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, help.salesforce.com, resources.docs.salesforce.com"
+  "sources": "salesforce.com, help.salesforce.com, 49648266.fs1.hubspotusercontent-na1.net"
  },
  {
   "key": "claude:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "provider": "claude",
   "lang": "DE",
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "itransition.com, softwarefinder.com, salesforce.com"
+  "sources": "fk-sd.de, itransition.com, twopirconsulting.com"
  },
  {
   "key": "gemini:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
@@ -168,7 +168,7 @@
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "cited": "ja",
   "mentioned": "nein",
-  "sources": "salesforce.com, fk-sd.de, help.salesforce.com"
+  "sources": "fk-sd.de, datasovren.com, minusculetechnologies.com"
  },
  {
   "key": "google_ai_mode:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
@@ -177,16 +177,16 @@
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, youtube.com, help.salesforce.com"
+  "sources": "salesfuchs.com, bc-advisory.de, salesforce.com"
  },
  {
   "key": "chat_gpt:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
   "provider": "chat_gpt",
   "lang": "DE",
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": "salesforce.com, help.salesforce.com, kbmax.com"
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "salesforce.com, help.salesforce.com, companybench.com"
  },
  {
   "key": "claude:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
@@ -195,7 +195,7 @@
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "cloudmasonry.com, forceperformers.com, kugamon.com"
+  "sources": "namirusolutions.com, cloudmasonry.com, kugamon.com"
  },
  {
   "key": "gemini:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
@@ -211,9 +211,9 @@
   "provider": "perplexity",
   "lang": "DE",
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "salesforce.com, arcsen.com, revspire.io"
+  "sources": "fk-sd.de, tray.ai, redtag.pro"
  },
  {
   "key": "google_ai_mode:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
@@ -222,16 +222,16 @@
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, automationchampion.com, cloudnexus.ai"
+  "sources": "namirusolutions.com, vectrsolutions.com, applikontech.com"
  },
  {
   "key": "chat_gpt:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "provider": "chat_gpt",
   "lang": "DE",
   "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": "sfdx-hardis.cloudity.com, assets-global.website-files.com, assets.gearset.com"
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "copado.com, gearset.com, sfdx-hardis.github.io"
  },
  {
   "key": "claude:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
@@ -240,7 +240,7 @@
   "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforcedictionary.com, getclientell.com, gearset.com"
+  "sources": "copado.com, tothenew.com, sherwen.com"
  },
  {
   "key": "gemini:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
@@ -258,7 +258,7 @@
   "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "cited": "ja",
   "mentioned": "nein",
-  "sources": "gearset.com, fk-sd.de, copado.com"
+  "sources": "fk-sd.de, dev.to, flosum.com"
  },
  {
   "key": "google_ai_mode:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
@@ -267,7 +267,7 @@
   "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "gearset.com, linkedin.com, flosum.com"
+  "sources": "gearset.com, copado.com, reddit.com"
  },
  {
   "key": "chat_gpt:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
@@ -283,9 +283,9 @@
   "provider": "claude",
   "lang": "DE",
   "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "myaskai.com, getclientell.com, valintry360.com"
+  "sources": "fk-sd.de, cloudconsultants.ch, eesel.ai"
  },
  {
   "key": "gemini:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
@@ -303,7 +303,7 @@
   "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
   "cited": "ja",
   "mentioned": "nein",
-  "sources": "fk-sd.de, getclientell.com, weflow.ai"
+  "sources": "fk-sd.de, salesforce.com, zenml.io"
  },
  {
   "key": "google_ai_mode:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
@@ -319,18 +319,18 @@
   "provider": "chat_gpt",
   "lang": "DE",
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
-  "cited": "ja",
-  "mentioned": "ja",
-  "sources": "help.salesforce.com, developer.salesforce.com, fk-sd.de"
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "resources.docs.salesforce.com, help.salesforce.com"
  },
  {
   "key": "claude:Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
   "provider": "claude",
   "lang": "DE",
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "github.com, help.salesforce.com"
+  "sources": "help.salesforce.com, fk-sd.de"
  },
  {
   "key": "gemini:Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
@@ -348,7 +348,7 @@
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
   "cited": "ja",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, trailhead.salesforce.com, fk-sd.de"
+  "sources": "fk-sd.de, help.salesforce.com, trailhead.salesforce.com"
  },
  {
   "key": "google_ai_mode:Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
@@ -357,7 +357,7 @@
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, developer.salesforce.com, trailhead.salesforce.com"
+  "sources": "help.salesforce.com, docable.co, developer.salesforce.com"
  },
  {
   "key": "chat_gpt:Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
@@ -393,7 +393,7 @@
   "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "hub.sap.com, ecosire.com, comselect.de"
+  "sources": "marini.systems, vigience.com, commercient.com"
  },
  {
   "key": "google_ai_mode:Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
@@ -402,7 +402,7 @@
   "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "seamless.engineering, community.sap.com, ashvirtech.com"
+  "sources": "community.sap.com, theobald-software.com, mulesoft.com"
  },
  {
   "key": "chat_gpt:Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
@@ -420,7 +420,7 @@
   "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": ""
+  "sources": "help.salesforce.com, cremanski.com, vantagepoint.io"
  },
  {
   "key": "gemini:Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
@@ -436,9 +436,9 @@
   "provider": "perplexity",
   "lang": "DE",
   "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, architect.salesforce.com, salesforce.com"
+  "sources": "fk-sd.de, help.salesforce.com, salesfuchs.com"
  },
  {
   "key": "google_ai_mode:Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
@@ -447,7 +447,7 @@
   "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "trailhead.salesforce.com, matchmyemail.com, help.salesforce.com"
+  "sources": "help.salesforce.com, atrium.ai, matchmyemail.com"
  },
  {
   "key": "chat_gpt:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
@@ -456,7 +456,7 @@
   "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
   "cited": "ja",
   "mentioned": "ja",
-  "sources": "fk-sd.de, nextcloudsolution.de, sfmike.de"
+  "sources": "fk-sd.de, nextcloudsolution.de, freelance.de"
  },
  {
   "key": "claude:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
@@ -465,7 +465,7 @@
   "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "freelance.de, gulp.de, consultingheads.com"
+  "sources": ""
  },
  {
   "key": "gemini:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
@@ -481,9 +481,9 @@
   "provider": "perplexity",
   "lang": "EN",
   "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "ja",
-  "sources": "fratch.io, freelancermap.de, gulp.de"
+  "sources": "appexchange.salesforce.com, fk-sd.de, fratch.io"
  },
  {
   "key": "google_ai_mode:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
@@ -491,26 +491,26 @@
   "lang": "EN",
   "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
   "cited": "nein",
-  "mentioned": "ja",
-  "sources": "de.linkedin.com, fratch.io, sfmike.de"
+  "mentioned": "nein",
+  "sources": "fratch.io"
  },
  {
   "key": "chat_gpt:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "provider": "chat_gpt",
   "lang": "EN",
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": "sfdx-hardis.github.io, salesforce.com, github.com"
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "sfdx-hardis.github.io, resources.docs.salesforce.com, github.com"
  },
  {
   "key": "claude:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "provider": "claude",
   "lang": "EN",
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
-  "cited": "nein",
-  "mentioned": "nein",
-  "sources": "accelq.com, sherwen.com, github.com"
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "sfdx-hardis.cloudity.com, devopslaunchpad.com, github.com"
  },
  {
   "key": "gemini:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
@@ -528,7 +528,7 @@
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "cited": "ja",
   "mentioned": "nein",
-  "sources": "fk-sd.de, gtmsystemsacademy.com, github.com"
+  "sources": "fk-sd.de, serpent.cloud, gtmsystemsacademy.com"
  },
  {
   "key": "google_ai_mode:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
@@ -537,7 +537,7 @@
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "sfdx-hardis.cloudity.com, reddit.com"
+  "sources": "youtube.com, sfdx-hardis.cloudity.com"
  },
  {
   "key": "chat_gpt:How do I govern several Salesforce implementation partners in one program?",
@@ -573,7 +573,7 @@
   "prompt": "How do I govern several Salesforce implementation partners in one program?",
   "cited": "ja",
   "mentioned": "nein",
-  "sources": "fk-sd.de, salesforce.com, help.salesforce.com"
+  "sources": "salesforcedictionary.com, spyro-soft.com, dgt27.com"
  },
  {
   "key": "google_ai_mode:How do I govern several Salesforce implementation partners in one program?",
@@ -582,7 +582,7 @@
   "prompt": "How do I govern several Salesforce implementation partners in one program?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "medium.com"
+  "sources": "forward.eu, salesforceimplementationpartners.com, salesforce.com"
  },
  {
   "key": "chat_gpt:Best practices for rolling out Salesforce Field Service in waves",
@@ -618,7 +618,7 @@
   "prompt": "Best practices for rolling out Salesforce Field Service in waves",
   "cited": "ja",
   "mentioned": "nein",
-  "sources": "fk-sd.de, help.salesforce.com, salesforce.com"
+  "sources": "fk-sd.de, hikko.com, help.salesforce.com"
  },
  {
   "key": "google_ai_mode:Best practices for rolling out Salesforce Field Service in waves",
@@ -627,7 +627,7 @@
   "prompt": "Best practices for rolling out Salesforce Field Service in waves",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "hikko.com"
+  "sources": "developer.salesforce.com, salesforce.com"
  },
  {
   "key": "chat_gpt:What are the limitations of Salesforce Document Builder?",
@@ -636,16 +636,16 @@
   "prompt": "What are the limitations of Salesforce Document Builder?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "developer.salesforce.com, help.salesforce.com, ekenigsberg.com"
+  "sources": "help.salesforce.com, developer.salesforce.com, docable.co"
  },
  {
   "key": "claude:What are the limitations of Salesforce Document Builder?",
   "provider": "claude",
   "lang": "EN",
   "prompt": "What are the limitations of Salesforce Document Builder?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, tinkertimelabs.com, thecloudupdate.co"
+  "sources": "help.salesforce.com, fk-sd.de, tinkertimelabs.com"
  },
  {
   "key": "gemini:What are the limitations of Salesforce Document Builder?",
@@ -661,9 +661,9 @@
   "provider": "perplexity",
   "lang": "EN",
   "prompt": "What are the limitations of Salesforce Document Builder?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, developer.salesforce.com, helpx.adobe.com"
+  "sources": "fk-sd.de, github.com, helpx.adobe.com"
  },
  {
   "key": "google_ai_mode:What are the limitations of Salesforce Document Builder?",
@@ -672,6 +672,996 @@
   "prompt": "What are the limitations of Salesforce Document Builder?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, docgenius.ai"
+  "sources": "developer.salesforce.com, docable.co"
+ },
+ {
+  "key": "chat_gpt:Salesforce Architekt freiberuflich NRW",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce Architekt freiberuflich NRW",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce Architekt freiberuflich NRW",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce Architekt freiberuflich NRW",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "freelancermap.de, de.indeed.com, freelance.de"
+ },
+ {
+  "key": "gemini:Salesforce Architekt freiberuflich NRW",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce Architekt freiberuflich NRW",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce Architekt freiberuflich NRW",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce Architekt freiberuflich NRW",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, freelance.de, linkedin.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce Architekt freiberuflich NRW",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce Architekt freiberuflich NRW",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "freelancermap.de, fk-sd.de"
+ },
+ {
+  "key": "chat_gpt:Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "pearsoncarter.com, fratch.io"
+ },
+ {
+  "key": "claude:Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, freelance.de, malt.de"
+ },
+ {
+  "key": "gemini:Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "cited": "nein",
+  "mentioned": "ja",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, freelance.de, fratch.io"
+ },
+ {
+  "key": "google_ai_mode:Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fratch.io, fk-sd.de, jeet-singh.com"
+ },
+ {
+  "key": "chat_gpt:Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de"
+ },
+ {
+  "key": "google_ai_mode:Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "salesfour.de"
+ },
+ {
+  "key": "chat_gpt:Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "sweetpotatotec.com, bc-advisory.de, fk-sd.de"
+ },
+ {
+  "key": "gemini:Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, bc-advisory.de, ksolves.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "bc-advisory.de, cloudworx.agency, help.salesforce.com"
+ },
+ {
+  "key": "chat_gpt:Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "freelance.de, gulp.de, sortlist.com"
+ },
+ {
+  "key": "gemini:Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, 10kview.com, routine-automation.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "freelance.de, consultingheads.com, sfmike.de"
+ },
+ {
+  "key": "chat_gpt:Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, help.salesforce.com, tekunda.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "appexchange.salesforce.com, help.salesforce.com, salesforce.com"
+ },
+ {
+  "key": "chat_gpt:Salesforce Field Service Einführung Berater Maschinenbau",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce Field Service Einführung Berater Maschinenbau",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "ki-syndikat.de, factory42.com, coastalcloud.us"
+ },
+ {
+  "key": "gemini:Salesforce Field Service Einführung Berater Maschinenbau",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce Field Service Einführung Berater Maschinenbau",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, routine-automation.com, logicline.de"
+ },
+ {
+  "key": "google_ai_mode:Salesforce Field Service Einführung Berater Maschinenbau",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "logicline.de"
+ },
+ {
+  "key": "chat_gpt:Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "comselect.de, maschinenbau.comselect.de, mindsquare.de"
+ },
+ {
+  "key": "gemini:Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, salesfuchs.com, comselect.de"
+ },
+ {
+  "key": "google_ai_mode:Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "logicline.de, salesforce.com, salesfour.de"
+ },
+ {
+  "key": "chat_gpt:Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, praetorian-consulting.com, cloudconsultants.ch"
+ },
+ {
+  "key": "gemini:Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "itransition.com, fk-sd.de, heinze-consulting.de"
+ },
+ {
+  "key": "google_ai_mode:Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "salesfuchs.com"
+ },
+ {
+  "key": "chat_gpt:Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "github.com, altios.com, reddit.com"
+ },
+ {
+  "key": "claude:Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "npmjs.com, salesforcedevops.net, marketplace.visualstudio.com"
+ },
+ {
+  "key": "gemini:Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "jobs.urbanodx.com, fk-sd.de, jobs.continental.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "sfdx-hardis.cloudity.com, de.linkedin.com, hardis-group.com"
+ },
+ {
+  "key": "chat_gpt:Gearset Alternative für Salesforce DevOps",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Gearset Alternative für Salesforce DevOps",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, copado.com, youtube.com"
+ },
+ {
+  "key": "claude:Gearset Alternative für Salesforce DevOps",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Gearset Alternative für Salesforce DevOps",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "salesforcebofc.medium.com, copado.com, forcetalks.com"
+ },
+ {
+  "key": "gemini:Gearset Alternative für Salesforce DevOps",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Gearset Alternative für Salesforce DevOps",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Gearset Alternative für Salesforce DevOps",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Gearset Alternative für Salesforce DevOps",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, g2.com, getclientell.com"
+ },
+ {
+  "key": "google_ai_mode:Gearset Alternative für Salesforce DevOps",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Gearset Alternative für Salesforce DevOps",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "forcetalks.com, getclientell.com, medium.com"
+ },
+ {
+  "key": "chat_gpt:Copado Alternative ohne Lizenzkosten",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Copado Alternative ohne Lizenzkosten",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Copado Alternative ohne Lizenzkosten",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Copado Alternative ohne Lizenzkosten",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "getclientell.com, testsigma.com, serpent.cloud"
+ },
+ {
+  "key": "gemini:Copado Alternative ohne Lizenzkosten",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Copado Alternative ohne Lizenzkosten",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Copado Alternative ohne Lizenzkosten",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Copado Alternative ohne Lizenzkosten",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, g2.com, getclientell.com"
+ },
+ {
+  "key": "google_ai_mode:Copado Alternative ohne Lizenzkosten",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Copado Alternative ohne Lizenzkosten",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "flosum.com, techjockey.com, vericence.com"
+ },
+ {
+  "key": "chat_gpt:Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, salesfuchs.com, scalableoperations.co"
+ },
+ {
+  "key": "google_ai_mode:Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "chat_gpt:Salesforce SAP Integration Berater für Hersteller",
+  "provider": "chat_gpt",
+  "lang": "DE",
+  "prompt": "Salesforce SAP Integration Berater für Hersteller",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce SAP Integration Berater für Hersteller",
+  "provider": "claude",
+  "lang": "DE",
+  "prompt": "Salesforce SAP Integration Berater für Hersteller",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "comselect.de, mind-force.de, cbs-cx.com"
+ },
+ {
+  "key": "gemini:Salesforce SAP Integration Berater für Hersteller",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce SAP Integration Berater für Hersteller",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce SAP Integration Berater für Hersteller",
+  "provider": "perplexity",
+  "lang": "DE",
+  "prompt": "Salesforce SAP Integration Berater für Hersteller",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, routine-automation.com, cbs-cx.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce SAP Integration Berater für Hersteller",
+  "provider": "google_ai_mode",
+  "lang": "DE",
+  "prompt": "Salesforce SAP Integration Berater für Hersteller",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "fluidogroup.com, comselect.de, c-a-s.de"
+ },
+ {
+  "key": "chat_gpt:independent Salesforce architect for manufacturers in Europe",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "independent Salesforce architect for manufacturers in Europe",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:independent Salesforce architect for manufacturers in Europe",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "independent Salesforce architect for manufacturers in Europe",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:independent Salesforce architect for manufacturers in Europe",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "independent Salesforce architect for manufacturers in Europe",
+  "cited": "nein",
+  "mentioned": "ja",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:independent Salesforce architect for manufacturers in Europe",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "independent Salesforce architect for manufacturers in Europe",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, fratch.io, freelance.de"
+ },
+ {
+  "key": "google_ai_mode:independent Salesforce architect for manufacturers in Europe",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "independent Salesforce architect for manufacturers in Europe",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, fratch.io"
+ },
+ {
+  "key": "chat_gpt:Salesforce multi-vendor governance consultant",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "Salesforce multi-vendor governance consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce multi-vendor governance consultant",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "Salesforce multi-vendor governance consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:Salesforce multi-vendor governance consultant",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "Salesforce multi-vendor governance consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce multi-vendor governance consultant",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "Salesforce multi-vendor governance consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "ekeltechnology.com, caleidoscope.co.uk, linkedin.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce multi-vendor governance consultant",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "Salesforce multi-vendor governance consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "spyro-soft.com"
+ },
+ {
+  "key": "chat_gpt:Gearset alternatives for Salesforce DevOps",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "Gearset alternatives for Salesforce DevOps",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "bluecanvas.io, flosum.com, fk-sd.de"
+ },
+ {
+  "key": "claude:Gearset alternatives for Salesforce DevOps",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "Gearset alternatives for Salesforce DevOps",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "salesforcebofc.medium.com, forcetalks.com, slashdot.org"
+ },
+ {
+  "key": "gemini:Gearset alternatives for Salesforce DevOps",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "Gearset alternatives for Salesforce DevOps",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Gearset alternatives for Salesforce DevOps",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "Gearset alternatives for Salesforce DevOps",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, getclientell.com, g2.com"
+ },
+ {
+  "key": "google_ai_mode:Gearset alternatives for Salesforce DevOps",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "Gearset alternatives for Salesforce DevOps",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "forcetalks.com, salesforceben.com, reddit.com"
+ },
+ {
+  "key": "chat_gpt:Copado alternatives open source",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "Copado alternatives open source",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "sfdx-hardis.github.io, developer.salesforce.com, github.com"
+ },
+ {
+  "key": "claude:Copado alternatives open source",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "Copado alternatives open source",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "saashub.com, softwareworld.co, slashdot.org"
+ },
+ {
+  "key": "gemini:Copado alternatives open source",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "Copado alternatives open source",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Copado alternatives open source",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "Copado alternatives open source",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, g2.com, getclientell.com"
+ },
+ {
+  "key": "google_ai_mode:Copado alternatives open source",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "Copado alternatives open source",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "sfdx-hardis.cloudity.com, reddit.com"
+ },
+ {
+  "key": "chat_gpt:Salesforce Field Service implementation consultant Germany",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "Salesforce Field Service implementation consultant Germany",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce Field Service implementation consultant Germany",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "Salesforce Field Service implementation consultant Germany",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "sunzinet.com, vrpconsulting.com, noltic.com"
+ },
+ {
+  "key": "gemini:Salesforce Field Service implementation consultant Germany",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "Salesforce Field Service implementation consultant Germany",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce Field Service implementation consultant Germany",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "Salesforce Field Service implementation consultant Germany",
+  "cited": "ja",
+  "mentioned": "ja",
+  "sources": "fk-sd.de, arbeitsagentur.de, jobs.vaillant-group.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce Field Service implementation consultant Germany",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "Salesforce Field Service implementation consultant Germany",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "fratch.io, salesforce.com, appexchange.salesforce.com"
+ },
+ {
+  "key": "chat_gpt:client-side Salesforce architect vs system integrator",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "client-side Salesforce architect vs system integrator",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:client-side Salesforce architect vs system integrator",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "client-side Salesforce architect vs system integrator",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:client-side Salesforce architect vs system integrator",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "client-side Salesforce architect vs system integrator",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:client-side Salesforce architect vs system integrator",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "client-side Salesforce architect vs system integrator",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, salesforce.com, architect.salesforce.com"
+ },
+ {
+  "key": "google_ai_mode:client-side Salesforce architect vs system integrator",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "client-side Salesforce architect vs system integrator",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "modernstacksystems.com"
+ },
+ {
+  "key": "chat_gpt:how to choose a Salesforce implementation partner",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "how to choose a Salesforce implementation partner",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:how to choose a Salesforce implementation partner",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "how to choose a Salesforce implementation partner",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:how to choose a Salesforce implementation partner",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "how to choose a Salesforce implementation partner",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:how to choose a Salesforce implementation partner",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "how to choose a Salesforce implementation partner",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "help.salesforce.com, softsquare.biz, nsquarexperts.com"
+ },
+ {
+  "key": "google_ai_mode:how to choose a Salesforce implementation partner",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "how to choose a Salesforce implementation partner",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "customertimes.com, help.salesforce.com"
+ },
+ {
+  "key": "chat_gpt:Salesforce project rescue consultant",
+  "provider": "chat_gpt",
+  "lang": "EN",
+  "prompt": "Salesforce project rescue consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "claude:Salesforce project rescue consultant",
+  "provider": "claude",
+  "lang": "EN",
+  "prompt": "Salesforce project rescue consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": ""
+ },
+ {
+  "key": "gemini:Salesforce project rescue consultant",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "Salesforce project rescue consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
+  "key": "perplexity:Salesforce project rescue consultant",
+  "provider": "perplexity",
+  "lang": "EN",
+  "prompt": "Salesforce project rescue consultant",
+  "cited": "ja",
+  "mentioned": "nein",
+  "sources": "fk-sd.de, abstraktsolutions.com, ksolves.com"
+ },
+ {
+  "key": "google_ai_mode:Salesforce project rescue consultant",
+  "provider": "google_ai_mode",
+  "lang": "EN",
+  "prompt": "Salesforce project rescue consultant",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "cynoteck.com, groviya.com, freelancermap.de"
  }
 ]

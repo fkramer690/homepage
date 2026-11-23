@@ -1,0 +1,2861 @@
+{
+  "generatedAt": "2026-11-23T06:35:03.216Z",
+  "domain": "fk-sd.de",
+  "cost": 3.753,
+  "models": {
+    "chat_gpt": {
+      "name": "gpt-5-mini",
+      "reasoning": true
+    },
+    "claude": {
+      "name": "claude-sonnet-5",
+      "reasoning": true
+    },
+    "gemini": {
+      "name": "gemini-2.5-flash",
+      "reasoning": true
+    },
+    "perplexity": {
+      "name": "sonar",
+      "reasoning": false
+    }
+  },
+  "answers": [
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "bc-advisory.de",
+        "pwc.de",
+        "bilarna.com",
+        "g2.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/services/partner-governance/",
+        "https://www.fk-sd.de/leistungen/partnersteuerung/",
+        "https://www.fk-sd.de/",
+        "https://www.fk-sd.de/leistungen/",
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+        "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+        "https://www.fk-sd.de/blog/salesforce-architekt-oder-systemintegrator/",
+        "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+        "https://www.fk-sd.de/salesforce-field-service-berater/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "de.linkedin.com",
+        "fratch.io"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/leistungen/partnersteuerung/"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "gulp.de",
+        "freelance.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": false,
+      "mentioned": true,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "freelance.de",
+        "gulp.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/en/",
+        "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+        "https://www.fk-sd.de/en/services/salesforce-architecture/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "freelancermap.de",
+        "freelance.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "help.salesforce.com",
+        "salesforce.com",
+        "mind-force.de",
+        "yash.com",
+        "trailhead.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/masterclass/field-service/field-service-assets-wartung-teile/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "help.salesforce.com",
+        "49648266.fs1.hubspotusercontent-na1.net",
+        "erp-software.org",
+        "c1.sfdcstatic.com",
+        "kai-waehner.de",
+        "cloud.mail.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "itransition.com",
+        "twopirconsulting.com",
+        "softwarefinder.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "datasovren.com",
+        "minusculetechnologies.com",
+        "codleo.com",
+        "salesforce.com",
+        "twopirconsulting.com",
+        "mind-force.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/masterclass/manufacturing-cloud/einordnung-und-business-case/",
+        "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesfuchs.com",
+        "bc-advisory.de",
+        "salesforce.com",
+        "mind-force.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "salesforce.com",
+        "help.salesforce.com",
+        "companybench.com",
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-cpq-revenue-cloud-unterschiede/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "namirusolutions.com",
+        "cloudmasonry.com",
+        "kugamon.com",
+        "vectrsolutions.com",
+        "forceperformers.com",
+        "advancedcommunities.com",
+        "clonepartner.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "tray.ai",
+        "redtag.pro",
+        "namirusolutions.com",
+        "sofyrus.com",
+        "b2bsaasnow.com",
+        "salesforce.com",
+        "experlogix.com",
+        "techforceservices.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+        "https://www.fk-sd.de/masterclass/revenue-cloud/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "namirusolutions.com",
+        "vectrsolutions.com",
+        "applikontech.com",
+        "trailhead.salesforce.com",
+        "appexchange.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "copado.com",
+        "gearset.com",
+        "sfdx-hardis.github.io",
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/gearset-copado-alternativen/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "copado.com",
+        "tothenew.com",
+        "sherwen.com",
+        "hyphenxsolutions.com",
+        "gearset.com",
+        "g2.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "dev.to",
+        "flosum.com",
+        "girikon.com",
+        "gearset.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/gearset-copado-alternativen/",
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+        "https://www.fk-sd.de/masterclass/devops-release-management/devops-werkzeuge-vergleich/",
+        "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+        "https://www.fk-sd.de/blog/sfdx-hardis-einfuehrung-salesforce-devops/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "gearset.com",
+        "copado.com",
+        "reddit.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "salesforce.com",
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/serviceagent-haendleranfragen-kosten/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "cloudconsultants.ch",
+        "eesel.ai",
+        "oliv.ai"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "salesforce.com",
+        "zenml.io",
+        "find-your-software.de",
+        "salesfive.com",
+        "enway.com",
+        "default.com",
+        "help.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+        "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
+        "https://www.fk-sd.de/blog/manufacturing-cloud-zusatzkosten-add-ons/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "pluno.ai"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "resources.docs.salesforce.com",
+        "help.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "help.salesforce.com",
+        "trailhead.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-document-builder-grenzen-workarounds/",
+        "https://www.fk-sd.de/blog/salesforce-service-documents-document-builder-servicebericht/",
+        "https://www.fk-sd.de/masterclass/field-service/field-service-mobile-app-dokumente/",
+        "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
+        "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+        "https://www.fk-sd.de/en/masterclass/field-service/field-service-mobile-app-documents/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "docable.co",
+        "developer.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "marini.systems",
+        "vigience.com",
+        "commercient.com",
+        "integrtr.com",
+        "appseconnect.com",
+        "mind-logistik.de",
+        "mind-force.de",
+        "comselect.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "community.sap.com",
+        "theobald-software.com",
+        "mulesoft.com",
+        "seamless.engineering"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "cremanski.com",
+        "vantagepoint.io"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "help.salesforce.com",
+        "salesfuchs.com",
+        "cremanski.com",
+        "note.com",
+        "softsquare.biz",
+        "codleo.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "atrium.ai",
+        "matchmyemail.com",
+        "developer.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "nextcloudsolution.de",
+        "freelance.de",
+        "fratch.io"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": false,
+      "mentioned": true,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "appexchange.salesforce.com",
+        "fk-sd.de",
+        "fratch.io",
+        "jeet-singh.com",
+        "linkedin.com",
+        "podesky.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/en/services/salesforce-architecture/",
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+        "https://www.fk-sd.de/en/services/",
+        "https://www.fk-sd.de/leistungen/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "fratch.io"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "sfdx-hardis.github.io",
+        "resources.docs.salesforce.com",
+        "github.com",
+        "fk-sd.de",
+        "elements.cloud",
+        "help.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "sfdx-hardis.cloudity.com",
+        "devopslaunchpad.com",
+        "github.com",
+        "fk-sd.de",
+        "slideshare.net"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "serpent.cloud",
+        "gtmsystemsacademy.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+        "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+        "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+        "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+        "https://www.fk-sd.de/en/services/devops-release-management/",
+        "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "youtube.com",
+        "sfdx-hardis.cloudity.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "salesforcedictionary.com",
+        "spyro-soft.com",
+        "dgt27.com",
+        "fk-sd.de",
+        "sfvedas.com",
+        "omnivodigital.com",
+        "moustafarefaat.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/leistungen/partnersteuerung/",
+        "https://www.fk-sd.de/en/",
+        "https://www.fk-sd.de/en/services/program-management-nearshore/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "forward.eu",
+        "salesforceimplementationpartners.com",
+        "salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "hikko.com",
+        "help.salesforce.com",
+        "salesforce.com",
+        "linkedin.com",
+        "praxedo.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/salesforce-field-service-rollout/",
+        "https://www.fk-sd.de/en/masterclass/field-service/field-service-ai-agents-rollout/",
+        "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "developer.salesforce.com",
+        "salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "developer.salesforce.com",
+        "docable.co",
+        "resources.docs.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "fk-sd.de",
+        "tinkertimelabs.com",
+        "experlogix.com",
+        "xfilespro.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "github.com",
+        "helpx.adobe.com",
+        "help.salesforce.com",
+        "experlogix.com",
+        "resources.docs.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "developer.salesforce.com",
+        "docable.co"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce Architekt freiberuflich NRW",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce Architekt freiberuflich NRW",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "freelancermap.de",
+        "de.indeed.com",
+        "freelance.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce Architekt freiberuflich NRW",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce Architekt freiberuflich NRW",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "freelance.de",
+        "linkedin.com",
+        "freelancermap.de",
+        "gulp.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/leistungen/salesforce-architektur/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce Architekt freiberuflich NRW",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "freelancermap.de",
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "pearsoncarter.com",
+        "fratch.io"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "freelance.de",
+        "malt.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/",
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": true,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "freelance.de",
+        "fratch.io",
+        "peakpeak.jobs.personio.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+        "https://www.fk-sd.de/en/",
+        "https://www.fk-sd.de/partner/recruiter/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fratch.io",
+        "fk-sd.de",
+        "jeet-singh.com",
+        "consultingheads.com",
+        "freelancermap.de",
+        "freelance.de",
+        "sfmike.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/leistungen/partnersteuerung/",
+        "https://www.fk-sd.de/",
+        "https://www.fk-sd.de/en/services/partner-governance/",
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/leistungen/",
+        "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+        "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+        "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+        "https://www.fk-sd.de/en/services/",
+        "https://www.fk-sd.de/leistungen/change-management/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesfour.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "sweetpotatotec.com",
+        "bc-advisory.de",
+        "fk-sd.de",
+        "lovalto.com",
+        "valintry360.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/services/partner-governance/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "bc-advisory.de",
+        "ksolves.com",
+        "worxwide.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-partner-wechseln/",
+        "https://www.fk-sd.de/leistungen/partnersteuerung/",
+        "https://www.fk-sd.de/leistungen/salesforce-projekt-retten/",
+        "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
+        "https://www.fk-sd.de/en/services/salesforce-project-rescue/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "bc-advisory.de",
+        "cloudworx.agency",
+        "help.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "freelance.de",
+        "gulp.de",
+        "sortlist.com",
+        "bc-advisory.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "10kview.com",
+        "routine-automation.com",
+        "bc-advisory.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/leistungen/salesforce-projekt-retten/",
+        "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+        "https://www.fk-sd.de/",
+        "https://www.fk-sd.de/leistungen/",
+        "https://www.fk-sd.de/en/blog/salesforce-freelancer-or-consultancy/",
+        "https://www.fk-sd.de/blog/salesforce-freelancer-oder-agentur/",
+        "https://www.fk-sd.de/blog/salesforce-partner-wechseln/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "freelance.de",
+        "consultingheads.com",
+        "sfmike.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "help.salesforce.com",
+        "tekunda.com",
+        "sortlist.de",
+        "crm.folio3.com",
+        "telusdigital.com",
+        "acxiom.com",
+        "manras.com",
+        "synebo.io",
+        "ntconsultcorp.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "appexchange.salesforce.com",
+        "help.salesforce.com",
+        "salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "ki-syndikat.de",
+        "factory42.com",
+        "coastalcloud.us",
+        "news.it-matchmaker.com",
+        "trailheadacademy.salesforce.com",
+        "logicline.de",
+        "comselect.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "routine-automation.com",
+        "logicline.de",
+        "fluidogroup.com",
+        "appexchange.salesforce.com",
+        "salesfive.com",
+        "mind-force.de",
+        "trailhead.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/salesforce-maschinenbau/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "logicline.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "comselect.de",
+        "maschinenbau.comselect.de",
+        "mindsquare.de",
+        "logicline.de",
+        "salesfuchs.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "salesfuchs.com",
+        "comselect.de",
+        "logicline.de",
+        "mwcs.io",
+        "sunzinet.com",
+        "mind-force.de",
+        "fluidogroup.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/salesforce-maschinenbau/",
+        "https://www.fk-sd.de/en/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "logicline.de",
+        "salesforce.com",
+        "salesfour.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "praetorian-consulting.com",
+        "cloudconsultants.ch",
+        "salesfuchs.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "itransition.com",
+        "fk-sd.de",
+        "heinze-consulting.de",
+        "valueunbound.com",
+        "anubis-analytics.com",
+        "allupp.com",
+        "mind-force.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/leistungen/make-or-buy-lizenzen/",
+        "https://www.fk-sd.de/en/services/make-or-buy-licences/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesfuchs.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "github.com",
+        "altios.com",
+        "reddit.com",
+        "resources.docs.salesforce.com",
+        "sfdx-hardis.cloudity.com",
+        "sfdx-hardis.github.io"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "npmjs.com",
+        "salesforcedevops.net",
+        "marketplace.visualstudio.com",
+        "sfdx-hardis-training.cloudity.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "jobs.urbanodx.com",
+        "fk-sd.de",
+        "jobs.continental.com",
+        "linkedin.com",
+        "careers.salesforce.com",
+        "salesforce.com",
+        "sfdx-hardis.cloudity.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+        "https://www.fk-sd.de/en/services/devops-release-management/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "sfdx-hardis.cloudity.com",
+        "de.linkedin.com",
+        "hardis-group.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Gearset Alternative für Salesforce DevOps",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "copado.com",
+        "youtube.com",
+        "forcetalks.com",
+        "resources.docs.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/gearset-copado-alternativen/?utm_source=openai",
+        "https://www.fk-sd.de/masterclass/devops-release-management/devops-werkzeuge-vergleich/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Gearset Alternative für Salesforce DevOps",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforcebofc.medium.com",
+        "copado.com",
+        "forcetalks.com",
+        "g2.com",
+        "opsera.ai"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Gearset Alternative für Salesforce DevOps",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Gearset Alternative für Salesforce DevOps",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "g2.com",
+        "getclientell.com",
+        "serpent.cloud",
+        "forcetalks.com",
+        "bluecanvas.io",
+        "flosum.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/gearset-copado-alternativen/",
+        "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Gearset Alternative für Salesforce DevOps",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "forcetalks.com",
+        "getclientell.com",
+        "medium.com",
+        "reddit.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Copado Alternative ohne Lizenzkosten",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Copado Alternative ohne Lizenzkosten",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "getclientell.com",
+        "testsigma.com",
+        "serpent.cloud",
+        "tothenew.com",
+        "saashub.com",
+        "hutte.io"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Copado Alternative ohne Lizenzkosten",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Copado Alternative ohne Lizenzkosten",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "g2.com",
+        "getclientell.com",
+        "serpent.cloud",
+        "reddit.com",
+        "gartner.com",
+        "trustradius.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/gearset-copado-alternativen/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Copado Alternative ohne Lizenzkosten",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "flosum.com",
+        "techjockey.com",
+        "vericence.com",
+        "docs.uzdavines.ai",
+        "reddit.com",
+        "sfdx-hardis.cloudity.com",
+        "linkedin.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "salesfuchs.com",
+        "scalableoperations.co",
+        "blog.tucario.com",
+        "plumlogix.com",
+        "minusculetechnologies.com",
+        "dianapps.com",
+        "bkonect.com",
+        "cloudtrailz.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-freelancer-oder-agentur/",
+        "https://www.fk-sd.de/en/blog/salesforce-freelancer-or-consultancy/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce SAP Integration Berater für Hersteller",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce SAP Integration Berater für Hersteller",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "comselect.de",
+        "mind-force.de",
+        "cbs-cx.com",
+        "kate-group.de",
+        "jetbi.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce SAP Integration Berater für Hersteller",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce SAP Integration Berater für Hersteller",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "routine-automation.com",
+        "cbs-cx.com",
+        "mindsquare.de",
+        "mind-force.de",
+        "comselect.de",
+        "fratch.io",
+        "erlebe-software.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/services/salesforce-integration/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce SAP Integration Berater für Hersteller",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "fluidogroup.com",
+        "comselect.de",
+        "c-a-s.de",
+        "erlebe-software.de",
+        "mulesoft.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "independent Salesforce architect for manufacturers in Europe",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "independent Salesforce architect for manufacturers in Europe",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "independent Salesforce architect for manufacturers in Europe",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": true,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "independent Salesforce architect for manufacturers in Europe",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "fratch.io",
+        "freelance.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/",
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+        "https://www.fk-sd.de/en/services/salesforce-architecture/",
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/en/services/",
+        "https://www.fk-sd.de/leistungen/",
+        "https://www.fk-sd.de/leistungen/salesforce-architektur/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "independent Salesforce architect for manufacturers in Europe",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "fratch.io"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Salesforce multi-vendor governance consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Salesforce multi-vendor governance consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Salesforce multi-vendor governance consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Salesforce multi-vendor governance consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "ekeltechnology.com",
+        "caleidoscope.co.uk",
+        "linkedin.com",
+        "nubessom.com",
+        "itechcloudsolution.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Salesforce multi-vendor governance consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "spyro-soft.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Gearset alternatives for Salesforce DevOps",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "bluecanvas.io",
+        "flosum.com",
+        "fk-sd.de",
+        "pranavnagrecha.github.io",
+        "stackreferee.com",
+        "assets.gearset.com",
+        "getclientell.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Gearset alternatives for Salesforce DevOps",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforcebofc.medium.com",
+        "forcetalks.com",
+        "slashdot.org",
+        "bluecanvas.io",
+        "techjockey.com",
+        "getclientell.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Gearset alternatives for Salesforce DevOps",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Gearset alternatives for Salesforce DevOps",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "getclientell.com",
+        "g2.com",
+        "forcetalks.com",
+        "bluecanvas.io",
+        "github.com",
+        "flosum.com",
+        "gearset.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Gearset alternatives for Salesforce DevOps",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "forcetalks.com",
+        "salesforceben.com",
+        "reddit.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Copado alternatives open source",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "sfdx-hardis.github.io",
+        "developer.salesforce.com",
+        "github.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Copado alternatives open source",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "saashub.com",
+        "softwareworld.co",
+        "slashdot.org",
+        "sourceforge.net",
+        "trustradius.com",
+        "g2.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Copado alternatives open source",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Copado alternatives open source",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "g2.com",
+        "getclientell.com",
+        "sourceforge.net",
+        "trustradius.com",
+        "keploy.io",
+        "reddit.com",
+        "testsigma.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Copado alternatives open source",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "sfdx-hardis.cloudity.com",
+        "reddit.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Salesforce Field Service implementation consultant Germany",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Salesforce Field Service implementation consultant Germany",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "sunzinet.com",
+        "vrpconsulting.com",
+        "noltic.com",
+        "rsmus.com",
+        "appexchange.salesforce.com",
+        "melonleaf.com",
+        "digitalstratify.co"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Salesforce Field Service implementation consultant Germany",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Salesforce Field Service implementation consultant Germany",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": true,
+      "domains": [
+        "fk-sd.de",
+        "arbeitsagentur.de",
+        "jobs.vaillant-group.com",
+        "linkedin.com",
+        "salesforce.wd12.myworkdayjobs.com",
+        "appexchange.salesforce.com",
+        "fratch.io",
+        "comselect.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/salesforce-field-service-berater/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Salesforce Field Service implementation consultant Germany",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "fratch.io",
+        "salesforce.com",
+        "appexchange.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "client-side Salesforce architect vs system integrator",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "client-side Salesforce architect vs system integrator",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "client-side Salesforce architect vs system integrator",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "client-side Salesforce architect vs system integrator",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "salesforce.com",
+        "architect.salesforce.com",
+        "janbasktraining.com",
+        "salesforceben.com",
+        "developer.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/salesforce-architect-vs-system-integrator/",
+        "https://www.fk-sd.de/blog/salesforce-architekt-oder-systemintegrator/",
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+        "https://www.fk-sd.de/en/masterclass/ai-salesforce/aiforce-and-system-integrators/",
+        "https://www.fk-sd.de/en/blog/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "client-side Salesforce architect vs system integrator",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "modernstacksystems.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "how to choose a Salesforce implementation partner",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "how to choose a Salesforce implementation partner",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "how to choose a Salesforce implementation partner",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "how to choose a Salesforce implementation partner",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "softsquare.biz",
+        "nsquarexperts.com",
+        "magicfuse.co",
+        "awsquality.com",
+        "synebo.io",
+        "salesforce.com",
+        "plumlogix.com",
+        "avenga.com",
+        "manras.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "how to choose a Salesforce implementation partner",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "customertimes.com",
+        "help.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Salesforce project rescue consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Salesforce project rescue consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Salesforce project rescue consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Salesforce project rescue consultant",
+      "group": "kauf",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "fk-sd.de",
+        "abstraktsolutions.com",
+        "ksolves.com",
+        "fosteringllc.com",
+        "bkonect.com",
+        "appexchange.salesforce.com",
+        "omnivodigital.com",
+        "crm.consulting"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+        "https://www.fk-sd.de/leistungen/salesforce-projekt-retten/"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Salesforce project rescue consultant",
+      "group": "kauf",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "cynoteck.com",
+        "groviya.com",
+        "freelancermap.de"
+      ],
+      "citedUrls": []
+    }
+  ]
+}

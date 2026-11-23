@@ -118,5 +118,45 @@
   "answers": 15,
   "cited": 0,
   "mentioned": 1
+ },
+ {
+  "key": "2026-11-23:chat_gpt",
+  "date": "2026-11-23",
+  "provider": "chat_gpt",
+  "answers": 37,
+  "cited": 8,
+  "mentioned": 8
+ },
+ {
+  "key": "2026-11-23:claude",
+  "date": "2026-11-23",
+  "provider": "claude",
+  "answers": 37,
+  "cited": 8,
+  "mentioned": 2
+ },
+ {
+  "key": "2026-11-23:gemini",
+  "date": "2026-11-23",
+  "provider": "gemini",
+  "answers": 37,
+  "cited": 0,
+  "mentioned": 4
+ },
+ {
+  "key": "2026-11-23:perplexity",
+  "date": "2026-11-23",
+  "provider": "perplexity",
+  "answers": 37,
+  "cited": 34,
+  "mentioned": 11
+ },
+ {
+  "key": "2026-11-23:google_ai_mode",
+  "date": "2026-11-23",
+  "provider": "google_ai_mode",
+  "answers": 37,
+  "cited": 5,
+  "mentioned": 5
  }
 ]

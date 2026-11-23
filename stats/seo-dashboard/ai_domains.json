@@ -1,82 +1,82 @@
 [
  {
-  "domain": "salesforce.com",
-  "citations": 18
- },
- {
-  "domain": "help.salesforce.com",
-  "citations": 18
+  "domain": "fk-sd.de",
+  "citations": 55
  },
  {
   "domain": "vertexaisearch.cloud.google.com",
-  "citations": 15
+  "citations": 37
  },
  {
-  "domain": "fk-sd.de",
-  "citations": 10
+  "domain": "help.salesforce.com",
+  "citations": 21
  },
  {
-  "domain": "trailhead.salesforce.com",
-  "citations": 7
- },
- {
-  "domain": "freelance.de",
-  "citations": 5
- },
- {
-  "domain": "sfdx-hardis.cloudity.com",
-  "citations": 5
- },
- {
-  "domain": "developer.salesforce.com",
-  "citations": 5
- },
- {
-  "domain": "github.com",
-  "citations": 5
- },
- {
-  "domain": "freelancermap.de",
-  "citations": 4
+  "domain": "salesforce.com",
+  "citations": 19
  },
  {
   "domain": "fratch.io",
-  "citations": 4
+  "citations": 12
  },
  {
-  "domain": "resources.docs.salesforce.com",
-  "citations": 4
+  "domain": "freelance.de",
+  "citations": 12
  },
  {
-  "domain": "gearset.com",
-  "citations": 4
+  "domain": "mind-force.de",
+  "citations": 9
+ },
+ {
+  "domain": "g2.com",
+  "citations": 8
  },
  {
   "domain": "appexchange.salesforce.com",
-  "citations": 3
+  "citations": 8
  },
  {
-  "domain": "vectrsolutions.com",
-  "citations": 3
+  "domain": "reddit.com",
+  "citations": 8
  },
  {
-  "domain": "gulp.de",
-  "citations": 3
- },
- {
-  "domain": "consultingheads.com",
-  "citations": 3
- },
- {
-  "domain": "flosum.com",
-  "citations": 3
+  "domain": "comselect.de",
+  "citations": 8
  },
  {
   "domain": "getclientell.com",
-  "citations": 3
+  "citations": 8
  },
  {
-  "domain": "salesforceben.com",
-  "citations": 3
+  "domain": "bc-advisory.de",
+  "citations": 7
+ },
+ {
+  "domain": "salesfuchs.com",
+  "citations": 7
+ },
+ {
+  "domain": "developer.salesforce.com",
+  "citations": 7
+ },
+ {
+  "domain": "linkedin.com",
+  "citations": 7
+ },
+ {
+  "domain": "sfdx-hardis.cloudity.com",
+  "citations": 7
+ },
+ {
+  "domain": "forcetalks.com",
+  "citations": 7
+ },
+ {
+  "domain": "freelancermap.de",
+  "citations": 6
+ },
+ {
+  "domain": "resources.docs.salesforce.com",
+  "citations": 6
  }
 ]
