@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-16T05:44:17.187Z",
+  "generatedAt": "2026-11-23T05:53:22.744Z",
   "domain": "fk-sd.de",
-  "requests": 223,
+  "requests": 228,
   "summary": {
-    "keywordsFound": 32,
+    "keywordsFound": 30,
     "keywords": 99,
     "questionsFound": 27,
     "questions": 37,
     "indexedPages": 16,
-    "submittedIndexed": 21,
+    "submittedIndexed": 20,
     "submitted": 25
   },
   "keywords": {
@@ -31,9 +31,9 @@
       },
       {
         "keyword": "salesforce solution architect",
-        "position": 30,
+        "position": 32,
         "url": "https://www.fk-sd.de/",
-        "ownResults": 2
+        "ownResults": 1
       },
       {
         "keyword": "salesforce beratung mittelstand",
@@ -44,7 +44,7 @@
         "keyword": "salesforce partnersteuerung",
         "position": 3,
         "url": "https://www.fk-sd.de/leistungen/partnersteuerung/",
-        "ownResults": 2
+        "ownResults": 1
       },
       {
         "keyword": "salesforce devops beratung",
@@ -84,7 +84,7 @@
       },
       {
         "keyword": "salesforce field service einführung",
-        "position": 3,
+        "position": 1,
         "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
         "ownResults": 1
       },
@@ -96,7 +96,7 @@
       },
       {
         "keyword": "salesforce manufacturing cloud",
-        "position": 34,
+        "position": 31,
         "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
         "ownResults": 1
       },
@@ -113,9 +113,8 @@
       },
       {
         "keyword": "salesforce cpq revenue cloud",
-        "position": 33,
-        "url": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
-        "ownResults": 1
+        "position": null,
+        "url": null
       },
       {
         "keyword": "salesforce cpq end of sale",
@@ -134,13 +133,13 @@
       },
       {
         "keyword": "agentforce hersteller",
-        "position": 2,
+        "position": 3,
         "url": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
         "ownResults": 1
       },
       {
         "keyword": "agentforce kosten",
-        "position": 23,
+        "position": 19,
         "url": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
         "ownResults": 1
       },
@@ -156,7 +155,7 @@
       },
       {
         "keyword": "salesforce document builder",
-        "position": 16,
+        "position": 26,
         "url": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
         "ownResults": 1
       },
@@ -172,7 +171,7 @@
       },
       {
         "keyword": "salesforce implementation partner",
-        "position": 28,
+        "position": 37,
         "url": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
         "ownResults": 1
       },
@@ -183,7 +182,7 @@
       },
       {
         "keyword": "salesforce lizenz kosten",
-        "position": 7,
+        "position": 5,
         "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
         "ownResults": 1
       },
@@ -200,13 +199,13 @@
       },
       {
         "keyword": "salesforce manufacturing cloud vs sales cloud",
-        "position": 4,
+        "position": 3,
         "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
         "ownResults": 1
       },
       {
         "keyword": "salesforce manufacturing cloud pricing",
-        "position": 16,
+        "position": 27,
         "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
         "ownResults": 1
       },
@@ -354,7 +353,7 @@
       },
       {
         "keyword": "salesforce lizenzberatung",
-        "position": 12,
+        "position": 10,
         "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
         "ownResults": 1
       },
@@ -371,7 +370,7 @@
       },
       {
         "keyword": "salesforce freelancer oder agentur",
-        "position": 15,
+        "position": 16,
         "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
         "ownResults": 1
       }
@@ -417,18 +416,18 @@
       },
       {
         "keyword": "salesforce manufacturing cloud features",
-        "position": 39,
-        "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
-        "ownResults": 1
-      },
-      {
-        "keyword": "salesforce revenue cloud pricing",
         "position": null,
         "url": null
       },
       {
+        "keyword": "salesforce revenue cloud pricing",
+        "position": 25,
+        "url": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
+        "ownResults": 1
+      },
+      {
         "keyword": "salesforce cpq vs revenue cloud",
-        "position": 34,
+        "position": 36,
         "url": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
         "ownResults": 1
       },
@@ -460,9 +459,8 @@
       },
       {
         "keyword": "salesforce change management consulting",
-        "position": 12,
-        "url": "https://www.fk-sd.de/en/services/",
-        "ownResults": 1
+        "position": null,
+        "url": null
       },
       {
         "keyword": "adkar model",
@@ -619,7 +617,7 @@
       "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
       "position": 1,
       "url": "https://www.fk-sd.de/en/",
-      "ownResults": 3
+      "ownResults": 2
     },
     {
       "lang": "en",
@@ -680,7 +678,7 @@
     {
       "lang": "de",
       "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
-      "position": 3,
+      "position": 4,
       "url": "https://www.fk-sd.de/",
       "ownResults": 3
     },
@@ -696,7 +694,7 @@
       "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
       "position": 3,
       "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
-      "ownResults": 2
+      "ownResults": 1
     },
     {
       "lang": "de",
@@ -716,7 +714,7 @@
       "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
       "position": 1,
       "url": "https://www.fk-sd.de/",
-      "ownResults": 2
+      "ownResults": 1
     },
     {
       "lang": "de",
@@ -777,9 +775,9 @@
     {
       "lang": "en",
       "prompt": "client-side Salesforce architect vs system integrator",
-      "position": 4,
+      "position": 3,
       "url": "https://www.fk-sd.de/en/freelance-salesforce-architect/",
-      "ownResults": 3
+      "ownResults": 2
     },
     {
       "lang": "en",
@@ -796,20 +794,20 @@
     }
   ],
   "indexed": [
-    "https://www.fk-sd.de/",
-    "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
     "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
     "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
-    "https://www.fk-sd.de/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/",
     "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+    "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
     "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
     "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
     "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
     "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+    "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
     "https://www.fk-sd.de/en/blog/revenue-cloud-discount-approvals/",
     "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+    "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
     "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
-    "https://www.fk-sd.de/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+    "https://www.fk-sd.de/en/services/",
     "https://www.fk-sd.de/fragen/",
     "https://www.fk-sd.de/leistungen/partnersteuerung/"
   ],
@@ -872,7 +870,7 @@
     {
       "date": "2026-11-09",
       "url": "https://www.fk-sd.de/en/blog/",
-      "indexed": true
+      "indexed": false
     },
     {
       "date": "2026-11-09",
