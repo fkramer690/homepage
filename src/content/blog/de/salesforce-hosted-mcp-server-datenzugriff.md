@@ -1,8 +1,9 @@
 ---
 title: "Hosted MCP Server: Wer liest welche Salesforce-Daten?"
-description: "Wer über die Hosted MCP Server von Salesforce welche Daten lesen darf: Named User, OAuth mit PKCE, sobject-reads zuerst und wo der Einstein Trust Layer endet."
+metaTitle: "Salesforce Hosted MCP: KI liest, was der Benutzer darf"
+description: "Über Hosted MCP Server liest ein KI-Client genau das, worauf der autorisierende Benutzer Zugriff hat. Wo der Einstein Trust Layer endet, wie Sie sicher starten."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: de
 slug: salesforce-hosted-mcp-server-datenzugriff
 translationKey: hosted-mcp-servers-data-access

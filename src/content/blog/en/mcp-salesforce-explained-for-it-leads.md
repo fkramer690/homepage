@@ -1,8 +1,9 @@
 ---
 title: "MCP and Salesforce explained for IT leads"
-description: "What MCP means in Salesforce and the four decisions an IT lead has to make: which servers, which users, which data and which AI clients and agents to allow."
+metaTitle: "MCP in Salesforce: 4 decisions for IT leadership"
+description: "MCP is the protocol AI tools use to call Salesforce. What a client may do follows from four IT decisions: servers, users, data and clients."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: en
 slug: mcp-salesforce-explained-for-it-leads
 translationKey: mcp-explained-salesforce-it-leads

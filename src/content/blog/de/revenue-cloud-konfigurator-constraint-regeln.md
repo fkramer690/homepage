@@ -1,8 +1,9 @@
 ---
 title: "Revenue Cloud Konfigurator: Wann lohnen Constraint-Regeln?"
-description: "Wann der Revenue-Cloud-Konfigurator mit Constraint-Regeln und CML für technische Produkte reicht und wann Hersteller einen externen Konfigurator behalten."
+metaTitle: "Revenue Cloud Constraint-Regeln: wann sie sich lohnen"
+description: "Constraint-Regeln lohnen sich bei abhängigen Attributen, die der Hersteller selbst pflegt. Wann SAP-Variantenkonfiguration oder ein Konfigurator bleibt."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: de
 slug: revenue-cloud-konfigurator-constraint-regeln
 translationKey: revenue-cloud-configurator-constraint-rules

@@ -1,9 +1,9 @@
 ---
 title: "Revenue Cloud, RLM, RCA: which product name applies?"
 metaTitle: "Salesforce Revenue Cloud, RLM, RCA: which name applies?"
-description: "Revenue Management, Revenue Cloud, RLM, RCA or CPQ? What each Salesforce name means today and which one belongs in an order form, tender or SOW."
+description: "RLM, RCA and Revenue Cloud are names for the same native product; Salesforce CPQ is a different one. Which name means what today and what goes in an order form."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: en
 slug: revenue-cloud-product-names-rlm-rca
 translationKey: revenue-cloud-product-names

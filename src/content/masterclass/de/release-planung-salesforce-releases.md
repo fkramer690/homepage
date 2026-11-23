@@ -1,6 +1,6 @@
 ---
 title: "Release-Planung für Salesforce: Kalender und Releases"
-description: "Release-Kalender, Rhythmus und Freeze-Fenster für Salesforce, dazu Sandbox Preview, Release Updates, API-Versionen und Abschaltungen, die Pipelines treffen."
+description: "Release-Planung für Salesforce heißt zwei Kalender übereinanderlegen: Ihren Rhythmus mit Freeze-Fenstern und die drei Salesforce-Releases mit Abschaltungen."
 lang: de
 slug: release-planung-salesforce-releases
 course: devops

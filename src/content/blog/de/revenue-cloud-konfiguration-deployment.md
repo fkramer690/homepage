@@ -1,8 +1,9 @@
 ---
 title: "Revenue Cloud Deployments: Konfiguration in der Pipeline"
-description: "Wie Katalog, Pricing Procedures und Context Definitions der Revenue Cloud in die Produktion kommen, wenn die Konfiguration aus Daten besteht."
+metaTitle: "Revenue Cloud Deployment: Konfiguration ist meist Daten"
+description: "Die meiste Revenue-Cloud-Konfiguration sind Datensätze, keine Metadaten, und ein eigenes Deployment-Werkzeug fehlt. Die Reihenfolge und was manuell bleibt."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: de
 slug: revenue-cloud-konfiguration-deployment
 translationKey: revenue-cloud-configuration-deployment
