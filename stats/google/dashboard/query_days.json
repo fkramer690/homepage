@@ -10004,6 +10004,20 @@
  },
  {
   "day": "2026-11-22",
+  "query": "manufacturing cloud services",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 71.7
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 43
+ },
+ {
+  "day": "2026-11-22",
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "clicks": 0,
   "impressions": 3,
@@ -10043,6 +10057,20 @@
   "clicks": 0,
   "impressions": 2,
   "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 48.5
  },
  {
   "day": "2026-11-22",
@@ -10151,6 +10179,13 @@
  },
  {
   "day": "2026-11-22",
+  "query": "how to choose a salesforce implementation partner",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
   "query": "ki chatbot audit trail",
   "clicks": 0,
   "impressions": 1,
@@ -10165,6 +10200,20 @@
  },
  {
   "day": "2026-11-22",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 39
+ },
+ {
+  "day": "2026-11-22",
+  "query": "offline field service app",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
+  "day": "2026-11-22",
   "query": "proalpha anbindung salesforce",
   "clicks": 0,
   "impressions": 1,
@@ -10172,10 +10221,38 @@
  },
  {
   "day": "2026-11-22",
-  "query": "salesforce manufacturing cloud",
+  "query": "salesforce architektur",
   "clicks": 0,
   "impressions": 1,
-  "position": 29
+  "position": 12
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce architektur basel",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce architektur klagenfurt",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce architektur linz",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce change management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 38
  },
  {
   "day": "2026-11-22",
@@ -10190,13 +10267,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 44
- },
- {
-  "day": "2026-11-22",
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 56
  },
  {
   "day": "2026-11-22",
@@ -10232,5 +10302,40 @@
   "clicks": 0,
   "impressions": 1,
   "position": 42
+ },
+ {
+  "day": "2026-11-23",
+  "query": "erp system field service",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 23
+ },
+ {
+  "day": "2026-11-23",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 28
+ },
+ {
+  "day": "2026-11-23",
+  "query": "field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 79
+ },
+ {
+  "day": "2026-11-23",
+  "query": "sfdx hardis",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "day": "2026-11-23",
+  "query": "what is the agent context engine in salesforce data 360?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  }
 ]

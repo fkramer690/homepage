@@ -12905,6 +12905,22 @@
  },
  {
   "day": "2026-11-22",
+  "query": "manufacturing cloud services",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 71.7
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 43
+ },
+ {
+  "day": "2026-11-22",
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
   "clicks": 0,
@@ -12942,6 +12958,22 @@
   "clicks": 0,
   "impressions": 2,
   "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce nearshore development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 48.5
  },
  {
   "day": "2026-11-22",
@@ -13081,6 +13113,14 @@
  },
  {
   "day": "2026-11-22",
+  "query": "how to choose a salesforce implementation partner",
+  "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
   "query": "ki chatbot audit trail",
   "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
   "clicks": 0,
@@ -13097,6 +13137,22 @@
  },
  {
   "day": "2026-11-22",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 39
+ },
+ {
+  "day": "2026-11-22",
+  "query": "offline field service app",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-app-offline-data/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
+  "day": "2026-11-22",
   "query": "proalpha anbindung salesforce",
   "page": "https://www.fk-sd.de/leistungen/salesforce-schnittstellen/",
   "clicks": 0,
@@ -13105,11 +13161,43 @@
  },
  {
   "day": "2026-11-22",
-  "query": "salesforce manufacturing cloud",
-  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "query": "salesforce architektur",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
   "clicks": 0,
   "impressions": 1,
-  "position": 29
+  "position": 12
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce architektur basel",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce architektur klagenfurt",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce architektur linz",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce change management",
+  "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 38
  },
  {
   "day": "2026-11-22",
@@ -13126,14 +13214,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 44
- },
- {
-  "day": "2026-11-22",
-  "query": "salesforce nearshore development",
-  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 56
  },
  {
   "day": "2026-11-22",
@@ -13190,5 +13270,53 @@
   "clicks": 0,
   "impressions": 1,
   "position": 42
+ },
+ {
+  "day": "2026-11-23",
+  "query": "erp system field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 23
+ },
+ {
+  "day": "2026-11-23",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 34.5
+ },
+ {
+  "day": "2026-11-23",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-23",
+  "query": "field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 79
+ },
+ {
+  "day": "2026-11-23",
+  "query": "sfdx hardis",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "day": "2026-11-23",
+  "query": "what is the agent context engine in salesforce data 360?",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  }
 ]

@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-23T05:02:54.065Z",
+ "generatedAt": "2026-11-23T16:10:56.320Z",
  "window": {
   "google": {
-   "from": "2026-10-26",
-   "to": "2026-11-22"
+   "from": "2026-10-27",
+   "to": "2026-11-23"
   },
   "bingWeek": "2026-11-20"
  },
@@ -34,7 +34,7 @@
    "impressions": 61,
    "clicks": 0,
    "position": 6,
-   "title": "Why DevOps decides Salesforce enterprise projects",
+   "title": "Enterprise Salesforce DevOps: the 6 building blocks",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
    "topQueries": [
     {
@@ -79,9 +79,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
    "path": "/en/blog/sfdx-hardis-open-source-salesforce-devops/",
-   "impressions": 46,
+   "impressions": 45,
    "clicks": 0,
-   "position": 7,
+   "position": 6.9,
    "title": "sfdx-hardis: free open-source Salesforce DevOps toolkit",
    "file": "src/content/blog/en/sfdx-hardis-open-source-salesforce-devops.md",
    "topQueries": [
@@ -102,6 +102,35 @@
     }
    ],
    "hint": "Antwort auf „sfdx hardis“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/",
+   "path": "/en/",
+   "impressions": 42,
+   "clicks": 0,
+   "position": 10,
+   "title": null,
+   "file": null,
+   "topQueries": [
+    {
+     "query": "sfdx-hardis",
+     "impressions": 7,
+     "position": 21.7
+    },
+    {
+     "query": "solutions factory consulting gmbh",
+     "impressions": 3,
+     "position": 41.7
+    },
+    {
+     "query": "fk solutions",
+     "impressions": 1,
+     "position": 9
+    }
+   ],
+   "hint": "Antwort auf „sfdx-hardis“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -153,6 +182,19 @@
    "new": false
   },
   {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/prompt-builder-or-agentforce-agent/",
+   "path": "/en/blog/prompt-builder-or-agentforce-agent/",
+   "impressions": 35,
+   "clicks": 0,
+   "position": 9.5,
+   "title": "Prompt Builder vs Agentforce agent: which one, what it costs",
+   "file": "src/content/blog/en/prompt-builder-or-agentforce-agent.md",
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": false
+  },
+  {
    "source": "bing",
    "page": "https://www.fk-sd.de/en/blog/salesforce-well-architected-framework-2026/",
    "path": "/en/blog/salesforce-well-architected-framework-2026/",
@@ -167,25 +209,12 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/prompt-builder-or-agentforce-agent/",
-   "path": "/en/blog/prompt-builder-or-agentforce-agent/",
-   "impressions": 34,
-   "clicks": 0,
-   "position": 9.7,
-   "title": "Prompt Builder vs Agentforce agent: which one, what it costs",
-   "file": "src/content/blog/en/prompt-builder-or-agentforce-agent.md",
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
    "path": "/en/blog/field-service-mobile-flow-limitations/",
-   "impressions": 31,
+   "impressions": 32,
    "clicks": 0,
-   "position": 7.2,
-   "title": "Field Service mobile flow limitations: Winter '27 update",
+   "position": 7,
+   "title": "Field Service mobile flow limitations: Winter '27 status",
    "file": "src/content/blog/en/field-service-mobile-flow-limitations.md",
    "topQueries": [
     {
@@ -199,12 +228,41 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+   "path": "/leistungen/salesforce-architektur/",
+   "impressions": 27,
+   "clicks": 0,
+   "position": 9.9,
+   "title": "Salesforce-Architektur und Solution Design",
+   "file": "src/content/services/de/salesforce-architektur.md",
+   "topQueries": [
+    {
+     "query": "salesforce architektur linz",
+     "impressions": 3,
+     "position": 8
+    },
+    {
+     "query": "salesforce architektur",
+     "impressions": 2,
+     "position": 13
+    },
+    {
+     "query": "salesforce architektur bonn",
+     "impressions": 2,
+     "position": 8
+    }
+   ],
+   "hint": "Antwort auf „salesforce architektur linz“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
    "path": "/blog/salesforce-editionen-core-advanced-max/",
    "impressions": 26,
    "clicks": 0,
    "position": 6.1,
-   "title": "Salesforce-Editionen Core, Advanced, Max für Hersteller",
+   "title": "Salesforce Core, Advanced, Max: 195, 395 oder 550 €?",
    "file": "src/content/blog/de/salesforce-editionen-core-advanced-max.md",
    "topQueries": [
     {
@@ -260,6 +318,19 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+   "path": "/freiberuflicher-salesforce-architect/",
+   "impressions": 24,
+   "clicks": 0,
+   "position": 9,
+   "title": null,
+   "file": null,
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
    "path": "/en/blog/flex-credits-agentforce-cost-per-action/",
    "impressions": 23,
@@ -267,48 +338,6 @@
    "position": 7.7,
    "title": "Agentforce pricing 2026: $0.10 per action, full cost example",
    "file": "src/content/blog/en/flex-credits-agentforce-cost-per-action.md",
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
-   "path": "/leistungen/salesforce-architektur/",
-   "impressions": 23,
-   "clicks": 0,
-   "position": 9.7,
-   "title": "Salesforce-Architektur und Solution Design",
-   "file": "src/content/services/de/salesforce-architektur.md",
-   "topQueries": [
-    {
-     "query": "salesforce architektur bonn",
-     "impressions": 2,
-     "position": 8
-    },
-    {
-     "query": "salesforce architektur linz",
-     "impressions": 2,
-     "position": 8
-    },
-    {
-     "query": "salesforce architektur salzburg",
-     "impressions": 2,
-     "position": 13
-    }
-   ],
-   "hint": "Antwort auf „salesforce architektur bonn“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
-   "path": "/freiberuflicher-salesforce-architect/",
-   "impressions": 19,
-   "clicks": 0,
-   "position": 10,
-   "title": null,
-   "file": null,
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
    "new": false
@@ -368,10 +397,10 @@
    "source": "google",
    "page": "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
    "path": "/blog/salesforce-dubletten-stammdaten-bereinigen/",
-   "impressions": 13,
+   "impressions": 14,
    "clicks": 0,
    "position": 7.6,
-   "title": "Dubletten in Salesforce: Stammdaten vor der KI bereinigen",
+   "title": "Dubletten in Salesforce bereinigen: 4 Schritte vor der KI",
    "file": "src/content/blog/de/salesforce-dubletten-stammdaten-bereinigen.md",
    "topQueries": [
     {
@@ -390,7 +419,7 @@
    "impressions": 13,
    "clicks": 0,
    "position": 8.5,
-   "title": "Salesforce Contracts: Reicht das Vertragsmanagement?",
+   "title": "Vertragsmanagement in Salesforce: Contracts ab 50 €",
    "file": "src/content/blog/de/salesforce-contracts-vertragsmanagement.md",
    "topQueries": [
     {
@@ -404,12 +433,25 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/ai-native-salesforce-delivery-process/",
+   "path": "/en/blog/ai-native-salesforce-delivery-process/",
+   "impressions": 11,
+   "clicks": 0,
+   "position": 5.4,
+   "title": "AI-native Salesforce delivery: 14 steps, 5 human gates",
+   "file": "src/content/blog/en/ai-native-salesforce-delivery-process.md",
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": true
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/penny-perfect-pricing-erp-prices/",
    "path": "/en/blog/penny-perfect-pricing-erp-prices/",
    "impressions": 11,
    "clicks": 0,
    "position": 7.4,
-   "title": "Penny Perfect Pricing: ERP prices in Salesforce?",
+   "title": "Penny Perfect Pricing: should SAP stay price master?",
    "file": "src/content/blog/en/penny-perfect-pricing-erp-prices.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
@@ -422,7 +464,7 @@
    "impressions": 10,
    "clicks": 0,
    "position": 10,
-   "title": "Salesforce-Lizenzkosten: Braucht jeder eine volle Lizenz?",
+   "title": "Salesforce-Lizenzen: Nein, nicht jeder braucht die volle",
    "file": "src/content/blog/de/salesforce-lizenzen-volle-lizenz.md",
    "topQueries": [
     {
@@ -441,8 +483,8 @@
      "position": 8
     }
    ],
-   "hint": "Title trifft die Hauptanfrage „salesforce lizenzen verwalten“ nicht",
-   "new": true
+   "hint": "Antwort auf „salesforce lizenzen verwalten“ in Description und ersten Satz",
+   "new": false
   }
  ],
  "nearPage1": [
@@ -450,9 +492,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
    "path": "/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
-   "impressions": 138,
+   "impressions": 141,
    "clicks": 2,
-   "position": 16.6,
+   "position": 16.4,
    "title": "Salesforce release planning: calendar and releases",
    "file": "src/content/masterclass/en/release-planning-salesforce-releases.md",
    "topQueries": [
@@ -535,38 +577,9 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/",
-   "path": "/en/",
-   "impressions": 41,
-   "clicks": 0,
-   "position": 10.3,
-   "title": null,
-   "file": null,
-   "topQueries": [
-    {
-     "query": "sfdx-hardis",
-     "impressions": 7,
-     "position": 21.7
-    },
-    {
-     "query": "solutions factory consulting gmbh",
-     "impressions": 3,
-     "position": 41.7
-    },
-    {
-     "query": "fk solutions",
-     "impressions": 1,
-     "position": 9
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
    "path": "/en/blog/revenue-cloud-billing-costs/",
-   "impressions": 39,
+   "impressions": 40,
    "clicks": 0,
    "position": 17.1,
    "title": "Revenue Cloud Billing pricing: one billing event per $50",
@@ -691,7 +704,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
    "path": "/masterclass/ki-salesforce/",
-   "impressions": 28,
+   "impressions": 29,
    "clicks": 0,
    "position": 15,
    "title": null,
@@ -699,8 +712,8 @@
    "topQueries": [
     {
      "query": "fertigung salesforce",
-     "impressions": 16,
-     "position": 16.9
+     "impressions": 17,
+     "position": 16.8
     }
    ],
    "hint": "Abschnitt und interne Links zu „fertigung salesforce“",
@@ -919,26 +932,21 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
-   "path": "/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
+   "page": "https://www.fk-sd.de/en/blog/field-service-enhanced-scheduling-optimization-switch/",
+   "path": "/en/blog/field-service-enhanced-scheduling-optimization-switch/",
    "impressions": 14,
    "clicks": 0,
-   "position": 13.9,
-   "title": "Salesforce Winter '27: what changes for your CI/CD pipeline",
-   "file": "src/content/blog/en/salesforce-winter-27-what-changes-for-your-pipeline.md",
+   "position": 13.4,
+   "title": "Enhanced Scheduling and Optimization: switch now?",
+   "file": "src/content/blog/en/field-service-enhanced-scheduling-optimization-switch.md",
    "topQueries": [
     {
-     "query": "salesforce summer release 2027",
-     "impressions": 1,
-     "position": 47
-    },
-    {
-     "query": "salesforce winter 27 api version",
-     "impressions": 1,
-     "position": 10
+     "query": "replace drs scheduling",
+     "impressions": 3,
+     "position": 43.7
     }
    ],
-   "hint": "Abschnitt und interne Links zu „salesforce summer release 2027“",
+   "hint": "Abschnitt und interne Links zu „replace drs scheduling“",
    "new": false
   },
   {
@@ -967,21 +975,26 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/field-service-enhanced-scheduling-optimization-switch/",
-   "path": "/en/blog/field-service-enhanced-scheduling-optimization-switch/",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
+   "path": "/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
    "impressions": 13,
    "clicks": 0,
-   "position": 14,
-   "title": "Enhanced Scheduling and Optimization: switch now?",
-   "file": "src/content/blog/en/field-service-enhanced-scheduling-optimization-switch.md",
+   "position": 14.2,
+   "title": "Salesforce Winter '27: what changes for your CI/CD pipeline",
+   "file": "src/content/blog/en/salesforce-winter-27-what-changes-for-your-pipeline.md",
    "topQueries": [
     {
-     "query": "replace drs scheduling",
-     "impressions": 3,
-     "position": 43.7
+     "query": "salesforce summer release 2027",
+     "impressions": 1,
+     "position": 47
+    },
+    {
+     "query": "salesforce winter 27 api version",
+     "impressions": 1,
+     "position": 10
     }
    ],
-   "hint": "Abschnitt und interne Links zu „replace drs scheduling“",
+   "hint": "Abschnitt und interne Links zu „salesforce summer release 2027“",
    "new": false
   },
   {
@@ -1123,35 +1136,11 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/salesforce-maschinenbau/",
-   "path": "/salesforce-maschinenbau/",
-   "impressions": 10,
-   "clicks": 0,
-   "position": 13.9,
-   "title": null,
-   "file": null,
-   "topQueries": [
-    {
-     "query": "salesforce beratung maschinenbau",
-     "impressions": 6,
-     "position": 11.3
-    },
-    {
-     "query": "salesforce maschinenbau",
-     "impressions": 2,
-     "position": 19.5
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „salesforce beratung maschinenbau“",
-   "new": true
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/blog/salesforce-cpq-revenue-cloud-unterschiede/",
    "path": "/blog/salesforce-cpq-revenue-cloud-unterschiede/",
-   "impressions": 10,
+   "impressions": 11,
    "clicks": 0,
-   "position": 14.3,
+   "position": 13.3,
    "title": "Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede",
    "file": "src/content/blog/de/salesforce-cpq-revenue-cloud-unterschiede.md",
    "topQueries": [
@@ -1172,6 +1161,30 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „wechsel von cpq zu revenue cloud“",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/salesforce-maschinenbau/",
+   "path": "/salesforce-maschinenbau/",
+   "impressions": 10,
+   "clicks": 0,
+   "position": 13.9,
+   "title": null,
+   "file": null,
+   "topQueries": [
+    {
+     "query": "salesforce beratung maschinenbau",
+     "impressions": 6,
+     "position": 11.3
+    },
+    {
+     "query": "salesforce maschinenbau",
+     "impressions": 2,
+     "position": 19.5
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „salesforce beratung maschinenbau“",
    "new": false
   }
  ],
@@ -1239,17 +1252,6 @@
    "page": null,
    "path": null,
    "file": null,
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "google",
-   "query": "how does a new team take over an unfinished salesforce development project?",
-   "impressions": 3,
-   "position": 6,
-   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
-   "path": "/en/blog/switching-salesforce-implementation-partner/",
-   "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
    "covered": false,
    "new": false
   },
@@ -1463,6 +1465,17 @@
    "new": false
   },
   {
+   "source": "bing",
+   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+   "impressions": 1,
+   "position": 7,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
+  },
+  {
    "source": "google",
    "query": "welche prozesse im field service lassen sich mit ki automatisieren?",
    "impressions": 1,
@@ -1564,17 +1577,6 @@
   {
    "source": "google",
    "query": "does gearset support more salesforce clouds than copado?",
-   "impressions": 1,
-   "position": 11,
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
-   "path": "/en/masterclass/devops-release-management/devops-tools-compared/",
-   "file": "src/content/masterclass/en/devops-tools-compared.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "google",
-   "query": "are all salesforce devops tools basically the same?",
    "impressions": 1,
    "position": 11,
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
@@ -1730,7 +1732,7 @@
      "impressions": 3,
      "clicks": 0,
      "position": 6,
-     "inQuestions": true
+     "inQuestions": false
     },
     {
      "query": "what is solution junkies process for taking over",
@@ -1779,7 +1781,7 @@
      "impressions": 1,
      "clicks": 0,
      "position": 11,
-     "inQuestions": true
+     "inQuestions": false
     }
    ],
    "hint": "Mehrere ähnliche lange Suchen: fehlende Teilfrage als Abschnitt oder FAQ mit direkter Antwort ergänzen",
@@ -1911,14 +1913,14 @@
    "title": "Salesforce Agent Context Engine explained",
    "file": "src/content/blog/en/salesforce-agent-context-engine-explained.md",
    "count": 1,
-   "impressions": 5,
+   "impressions": 6,
    "clicks": 0,
    "queries": [
     {
      "query": "what is the agent context engine in salesforce data 360?",
-     "impressions": 5,
+     "impressions": 6,
      "clicks": 0,
-     "position": 7.6,
+     "position": 7,
      "inQuestions": false
     }
    ],
@@ -1929,7 +1931,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
    "path": "/blog/salesforce-dubletten-stammdaten-bereinigen/",
-   "title": "Dubletten in Salesforce: Stammdaten vor der KI bereinigen",
+   "title": "Dubletten in Salesforce bereinigen: 4 Schritte vor der KI",
    "file": "src/content/blog/de/salesforce-dubletten-stammdaten-bereinigen.md",
    "count": 1,
    "impressions": 4,
@@ -2139,7 +2141,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
-   "title": "Why DevOps decides Salesforce enterprise projects",
+   "title": "Enterprise Salesforce DevOps: the 6 building blocks",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
    "count": 1,
    "impressions": 2,
@@ -2223,7 +2225,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/salesforce-hosted-mcp-servers-data-access/",
    "path": "/en/blog/salesforce-hosted-mcp-servers-data-access/",
-   "title": "Salesforce hosted MCP servers: who can read which data?",
+   "title": "Salesforce hosted MCP: AI reads what the user can read",
    "file": "src/content/blog/en/salesforce-hosted-mcp-servers-data-access.md",
    "count": 1,
    "impressions": 1,
@@ -2389,8 +2391,8 @@
   }
  ],
  "spam": {
-  "queries": 15,
-  "impressions": 60,
+  "queries": 16,
+  "impressions": 61,
   "list": [
    {
     "source": "google",
@@ -2466,15 +2468,20 @@
     "source": "google",
     "query": "site:shopee.* intitle:\"agentforce\"",
     "impressions": 1
+   },
+   {
+    "source": "bing",
+    "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+    "impressions": 1
    }
   ]
  },
  "counts": {
-  "snippet": 22,
-  "nearPage1": 31,
-  "questions": 38,
+  "snippet": 24,
+  "nearPage1": 30,
+  "questions": 37,
   "longQueries": 31,
   "new": 2,
-  "spam": 15
+  "spam": 16
  }
 }
