@@ -27,6 +27,7 @@ faq:
   - q: "Was kostet Data Mask & Seed?"
     a: "Die Produktseite von Salesforce nennt keinen Preis. Fragen Sie Ihren Account Executive nach einem Angebot und vergleichen Sie es mit dem Aufwand für einen eigenen Seed-Datensatz und dessen Pflege."
 draft: false
+contactBrief: ai-coding
 ---
 
 Sandbox-Kundendaten sollten maskiert oder ganz außer Reichweite sein, bevor sich der KI-Coding-Agent eines Partners mit einer Salesforce-Sandbox verbindet, denn alles, was der Agent liest, gelangt in einen Prompt. Eine Full-Copy-Sandbox enthält dieselben Händlerpreise, Verträge und Servicefälle wie die Produktion. Meine Regel: Agenten arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Testdaten; eine maskierte Partial Copy dient den Integrationstests, und die Full Copy bleibt Menschen vorbehalten. Der Preis dafür ist weniger Testrealismus. Maskierung zerstört Preislogik und seltene Datenkonstellationen, also muss jemand einen Seed-Datensatz gezielt erstellen.

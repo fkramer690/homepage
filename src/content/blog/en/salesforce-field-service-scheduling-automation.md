@@ -71,6 +71,8 @@ A fixed rhythm helps with the review. Trailhead suggests releasing the morning a
 
 The model has a cost too. Every dispatcher needs a Dispatcher license, and according to the price list it costs as much as a Technician license. The numbers are in part 1. If dispatchers check every appointment by hand forever, you pay for automation you do not use.
 
+How much trust in automated scheduling is realistic is the subject of an article on LinkedIn: [The system plans, the dispatcher releases: how much trust in automated scheduling is realistic](https://www.linkedin.com/pulse/system-plans-dispatcher-releases-how-much-trust-automated-kramer-avkwe/).
+
 ## When can dispatch run automatically?
 
 Field Service can also release appointments automatically. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.pfs_dispatching_appointments.htm&language=en_US&type=5), a scheduled job changes appointments from Scheduled to Dispatched. With drip feed, Field Service keeps only a set number of appointments in each technician's queue, for example two when the value is set to two. When one is done, the next one follows. The rest of the plan stays flexible.

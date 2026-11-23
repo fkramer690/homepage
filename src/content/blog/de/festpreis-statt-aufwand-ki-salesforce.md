@@ -8,7 +8,7 @@ slug: festpreis-statt-aufwand-ki-salesforce
 translationKey: fixed-price-ai-salesforce-partners
 topic: governance
 categories: [architecture, ai]
-contactBrief: partner-governance
+contactBrief: ai-coding
 tags: [Festpreis, Abrechnung nach Aufwand, Partnersteuerung, KI-Coding, Partnerprogramm, Maschinenbau]
 takeaways:
   - "Bei Stundenabrechnung rechnet ein Partner für jeden gesparten Tag weniger ab. Sie sehen den Gewinn nur in der Zeiterfassung oder als zusätzlichen Umfang."

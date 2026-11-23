@@ -25,6 +25,7 @@ faq:
   - q: "Sollten Partner offenlegen, welchen Code ein KI-Agent erzeugt hat?"
     a: "Ja. Verlangen Sie, dass KI-generierte Teile im Pull Request gekennzeichnet sind, zusammen mit dem Testlauf und dem Ergebnis von Code Analyzer. Schreiben Sie die Regel in den Vertrag, damit sie für jeden Partner im Programm gilt."
 draft: false
+contactBrief: ai-coding
 ---
 
 KI-generierten Salesforce-Code prüfen Sie als Kunde, indem Sie die Arbeit aufteilen. Die Pipeline Ihres Partners meldet, was Maschinen zuverlässig erkennen: SOQL und DML in Schleifen, fehlende Sharing-Deklarationen und typische Muster bei Objekt- und Feldberechtigungen. Ihr menschlicher Reviewer konzentriert sich auf das, was Werkzeuge übersehen: Tests ohne Aussagekraft, Felder, die existieren, aber die falschen sind, Geschäftsregeln, die nur richtig aussehen, und zu weiten Datenzugriff. Verlangen Sie Belege statt der Aussage „alle Tests grün“, und behalten Sie die letzte Freigabe auf Ihrer Seite.

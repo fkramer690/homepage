@@ -25,6 +25,7 @@ faq:
   - q: "Wie lang sollte eine KI-Regeldatei sein?"
     a: "Anthropic empfiehlt unter 200 Zeilen pro CLAUDE.md, OpenAI schreibt, eine kurze, genaue AGENTS.md sei nützlicher als eine lange Datei voller vager Regeln. Ergänzen Sie eine Zeile, wenn sich ein Review-Fund wiederholt, und streichen Sie, was die Pipeline schon prüft."
 draft: false
+contactBrief: ai-coding
 ---
 
 Eine KI-Regeldatei ist die Markdown-Datei, die ein Coding-Agent als dauerhafte Anweisung lädt, meist zu Beginn einer Sitzung: CLAUDE.md bei Claude Code, AGENTS.md bei Codex und Copilot, Regeldateien in .vibes/rules/ bei Agentforce Vibes. Aus meiner Sicht braucht ein gemeinsames Salesforce-Repository eine KI-Regeldatei, sobald intern oder beim Partner mit einem Agenten programmiert wird, sonst folgen jedes Werkzeug und jeder Partner eigenen Konventionen. Die Datei gehört dem Kunden; auf Ihrer Seite ist dafür eine verantwortliche Person benannt, meist der Lead-Architekt. Sie leitet den Agenten an. Was jedes Mal gelten muss, gehört in Settings, Hooks und die Pipeline.

@@ -8,7 +8,7 @@ slug: partners-using-ai-coding-contract-rules
 translationKey: partners-ai-coding-sow-rules
 topic: governance
 categories: [architecture, ai]
-contactBrief: partner-governance
+contactBrief: ai-coding
 tags: [partner governance, ai coding, statement of work, data protection, code review, manufacturing]
 takeaways:
   - "Anthropic does not train on code sent to Claude Code under commercial terms; on Free, Pro and Max plans, a user setting determines whether training is allowed."

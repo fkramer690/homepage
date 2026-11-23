@@ -25,6 +25,7 @@ faq:
   - q: "Wer verantwortet die Qualität der Agenten-Ergebnisse?"
     a: "Fachlich der Business Analyst, technisch der Architekt über die Regeldatei im Repository, beim Code der Entwickler, der jeden Pull Request reviewt. Der Agent entwirft und löst umkehrbare automatische Schritte aus, aber jede verbindliche Entscheidung braucht eine Person mit Namen."
 draft: false
+contactBrief: ai-coding
 ---
 
 Ein KI-nativer Delivery-Prozess für Salesforce macht das Jira-Ticket zur ausführbaren Spezifikation. Ein Agent erledigt die Fleißarbeit von der Workshop-Vorbereitung bis zum Pull Request, die Pipeline prüft deterministisch, und Personen entscheiden an fünf festen Toren: Protokoll, Spec, Code-Review, Bugs und Change Requests, Release. Der Prozess hat 14 Schritte von der ersten Anforderung bis zur Produktion. Er hält eine Kette zusammen, die klassische Projekte selten schaffen: Jede deployte Änderung führt auf eine freigegebene Anforderung zurück, am besten auf eine Entscheidung, die jemand beim Kunden bestätigt hat. Für Hersteller ändert sich vor allem eines: Der Fachbereich sieht viel früher etwas Lauffähiges und muss dafür schneller bestätigen.

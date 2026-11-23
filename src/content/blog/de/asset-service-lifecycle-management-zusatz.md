@@ -2,7 +2,7 @@
 title: "Asset Service Lifecycle Management: Lohnt sich das Add-on?"
 description: "Was die Add-ons Asset Service Lifecycle Management (75 Dollar) und Connected Assets zu Field Service ergänzen, was der Kern kann und wann es sich rechnet."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-17
 lang: de
 slug: asset-service-lifecycle-management-zusatz
 translationKey: asset-service-lifecycle-management-addon
@@ -69,6 +69,16 @@ Lassen Sie im Bestellformular klären, was für Ihre Edition gilt und mit welche
 Fünf der Funktionen betreffen den Bestand: Reservierung, Chargen, Suche und Umlagerung, Inventur und Nachschub. In den meisten Fertigungsunternehmen führt aus meiner Sicht das ERP Bestand und Materialstamm, Field Service hält eine Kopie für das Fahrzeuglager und die verbrauchten Teile. Diese Aufteilung erkläre ich in [Ersatzteile zwischen ERP und Salesforce](/blog/salesforce-field-service-ersatzteile-erp/). Plant SAP den Nachschub und führt die Inventur, entsteht mit denselben Funktionen in Salesforce die Gefahr einer zweiten Wahrheit. ASLM kann trotzdem bei Serviceschritten helfen, die die ERP-Schnittstelle schlecht abdeckt, etwa bei der Reservierung von Teilen für einen Arbeitsauftrag, beim Fahrzeuglager und bei Rücksendungen.
 
 Zum Maschinenbauer passen meist die Funktionen, die das ERP auf der Serviceseite schlecht abdeckt: die Deckungsansicht für die Hotline, die Hierarchie für Maschinen mit vielen Baugruppen, die Schätzung für Reparaturangebote und Kampagnen für Nachrüstungen. Depotreparatur lohnt sich für Unternehmen, die zurückgeschickte Baugruppen im eigenen Reparaturzentrum instand setzen.
+
+## Das Add-on rechnet sich über einen konkreten Umsatzanlass
+
+Salesforce beschreibt ASLM im Blogbeitrag [Field Service for Asset-Intensive Industries](https://www.salesforce.com/blog/field-service-asset-revenue/) vom Juni 2026 als Werkzeug, um mit der installierten Basis Serviceumsatz zu erzielen. Drei Funktionen stützen diesen Anwendungsfall:
+
+- **Asset Coverage View** zeigt der Hotline, welche Maschinen keinen Vertrag mehr haben oder deren Garantie ausläuft. Daraus entsteht nur dann ein Vertragsangebot, wenn jemand im Innendienst die Liste regelmäßig bearbeitet.
+- **Work Order Estimation** erstellt vor dem Einsatz ein Angebot für eine Reparatur außerhalb der Garantie. Der Kunde kann den Preis freigeben, bevor die Disposition den Einsatz einplant.
+- **Product Service Campaign** eignet sich auch für Nachrüstungen, nicht nur für Rückrufe. Eine Kampagne für alle Maschinen einer älteren Baureihe mit einem Modernisierungspaket ist ein Verkaufsanlass, wie in [Rückrufaktionen in Salesforce](/blog/rueckrufaktionen-service-kampagnen/) beschrieben.
+
+Ob sich das Add-on lohnt, würde ich an einem dieser Anlässe entscheiden und ihn beziffern: zum Beispiel mit der Zahl der Reparaturen außerhalb der Garantie, die pro Jahr ohne vorheriges Angebot ausgeführt werden, oder der Zahl der Maschinen ohne Wartungsvertrag. Die Kennzahlen für diese Entscheidung, Attach Rate und Vertragsabdeckung, beschreibe ich in [Field Service Kennzahlen nach dem Go-live](/blog/field-service-kennzahlen-operations-home/). Ohne einen benannten Anlass und einen Verantwortlichen im Innendienst bleibt ASLM vor allem eine zusätzliche Ansicht für die Hotline.
 
 ## Was bringt Connected Assets, und wann sind 15.000 Dollar im Monat gerechtfertigt?
 

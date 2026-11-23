@@ -25,6 +25,7 @@ faq:
   - q: "Ersetzt die tägliche Demo den Abnahmetest?"
     a: "Nein. Sie verringert spätes Nacharbeiten, weil der Fachexperte täglich laufende Software in der Sandbox sieht. Die Release-Abnahme mit Regression, Rollen und Freigabemodell bleibt, und Prozesse, die in SAP buchen, etwa Gutschriften für Garantieanträge, brauchen vor dem Release einen End-to-End-Test."
 draft: false
+contactBrief: ai-coding
 ---
 
 In dem Modell, das ich hier betrachte, kann KI-native Delivery ein Salesforce-Team auf kleine Pods verkleinern: jeweils ein Architekt, ein Builder-Reviewer, der die Coding-Agenten steuert, und ein Fachexperte aus dem Fachbereich. Für Hersteller betrifft die größere Änderung die eigene Organisation, weniger den Partner. Jeder Pod braucht jemanden aus Service, Vertrieb oder After-Sales, der täglich über den Prozess entscheidet und in einer täglichen Demo laufende Software abnimmt. Kurze Intents mit prüfbaren Akzeptanzkriterien ersetzen lange Lastenhefte in Prosa, und jedes Artefakt hat einen benannten Verantwortlichen. Kann Ihre Organisation diese Personen nicht freistellen, machen kleinere Partnerteams das Programm nicht schneller.

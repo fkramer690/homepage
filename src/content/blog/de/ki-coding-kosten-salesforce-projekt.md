@@ -26,6 +26,7 @@ faq:
   - q: "Warum ist Prompt-Caching für KI-Coding-Kosten so wichtig?"
     a: "Ein Coding-Agent schickt bei jedem Schritt das ganze Gespräch erneut. Bei Claude Opus 5.5 und Sonnet 5.5 kostet ein Cache-Treffer 5 Prozent des normalen Input-Preises; im Rechenbeispiel wird aus einer Session für rund 9,80 $ eine für rund 2,20 $."
 draft: false
+contactBrief: ai-coding
 ---
 
 KI-Coding kostet im Salesforce-Projekt weniger, als die meisten Budgetdiskussionen annehmen. Seats beginnen bei 19 $ pro Entwickler und Monat, und Anthropic und OpenAI nennen für typische Agentennutzung rund 100 $ bis 250 $ pro Entwickler und Monat; intensive Nutzung nach Verbrauch kann darüber liegen. In meinem Rechenbeispiel belaufen sich die Kosten für ein Partnerteam mit acht Personen auf rund 650 $ bis 1.500 $ im Monat, etwa ein Prozent der monatlichen Teamkosten. Schwieriger ist die Frage, wem die Accounts gehören und wer das Verbrauchsrisiko trägt. Meine bevorzugte Aufteilung: Bei Abrechnung nach Aufwand zahlt der Kunde, beim Festpreis der Partner.

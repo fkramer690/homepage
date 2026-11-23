@@ -25,6 +25,7 @@ faq:
   - q: "Sollte der Partner seinen eigenen Coding-Agenten mitbringen?"
     a: "Standardmäßig würde ich das nicht erlauben. Arbeitet der Partner mit eigenen Konten, steuern Sie weder Datenresidenz noch Aufbewahrung noch Offboarding. Geben Sie Partnerentwicklern Seats in Ihrer GitHub-, Claude- oder ChatGPT-Organisation oder eine Vibes-Lizenz in Ihrer Org."
 draft: false
+contactBrief: ai-coding
 ---
 
 Ob Agentforce Vibes, Claude Code, Codex oder Copilot: Die Wahl des Coding-Agenten für Salesforce ist eher eine Kundenentscheidung als eine Vorliebe der Entwickler. Den Ausschlag geben Fakten auf Ihrer Seite: welche Verträge und Werkzeuge Sie schon haben, ob Code und Prompts in der EU verarbeitet werden müssen, welches Kostenmodell Sie steuern können und welche Governance Ihre IT-Sicherheit erwartet. Liegt Ihre Org in der Hyperforce EU Operating Zone, fällt Vibes weg. Ist EU-Verarbeitung Pflicht, fällt die eigene API von Anthropic weg; Copilot und Bedrock bleiben. Die Modellqualität entscheidet zwischen den Optionen, die übrig bleiben.

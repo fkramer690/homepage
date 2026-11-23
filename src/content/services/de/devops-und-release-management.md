@@ -122,6 +122,8 @@ Ich baue Pipelines auf der Git-Plattform, die das Unternehmen schon nutzt. Bishe
 
 Für den Salesforce-Teil nutze ich oft sfdx-hardis, ein Open-Source-DevOps-Tool, das ich in eigenen Projekten einsetze. Es hat keine Lizenzgebühr (Runner und Wartung kosten trotzdem Zeit und Geld), und Repository, Pipeline und Zugriffsrechte bleiben beim Kunden. Was es kann, erkläre ich in [sfdx-hardis: Einführung in Open-Source-DevOps für Salesforce](/blog/sfdx-hardis-einfuehrung-salesforce-devops/). Ich unterstütze das Projekt, habe aber keine finanziellen Verbindungen dazu. Hat ein Kunde schon ein kommerzielles Tool, das funktioniert, baue ich darauf auf.
 
+Wenn Ihr Team in der Entwicklung mit KI-Agenten arbeiten will, braucht es diese Pipeline als Kontrollinstanz: Sie prüft jede Änderung, die ein KI-Agent erstellt, bevor eine Person sie freigibt. Im [KI-Readiness-Check](/salesforce-ki-readiness-check/) klären wir in drei Tagen zum Festpreis, wie gut Ihr Team darauf vorbereitet ist.
+
 ```hinweis tipp
 Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Release, etwa [Winter '27](/blog/salesforce-winter-27-aenderungen-pipeline/), kann API-Versionen, Metadaten-Verhalten oder Sicherheitseinstellungen ändern, von denen eine Pipeline abhängt. Von der Salesforce CLI erscheint zusätzlich jede Woche eine neue Version. Deshalb lege ich die Tool-Versionen in der Pipeline fest und teste Updates, bevor ich sie in den Release-Pfad übernehme.
 ```

@@ -56,13 +56,33 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   gets no eyebrow that repeats the menu item or the heading.
 - **Decoration only with a job** (AI-slop review 2026-10-31): no icon that
   only illustrates the word next to it (proof bar, start page service cards
-  carry none); no cyan accent bar on top of cards; the cyan line on the left
-  is reserved for quotes and the takeaways box; no gradients on boxes; the
+  carry none); no cyan accent bar on top of cards; no coloured stripe on
+  the left (or right) edge of a box, the cyan line on the left is reserved
+  for quotes (rule 2026-11-16, see "Highlighted boxes"); no gradients on boxes; the
   Blueprint marks (dimension lines, crosshair) only in the start page hero.
   At most one without/with comparison per page.
 - **Numbers (01, 02 …) only where the order matters** (steps, chapters,
   phases), never as a counter on lists whose order means nothing (references,
   questions).
+
+## Highlighted boxes (binding)
+
+Chosen by Fabian 2026-11-16 (preview https://claude.ai/artifact/LABtSmi9xvi8ZtXimdhvy1).
+A box never gets a coloured stripe on its edge (a typical AI-generated
+design tell). It is highlighted by one of three means the site already uses,
+picked by the job of the box:
+
+- **Dark (anthracite, like the contact block):** the takeaways box, jumps to
+  another page (`.post-service` "Passende Leistung", masterclass pager,
+  guest article box) and the partner box below the light author box.
+- **Header row (1px `--tint-line` frame, label as a `--tint-2` row across the
+  full width, like the table head in ```tabelle):** overviews and grouped
+  content: series box, case cards in ```stufen, recruiter box and fairness
+  note.
+- **Light cyan surface (`--tint-2` with `--tint-line`, like the author box):**
+  "Projekt im Fokus" on service pages, "Dafür besser" in ```staerken-grenzen.
+- Marked table cells get a 2px cyan frame inside the cell and semibold text;
+  the form success message is a white card with the check icon.
 
 ## Colours, radii and shadows (binding)
 
@@ -85,15 +105,45 @@ corner of 12px legend squares (3px to 4px).
   areas stay allowed.
 - **Radii:** `--radius` 10px (cards, frames, blocks), `--radius-md` 8px (boxes
   inside a block), `--radius-sm` 6px (small boxes, photos, buttons),
-  `--radius-xs` 4px (tags, code, tiny marks), `--radius-pill`; circles use
+  `--radius-xs` 4px (tags, code, tiny marks), `--radius-inner` 9px (top
+  corners of a header row inside a 1px frame), `--radius-pill`; circles use
   `50%`, square edges `0`.
-- **Shadows:** accent lines `--accent-top` (cyan), `--accent-top-dark`,
-  `--accent-left`; one lift on hover `--shadow-lift`; `--shadow-up` for the
+- **Shadows:** accent lines `--accent-top` (cyan), `--accent-top-dark`;
+  `--mark-frame` for a marked table cell; the depth scale `--elev-1`,
+  `--elev-2`, `--elev-3`, `--elev-dark`, `--edge-light`, `--btn-depth`,
+  `--sheet-offset` (see "Depth: elevation and layers"); one lift on hover
+  `--shadow-lift` (= `--elev-2`); `--shadow-up` for the
   bottom contact bar; `--shadow-knob` for the play button; `--focus-glow` for
   focus and the "now" dot. Outline rings stay as `0 0 0 Npx var(--token)`.
 - `scripts/check-tokens.mjs` runs in `npm run build` and fails on a hex colour
   outside `:root`, a radius that is not a token, or a shadow that is not a token
   or an outline ring. Never weaken it.
+
+## Depth: elevation and layers (binding)
+
+Chosen 2026-11-17 (Fabian: variant A "Ebenen" plus B "Überlappung" without the
+frame behind the quote). Depth comes from fixed heights and overlapping layers,
+never from gloss, glow, colour gradients or reflections. All rules sit in the
+"Depth" block at the end of `src/styles/global.css`.
+
+- **Three heights, light from above.** White cards and boxes rest on
+  `--elev-1` with the soft border `--line-soft` instead of a plain 1px line;
+  a highlighted box (the "with" column of the comparison, the project panel)
+  sits on `--elev-2`; a card lying over a section edge (key figures) on
+  `--elev-3`. Higher means more important; never give every box the top height.
+- **On dark:** framed photos and the contact form get `--elev-dark` plus the
+  light top edge `--edge-light`. Filled buttons get `--btn-depth`.
+- **Header** is frosted glass (86 % anthracite, blur 14px). This is the only
+  place with `backdrop-filter`.
+- **Key figures over the head:** the dark head gets 64px more bottom padding,
+  `.proof` moves up by 64px and shows its list as a white card.
+- **Offset sheets:** framed photos in dark heads (`hero-photo`, `rc-portrait`,
+  `.service-hero .service-photo`) have a second, empty frame offset by 14px
+  (8px below 960px). The About portrait on the start page gets
+  `--sheet-offset`. The project panel and the masterclass list on the start
+  page show one or two stacked sheets below. Quotes get no frame behind them.
+- New white cards join the `--elev-1` selector list instead of getting their
+  own border or shadow.
 
 ## Page heads, key figures, links and cards (binding)
 
@@ -106,8 +156,10 @@ Chosen 2026-10-31 as part of the polished design pass.
   eyebrow naming the area, h1, lead, optional photo on the right
   (`service-head has-photo`). Reading and list pages (blog overview, articles,
   masterclass chapters, certifications, legal) keep the light head.
-- **Key figures** always sit as the grey band `.proof` directly below the dark
-  head (`proof-list`, `cols-4` for four figures), never inside the running text.
+- **Key figures** always sit as `.proof` directly below the dark head
+  (`proof-list`, `cols-4` for four figures), never inside the running text.
+  Since 2026-11-17 the figures lie as a white card (`--elev-3`) over the lower
+  edge of the dark head (see "Depth: elevation and layers").
 - **One link style for "next" links** (`.text-link`, `.card-more`, `.fa-link`):
   Sora, bold, `--fs-ui`, cyan-dark, text arrow "→". Links in running text stay
   underlined.
@@ -120,7 +172,8 @@ Chosen 2026-10-31 as part of the polished design pass (details package).
 
 - **One hover for linked cards** (`.card-link`, `.post-tile a`, `.post-card`,
   `.q-topic`, `.post-service`, `.video-card`; grouped rule in global.css): cyan
-  border, `--shadow-lift`, title in cyan-dark. Nothing moves or jumps. A new
+  border, `--shadow-lift`, title in cyan-dark, the card lifts by 2px (not with
+  reduced motion; changed 2026-11-17 with the depth pass). A new
   kind of linked card joins that rule instead of getting its own hover.
 - **Rows in a white box** (masterclass lists on start and overview) get the grey
   `--bg` background on hover; rows without a box only colour the title.
@@ -307,11 +360,22 @@ Chosen 2026-10-30 for `/blog/` and `/en/blog/` (variant B of three: side-column
 field, bar above the articles, full-text result list). Built in
 `src/components/BlogIndex.astro`, next to the filter side column.
 
-- Above the article column a 54px search field (`search` icon, "/" shortcut hint),
-  below it "Oft gesucht" chips with fixed terms from `t.blog.searchPopularTerms`
-  and, while searching, "N Treffer für „…“ × Suche leeren".
-- Searches title, description, tags and topic names, every word must match. Hits
-  are marked in the card title and description; no wide card while searching.
+- Above the article column a 54px search field (`search` icon, "/" shortcut hint)
+  with a "Suchen" button next to it (added 2026-11-18), below it "Oft gesucht"
+  chips with fixed terms from `t.blog.searchPopularTerms` and, while searching,
+  "N Treffer im Volltext aller Artikel für „…“ × Suche leeren".
+- The search always covers the full text of every article (Fabian 2026-11-18:
+  typing alone must find body hits). While typing it first ranks title,
+  description, tags and topic names, then loads the index files of the first
+  letters of the search words (`/blog/suche/<letter>.json`, EN
+  `/en/blog/search/`, cached) and adds the text; Enter or the button skip the
+  short wait. Shown hits get a passage from their article text under the card
+  (light tint box, words marked). Matching rules and the EN/DE synonym list live
+  in `src/lib/blog-search.ts`: hyphens split words, a search word matches the
+  start of a word, words of up to three letters match whole words only. Results
+  are ranked (title before tags before description before running text); if no
+  article has every word, the articles with the most words come first with a
+  note. Hits are marked; no wide card while searching.
 - Combines with author and topic: the side-column counts follow the search. The
   query sits in `?q=`, the filters stay in the hash.
 - Below 960px the bar sits above the folded "Filter" box.

@@ -25,6 +25,7 @@ faq:
   - q: "Bringt sfdx-hardis Quality Gates mit?"
     a: "Ja. Für Pull Requests in einen Hauptzweig wie integration wird ein Job gestartet, der das Deployment simuliert, Apex-Tests ausführt und die Abdeckung prüft, und einen Codequalitätsjob mit MegaLinter und PMD. Ob die Jobs den Merge sperren, hängt von den Pflichtprüfungen Ihrer Git-Plattform ab. Für ApexGuru und org-spezifische Regeln sind eigene Schritte erforderlich."
 draft: false
+contactBrief: ai-coding
 ---
 
 KI-generierter Salesforce-Code sollte dieselben Quality Gates bestehen wie Code, den ein Mensch geschrieben hat. Dafür müssen drei Bedingungen gelten: Die Gates können eine Änderung stoppen, sie laufen in einer Pipeline, die Ihnen gehört, und sie gelten für jeden Partner gleich. Konkret sind das vier sperrende Prüfungen bei jedem Pull Request, dem Änderungsvorschlag, den ein Entwickler einreicht, bevor Code in den Hauptzweig übernommen wird: Codeanalyse mit fester Schwelle, einige Regeln für typische Fehler von Agenten, ein Dry-Run-Deployment in eine Sandbox und ein geschützter Merge. ApexGuru liefert Performance-Hinweise als Bericht. Was sich nicht durch eine Regel entscheiden lässt, bleibt beim menschlichen Reviewer.

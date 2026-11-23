@@ -26,6 +26,7 @@ faq:
   - q: "Why does prompt caching matter so much for AI coding costs?"
     a: "A coding agent re-sends the whole conversation with every step. On Claude Opus 5.5 and Sonnet 5.5 a cache read costs 5 percent of the normal input price, which turns a session of about $9.80 into one of about $2.20 in the worked example."
 draft: false
+contactBrief: ai-coding
 ---
 
 AI coding costs in a Salesforce project are lower than most budget discussions assume. Seats start at $19 per developer per month, and Anthropic and OpenAI report typical agent usage costs of roughly $100 to $250 per developer per month; heavy metered use can exceed that. In my worked example, a partner team of eight costs roughly $650 to $1,500 a month for AI tools, about one percent of its monthly day-rate spend. The harder question is who holds the accounts and carries the consumption risk. My preferred split: in time and materials the client pays, in a fixed price the partner.

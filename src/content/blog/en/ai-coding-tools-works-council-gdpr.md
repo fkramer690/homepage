@@ -27,6 +27,7 @@ faq:
   - q: "Does this apply to sites outside Germany?"
     a: "The works council rules are German law and apply to your German sites and their employees. GDPR applies across the EU. Some groups with German plants or engineering centers may choose to use the German process as the group standard for AI tools."
 draft: false
+contactBrief: ai-coding
 ---
 
 If you roll out Claude Code, GitHub Copilot or Codex to Salesforce developers employed at a German site, you will as a rule need the works council's consent under section 87(1) no. 6 of the Works Constitution Act (BetrVG), because these tools can produce usage data per person. Data protection asks which data leaves your environment through which channel, from the agent's context to the inference region. Anthropic's API has no EU region; Bedrock, Copilot and OpenAI offer EU processing with conditions. Plan both before the pilot: where a works council exists, the tool cannot go live without its consent or a ruling of the conciliation committee.

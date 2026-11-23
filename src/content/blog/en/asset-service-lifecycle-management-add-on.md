@@ -2,7 +2,7 @@
 title: "Asset Service Lifecycle Management: worth the add-on?"
 description: "What the $75 Asset Service Lifecycle Management add-on and Connected Assets add to Field Service, what the core license covers and when they pay off."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-17
 lang: en
 slug: asset-service-lifecycle-management-add-on
 translationKey: asset-service-lifecycle-management-addon
@@ -69,6 +69,16 @@ Have your order form clarify which statement applies to your edition and what ca
 Five of the functions deal with stock: allocation, batches, search and transfer, counts and replenishment. In most manufacturing companies I see the ERP as the owner of stock and the material master, with Field Service holding a copy for van stock and consumed parts. I explain that split in [spare parts between ERP and Salesforce](/en/blog/salesforce-field-service-spare-parts-erp/). If SAP plans replenishment and runs inventory counts, the same functions in Salesforce risk creating a second source of truth. ASLM can still help with service steps the ERP integration does not cover well, such as reserving parts for a work order, managing van stock and handling returns.
 
 The functions that usually fit a machine builder are the ones the ERP does not do well on the service side: the coverage view for the hotline, the hierarchy for machines with many assemblies, estimation for repair quotes and campaigns for retrofits. Depot repair fits companies that repair returned assemblies in their own repair center.
+
+## The add-on pays off through one specific revenue trigger
+
+In its blog post [Field Service for Asset-Intensive Industries](https://www.salesforce.com/blog/field-service-asset-revenue/) from June 2026, Salesforce describes ASLM as a tool for generating service revenue from the installed base. Three features support that use case:
+
+- **Asset Coverage View** shows the hotline which machines no longer have a contract or whose warranty is about to expire. That becomes a contract offer only if someone in inside sales works through the list regularly.
+- **Work Order Estimation** creates a quote for an out-of-warranty repair before the visit. The customer can approve the price before dispatch schedules the job.
+- **Product Service Campaign** can also be used for retrofits, not only for recalls. A campaign for all machines in an older series with a modernisation package is a sales trigger, as described in [Product recalls in Salesforce](/en/blog/product-recalls-service-campaigns/).
+
+I would tie the decision on the add-on to one of these triggers and quantify it: for example, the number of out-of-warranty repairs carried out each year without a prior quote, or the number of machines operated without a maintenance contract. The KPIs for that decision, attach rate and contract coverage, are described in [Field Service KPIs after go-live](/en/blog/field-service-kpis-after-go-live/). Without a named trigger and an owner in inside sales, ASLM remains mainly an additional view for the service hotline.
 
 ## What does Connected Assets add, and when is $15,000 a month justified?
 

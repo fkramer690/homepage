@@ -43,7 +43,10 @@ const more = [
     <div class="footer-brand">
       <a class="footer-logo" href={home}><Logo size={28} decorative /><span>{site.company.replace(/ GmbH$/, '')}</span></a>
       <p>{f.tagline}</p>
-      <a class="footer-linkedin" href={site.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>
+      <div class="footer-profiles">
+        <a class="footer-linkedin" href={site.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>
+        <a class="footer-linkedin" href={site.appexchange} target="_blank" rel="noopener">AppExchange<ExternalMark label={t.nav.externalTab} /></a>
+      </div>
     </div>
     <nav class="footer-col" aria-label={f.servicesTitle}>
       <p class="footer-head mono">{f.servicesTitle}</p>

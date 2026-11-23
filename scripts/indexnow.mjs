@@ -6,6 +6,10 @@
 //       every page in the sitemap with the hashes of the live site and writes
 //       the changed URLs to <out-file>. Also writes dist/indexnow-hashes.json
 //       for the next comparison.
+//       It also gives every sitemap entry without a <lastmod> (start page, service
+//       and landing pages, which have no date in their frontmatter) the date its
+//       content last changed, kept in dist/lastmod.json from deploy to deploy.
+//       Bing's webmaster guidelines ask for lastmod as a freshness signal.
 //
 // Only real content changes count: the hash covers title, description and the
 // visible text of <main> without navigation (contents, series, related articles)
@@ -20,6 +24,7 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 
 const site = (process.env.SITE_URL ?? 'https://www.fk-sd.de').replace(/\/$/, '');
 const hashFile = 'indexnow-hashes.json';
+const lastmodFile = 'lastmod.json';
 // Raise when contentOf changes, so the next deploy does not report every page.
 const hashVersion = 2;
 
@@ -62,6 +67,28 @@ if (mode === 'diff') {
   const changed = urls.filter((url) => (sameVersion ? live[url] !== hashes[url] : !(url in live)));
   writeFileSync(file, changed.join('\n'));
   console.log(`IndexNow: ${changed.length} of ${urls.length} pages changed.`);
+
+  // Last change date per page: today for a changed or new page, otherwise the
+  // date the live site recorded. The first run dates every page today.
+  let liveDates = {};
+  try {
+    const res = await fetch(`${site}/${lastmodFile}`);
+    if (res.ok) liveDates = await res.json();
+  } catch {
+    // First run or site unreachable.
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  const dates = Object.fromEntries(urls.map((url) => [url, sameVersion && live[url] === hashes[url] && liveDates[url] ? liveDates[url] : today]));
+  writeFileSync(`dist/${lastmodFile}`, JSON.stringify(dates, null, 1));
+  let filled = 0;
+  const sitemap = readFileSync('dist/sitemap-0.xml', 'utf8').replace(/<url>(?:(?!<\/url>)[\s\S])*<\/url>/g, (entry) => {
+    if (entry.includes('<lastmod>')) return entry;
+    const loc = entry.match(/<loc>([^<]+)<\/loc>/)[1];
+    filled += 1;
+    return entry.replace('</loc>', `</loc><lastmod>${dates[loc]}</lastmod>`);
+  });
+  writeFileSync('dist/sitemap-0.xml', sitemap);
+  console.log(`Sitemap: lastmod added to ${filled} pages without a frontmatter date.`);
 } else if (mode === 'submit') {
   const urlList = readFileSync(file, 'utf8').split('\n').filter(Boolean);
   if (urlList.length === 0) {

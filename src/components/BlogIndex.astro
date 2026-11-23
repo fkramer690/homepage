@@ -35,13 +35,16 @@ const topicFilters = categoryIds
   .map((id) => ({ id, label: categories[id][lang], icon: categories[id].icon, count: posts.filter((p) => p.data.categories.includes(id)).length }))
   .filter((f) => f.count > 0);
 
-// What the search bar looks through: title and description (read from the card by the
-// script), plus tags and topic names from this attribute.
+// What the search looks through while typing: title and description (read from the
+// card by the script), plus tags and topic names from this attribute. The "Search"
+// button adds the full text (src/lib/blog-search.ts).
 const searchText = (post: (typeof posts)[number]) =>
   [...post.data.tags, ...post.data.categories.map((c) => categories[c][lang])].join(' ').toLowerCase();
 
 // Drawings of the cards after the first page come from this file when they are shown.
 const drawingsHref = `${blogIndex(lang)}${lang === 'de' ? 'zeichnungen' : 'drawings'}.json`;
+// Word index and article texts of the full-text search (src/lib/blog-search.ts).
+const fulltextHref = `${blogIndex(lang)}${lang === 'de' ? 'suche' : 'search'}/`;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const root = abs(import.meta.env.BASE_URL);
 const blog = {
@@ -110,17 +113,21 @@ const schema = {
         </aside>
         <div class="blog-main">
           <search class="blog-search">
+            <div class="blog-search-row">
             <label class="blog-search-field">
               <Icon name="search" class="blog-search-icon" />
               <input type="search" data-search-input placeholder={t.blog.searchPlaceholder} aria-label={t.blog.searchLabel} autocomplete="off" />
               <kbd class="mono">/</kbd>
             </label>
+            <button type="button" class="btn blog-search-button" data-search-full>{t.blog.searchButton}</button>
+            </div>
             <p class="blog-search-popular"><span>{t.blog.searchPopular}:</span>{t.blog.searchPopularTerms.map((term) => <button type="button" class="blog-search-chip" data-search-term={term}>{term}</button>)}</p>
-            <p class="blog-search-status" aria-live="polite" data-search-status hidden><span><strong data-search-count></strong> {t.blog.searchHits} {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-filter-reset" data-search-clear>× {t.blog.searchClear}</button></p>
+            <p class="blog-search-status" aria-live="polite" data-search-status data-scope-title={t.blog.searchHitsTitle} data-scope-full={t.blog.searchHitsFull} data-loading={t.blog.searchLoading} hidden><span><strong data-search-count></strong> <span data-search-scope></span> {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-filter-reset" data-search-clear>× {t.blog.searchClear}</button></p>
+            <p class="blog-search-partial" data-search-partial hidden>{t.blog.searchPartial}</p>
           </search>
-        <ul class="post-grid" data-more-text={t.blog.loadMoreCount} data-drawings={drawingsHref}>
+        <ul class="post-grid" data-more-text={t.blog.loadMoreCount} data-drawings={drawingsHref} data-fulltext={fulltextHref}>
           {posts.map((post, i) => (
-            <li class:list={['post-tile', { featured: i === 0 }]} data-categories={post.data.categories.join(' ')} data-authors={authorsOf(post).join(' ')} data-search={searchText(post)}>
+            <li class:list={['post-tile', { featured: i === 0 }]} data-categories={post.data.categories.join(' ')} data-authors={authorsOf(post).join(' ')} data-search={searchText(post)} data-n={i} data-slug={post.data.slug}>
               <a href={postHref(post)}>
                 <span class="post-tile-media">
                   <CardDrawing translationKey={post.data.translationKey} topic={post.data.topic} lang={lang} deferred={i > FIRST_PAGE} />
@@ -154,8 +161,11 @@ const schema = {
   // Without JavaScript all articles stay visible. Search, author and topic filter
   // combine. The filters are kept in the URL hash (#juliane, #devops or
   // #juliane+change-management), the search in ?q=, so every view can be shared.
+  // The search looks through the full text of every article (src/lib/blog-search.ts).
   // The overview shows the first PAGE matching articles; "Load more" adds the next
   // PAGE. Filter and search always look through all articles.
+  // Search rules, synonyms and the full-text index: src/lib/blog-search.ts.
+  import { parseQuery, matches, shardOf, tokenize, snippet, markPattern, WEIGHT, type Term } from '../lib/blog-search';
   const PAGE = 24;
   const box = document.querySelector<HTMLElement>('.blog-filter');
   const grid = document.querySelector<HTMLElement>('.post-grid');
@@ -165,13 +175,20 @@ const schema = {
     const topics = [...box.querySelectorAll<HTMLButtonElement>('[data-topic]')];
     const input = document.querySelector<HTMLInputElement>('[data-search-input]')!;
     const status = document.querySelector<HTMLElement>('[data-search-status]')!;
+    const scope = status.querySelector<HTMLElement>('[data-search-scope]')!;
+    const partial = document.querySelector<HTMLElement>('[data-search-partial]')!;
     const none = document.querySelector<HTMLElement>('[data-search-none]')!;
     const more = document.querySelector<HTMLElement>('[data-more]')!;
     const moreCount = more.querySelector<HTMLElement>('[data-more-count]')!;
     const moreText = grid.dataset.moreText ?? '';
-    const state = { author: 'all', topic: 'all', q: '', limit: PAGE };
-    // Search text: title and description from the card, tags and topics from data-search.
-    const haystack = new Map(tiles.map((tile) => [tile, `${tile.querySelector('.post-title')?.textContent ?? ''} ${tile.querySelector('.post-desc')?.textContent ?? ''} ${tile.dataset.search ?? ''}`.toLowerCase()]));
+    const base = grid.dataset.fulltext!;
+    const state = { author: 'all', topic: 'all', q: '', limit: PAGE, full: false };
+    // Words of title, description (from the card) and tags and topics (data-search).
+    const fields = new Map(tiles.map((tile) => [tile, {
+      title: tokenize(tile.querySelector('.post-title')?.textContent ?? ''),
+      desc: tokenize(tile.querySelector('.post-desc')?.textContent ?? ''),
+      tags: tokenize(tile.dataset.search ?? ''),
+    }]));
     // The drawings of later cards are fetched once, the first time one of them is shown.
     let drawings: Promise<Record<string, string>> | undefined;
     function fillDrawings(shown: HTMLElement[]) {
@@ -185,44 +202,131 @@ const schema = {
         if (svg && slot.isConnected) slot.outerHTML = svg;
       }));
     }
+
+    // Full text: index files per first letter, loaded once each, only after "Search".
+    const shards = new Map<string, Promise<Record<string, number[]>>>();
+    const loadShard = (key: string) => {
+      if (!shards.has(key)) shards.set(key, fetch(`${base}${key}.json`).then((r) => (r.ok ? r.json() : {})).catch(() => ({})));
+      return shards.get(key)!;
+    };
+    const loaded = new Map<string, Record<string, number[]>>();
+    const shardKeys = (terms: Term[]) => [...new Set(terms.flatMap((t) => t.forms.map(shardOf)))];
+    // How often each search word occurs in the text of each article (article number → counts).
+    function bodyHits(terms: Term[]): Map<number, number[]> {
+      const hits = new Map<number, number[]>();
+      terms.forEach((term, ti) => term.forms.forEach((form) => {
+        for (const [token, postings] of Object.entries(loaded.get(shardOf(form)) ?? {})) {
+          if (!matches(token, form)) continue;
+          for (let k = 0; k < postings.length; k += 2) {
+            const counts = hits.get(postings[k]) ?? hits.set(postings[k], terms.map(() => 0)).get(postings[k])!;
+            counts[ti] += postings[k + 1];
+          }
+        }
+      }));
+      return hits;
+    }
+
     const has = (tile: HTMLElement, key: 'authors' | 'categories', id: string) =>
       id === 'all' || (tile.dataset[key] ?? '').split(' ').includes(id);
-    // Every word must appear (in any order); one-letter words are ignored.
-    const words = () => state.q.toLowerCase().split(/\s+/).filter((w) => w.length > 1);
-    const found = (tile: HTMLElement) => words().every((w) => haystack.get(tile)!.includes(w));
-    const count = (author: string, topic: string) =>
-      tiles.filter((tile) => has(tile, 'authors', author) && has(tile, 'categories', topic) && found(tile)).length;
+    const inField = (tokens: string[], term: Term) => tokens.some((tok) => term.forms.some((form) => matches(tok, form)));
+
+    // Score of every article for the current search: words found and weighted hits.
+    type Result = { found: Set<HTMLElement>; score: Map<HTMLElement, number>; partial: boolean };
+    function search(terms: Term[]): Result {
+      const body = state.full ? bodyHits(terms) : new Map<number, number[]>();
+      const score = new Map<HTMLElement, number>();
+      const words = new Map<HTMLElement, number>();
+      for (const tile of tiles) {
+        const f = fields.get(tile)!;
+        const counts = body.get(Number(tile.dataset.n));
+        let total = 0;
+        let n = 0;
+        terms.forEach((term, ti) => {
+          let s = 0;
+          if (inField(f.title, term)) s += WEIGHT.title;
+          if (inField(f.tags, term)) s += WEIGHT.tags;
+          if (inField(f.desc, term)) s += WEIGHT.desc;
+          if (counts?.[ti]) s += WEIGHT.body * (1 + Math.log2(counts[ti]));
+          if (s > 0) n++;
+          total += s;
+        });
+        score.set(tile, total);
+        words.set(tile, n);
+      }
+      // Articles with every word. If none has all, every article with at least one
+      // word, those with the most words first.
+      const best = Math.max(0, ...words.values());
+      const partial = best > 0 && best < terms.length;
+      const found = new Set(tiles.filter((tile) => (partial ? words.get(tile)! > 0 : best > 0 && words.get(tile) === best)));
+      for (const tile of tiles) score.set(tile, words.get(tile)! * 1000 + score.get(tile)!);
+      return { found, score, partial };
+    }
 
     // Hits are marked in title and description; the original text is kept to undo it.
     const texts = new Map<HTMLElement, string>();
     tiles.forEach((tile) => tile.querySelectorAll<HTMLElement>('.post-title, .post-desc').forEach((el) => texts.set(el, el.textContent ?? '')));
     const escape = (text: string) => text.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]!);
-    function highlight() {
-      const ws = words();
-      const pattern = ws.length ? new RegExp(`(${ws.map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'gi') : null;
-      texts.forEach((text, el) => { el.innerHTML = pattern ? escape(text).replace(pattern, '<mark>$1</mark>') : escape(text); });
+    const mark = (text: string, pattern: RegExp | null) => (pattern ? escape(text).replace(pattern, '<mark>$1</mark>') : escape(text));
+    function highlight(terms: Term[]) {
+      const pattern = markPattern(terms);
+      texts.forEach((text, el) => { el.innerHTML = mark(text, pattern); });
+    }
+
+    // In the full text each shown hit gets a passage from its article text.
+    const articleTexts = new Map<string, Promise<string>>();
+    function fillSnippets(shown: HTMLElement[], terms: Term[]) {
+      const pattern = markPattern(terms);
+      for (const tile of shown) {
+        const slug = tile.dataset.slug!;
+        if (!articleTexts.has(slug)) articleTexts.set(slug, fetch(`${base}${slug}.txt`).then((r) => (r.ok ? r.text() : '')).catch(() => ''));
+        const q = state.q;
+        articleTexts.get(slug)!.then((text) => {
+          if (!state.full || state.q !== q) return;
+          const passage = snippet(text, terms);
+          tile.querySelector('.post-snippet')?.remove();
+          if (!passage) return;
+          const el = document.createElement('span');
+          el.className = 'post-snippet';
+          el.innerHTML = mark(passage, pattern);
+          tile.querySelector('.post-desc')?.after(el);
+        });
+      }
     }
 
     function apply() {
       authors.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.author === state.author)));
       topics.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === state.topic)));
-      const searching = words().length > 0;
+      const terms = parseQuery(state.q);
+      const searching = terms.length > 0;
+      if (!searching) state.full = false;
+      const result = searching ? search(terms) : null;
+      const found = (tile: HTMLElement) => !result || result.found.has(tile);
+      const count = (author: string, topic: string) =>
+        tiles.filter((tile) => has(tile, 'authors', author) && has(tile, 'categories', topic) && found(tile)).length;
+      // Search results are ordered by score, otherwise by date (the order of the HTML).
+      const order = result
+        ? [...tiles].sort((a, b) => Number(found(b)) - Number(found(a)) || result.score.get(b)! - result.score.get(a)! || Number(a.dataset.n) - Number(b.dataset.n))
+        : tiles;
+      grid!.append(...order);
       // The wide first card takes two places, so one more card fills the last row.
       const limit = state.limit + (searching ? 0 : 1);
-      let matches = 0;
-      tiles.forEach((tile) => {
+      let matchCount = 0;
+      order.forEach((tile) => {
         const match = has(tile, 'authors', state.author) && has(tile, 'categories', state.topic) && found(tile);
-        if (match) matches++;
-        tile.hidden = !match || matches > limit;
+        if (match) matchCount++;
+        tile.hidden = !match || matchCount > limit;
         tile.classList.remove('featured');
+        if (!state.full) tile.querySelector('.post-snippet')?.remove();
       });
-      fillDrawings(tiles.filter((tile) => !tile.hidden));
-      more.hidden = matches <= limit;
-      moreCount.textContent = moreText.replace('{shown}', String(Math.min(matches, limit))).replace('{total}', String(matches));
-      highlight();
+      const shownTiles = order.filter((tile) => !tile.hidden);
+      fillDrawings(shownTiles);
+      if (state.full) fillSnippets(shownTiles, terms);
+      more.hidden = matchCount <= limit;
+      moreCount.textContent = moreText.replace('{shown}', String(Math.min(matchCount, limit))).replace('{total}', String(matchCount));
+      highlight(terms);
       // The newest visible article gets the wide card in every filtered view; search
       // results stay in plain order.
-      if (!searching) tiles.find((tile) => !tile.hidden)?.classList.add('featured');
+      if (!searching) shownTiles[0]?.classList.add('featured');
       // Each list counts within the other filter's choice; empty topics are greyed out.
       box!.querySelectorAll<HTMLElement>('[data-count-topic]').forEach((c) => {
         const n = count(state.author, c.dataset.countTopic!);
@@ -242,26 +346,61 @@ const schema = {
       status.hidden = !searching;
       status.querySelector('[data-search-count]')!.textContent = String(shown);
       status.querySelector('[data-search-query]')!.textContent = state.q.trim();
+      scope.textContent = state.full ? status.dataset.scopeFull! : status.dataset.scopeTitle!;
+      partial.hidden = !result?.partial;
       none.hidden = shown > 0;
-      const query = searching ? `?q=${encodeURIComponent(state.q.trim())}` : '';
-      history.replaceState(null, '', `${location.pathname}${query}${active.length ? `#${active.join('+')}` : ''}`);
+      const params = searching ? `?q=${encodeURIComponent(state.q.trim())}` : '';
+      history.replaceState(null, '', `${location.pathname}${params}${active.length ? `#${active.join('+')}` : ''}`);
+    }
+
+    // "Search" button or Enter: the same words, now also in the text of every article.
+    let fullRun = 0;
+    async function searchFullText() {
+      state.q = input.value;
+      const terms = parseQuery(state.q);
+      if (!terms.length) { input.focus(); return; }
+      const run = ++fullRun;
+      status.hidden = false;
+      scope.textContent = status.dataset.loading!;
+      await Promise.all(shardKeys(terms).map(async (key) => loaded.set(key, await loadShard(key))));
+      if (run !== fullRun || state.q !== input.value) return;
+      state.full = true;
+      state.limit = PAGE;
+      apply();
     }
 
     // Every new filter or search starts again with the first PAGE hits.
     authors.forEach((b) => b.addEventListener('click', () => { state.author = b.dataset.author ?? 'all'; state.limit = PAGE; apply(); }));
     topics.forEach((b) => b.addEventListener('click', () => { state.topic = b.dataset.topic ?? 'all'; state.limit = PAGE; apply(); }));
-    const search = (q: string) => { state.q = q; input.value = q; state.limit = PAGE; apply(); };
-    input.addEventListener('input', () => { state.q = input.value; state.limit = PAGE; apply(); });
+    // Typing searches the full text right away when the index files of the words are
+    // already loaded; otherwise titles, descriptions and tags first, and the full text
+    // follows a moment later.
+    let pending: ReturnType<typeof setTimeout> | undefined;
+    function searchFor(q: string) {
+      fullRun++;
+      clearTimeout(pending);
+      state.q = q;
+      input.value = q;
+      state.limit = PAGE;
+      const terms = parseQuery(q);
+      state.full = terms.length > 0 && shardKeys(terms).every((key) => loaded.has(key));
+      apply();
+      if (terms.length && !state.full) pending = setTimeout(searchFullText, 250);
+    }
+    input.addEventListener('input', () => searchFor(input.value));
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); searchFullText(); } });
+    document.querySelectorAll<HTMLButtonElement>('[data-search-full]').forEach((b) => b.addEventListener('click', () => searchFullText()));
     more.querySelector('[data-more-button]')?.addEventListener('click', () => {
       // Focus moves to the first new article, so keyboard users continue there.
-      const first = tiles.filter((tile) => tile.hidden && has(tile, 'authors', state.author) && has(tile, 'categories', state.topic) && found(tile))[0];
+      const visible = tiles.filter((tile) => !tile.hidden).length;
       state.limit += PAGE;
       apply();
+      const first = [...grid.querySelectorAll<HTMLElement>('.post-tile:not([hidden])')][visible];
       first?.querySelector('a')?.focus({ preventScroll: true });
     });
-    document.querySelectorAll<HTMLButtonElement>('[data-search-term]').forEach((b) => b.addEventListener('click', () => search(b.dataset.searchTerm ?? '')));
-    status.querySelector('[data-search-clear]')?.addEventListener('click', () => { search(''); input.focus(); });
-    box.querySelector('[data-reset]')?.addEventListener('click', () => { state.author = 'all'; state.topic = 'all'; search(''); });
+    document.querySelectorAll<HTMLButtonElement>('[data-search-term]').forEach((b) => b.addEventListener('click', () => searchFor(b.dataset.searchTerm ?? '')));
+    status.querySelector('[data-search-clear]')?.addEventListener('click', () => { searchFor(''); input.focus(); });
+    box.querySelector('[data-reset]')?.addEventListener('click', () => { state.author = 'all'; state.topic = 'all'; searchFor(''); });
     // "/" jumps into the search field, as on many documentation sites.
     document.addEventListener('keydown', (e) => {
       const target = e.target as HTMLElement;
@@ -276,8 +415,10 @@ const schema = {
     }
     // On phones the filter starts folded, so the articles come first.
     if (window.matchMedia('(max-width: 960px)').matches) box.querySelector('details')?.removeAttribute('open');
-    state.q = new URLSearchParams(location.search).get('q') ?? '';
+    const params = new URLSearchParams(location.search);
+    state.q = params.get('q') ?? '';
     input.value = state.q;
     apply();
+    if (state.q.trim()) searchFullText();
   }
 </script>
