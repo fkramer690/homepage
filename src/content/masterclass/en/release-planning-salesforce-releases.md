@@ -1,6 +1,6 @@
 ---
 title: "Salesforce release planning: calendar and releases"
-description: "Release calendar, cadence and freeze windows for Salesforce, plus sandbox preview, release updates, API versions and the retirements that hit pipelines."
+description: "Salesforce release planning means overlaying two calendars: your own rhythm with freeze windows and the three Salesforce releases a year with their retirements."
 lang: en
 slug: release-planning-salesforce-releases
 course: devops

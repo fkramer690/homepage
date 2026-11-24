@@ -1,8 +1,9 @@
 ---
 title: "Revenue Cloud deployments: configuration in the pipeline"
-description: "How catalog, pricing procedures and context definitions move from sandbox to production when most Revenue Cloud configuration is data, and what stays manual."
+metaTitle: "Revenue Cloud deployment: most configuration is data"
+description: "Most Revenue Cloud configuration is records, not metadata, and Salesforce has no own deployment tool for it. The deployment order and what stays manual."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: en
 slug: revenue-cloud-configuration-deployment
 translationKey: revenue-cloud-configuration-deployment

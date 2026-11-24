@@ -1,7 +1,9 @@
 ---
 title: "Field Service mobile flow limitations: Winter '27 update"
-description: "Which flow features are unsupported in the Salesforce Field Service mobile app, what Data Capture improves and which gaps still need a redesign."
+metaTitle: "Field Service mobile flow limitations: Winter '27 status"
+description: "No data table, no IN operator, offline saves only after sync: Field Service mobile app flow limits as of Winter '27, and where Data Capture fills the gaps."
 pubDate: 2026-11-06
+updatedDate: 2026-11-16
 lang: en
 slug: field-service-mobile-flow-limitations
 translationKey: field-service-mobile-flow-limits

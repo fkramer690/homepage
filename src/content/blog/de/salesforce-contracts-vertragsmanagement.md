@@ -1,8 +1,9 @@
 ---
 title: "Salesforce Contracts: Reicht das Vertragsmanagement?"
-description: "Was Salesforce Contracts vom Angebot bis zur Unterschrift und zu Pflichten abdeckt, was es kostet und wann die Rechtsabteilung ihr eigenes CLM-Werkzeug behält."
+metaTitle: "Vertragsmanagement in Salesforce: Contracts ab 50 €"
+description: "Salesforce Contracts reicht für Verträge aus dem Vertrieb, ab 50 € je Nutzer und Monat. Wann die Rechtsabteilung ihr eigenes CLM-Werkzeug behalten sollte."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: de
 slug: salesforce-contracts-vertragsmanagement
 translationKey: salesforce-contracts-revenue-cloud

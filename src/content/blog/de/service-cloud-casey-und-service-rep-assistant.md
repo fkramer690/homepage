@@ -1,8 +1,9 @@
 ---
 title: "Service Cloud: Casey und der Service Rep Assistant"
-description: "Casey antwortet Kunden, der Service Rep Assistant hilft Servicemitarbeitenden, Agentforce Contact Center startet in Europa. Was das für B2B-Service heißt."
+metaTitle: "Salesforce Casey: Help Agent oder Service Rep Assistant?"
+description: "Casey ist der KI-Help-Agent von Salesforce und antwortet Kunden; der Service Rep Assistant hilft Mitarbeitenden im Fall. Was beide im B2B-Service brauchen."
 pubDate: 2026-10-23
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: de
 slug: service-cloud-casey-und-service-rep-assistant
 translationKey: service-cloud-casey-assistant
@@ -26,7 +27,7 @@ faq:
     a: "Für Standardfragen mit klaren Antworten zu Themen wie Auftragsstatus, Dokumentation oder Rückgaberegeln kann er passen, wenn Identität, Rechte und Datenzugriff pro Kundenkonto geklärt sind. Bei technischer Diagnose, Gewährleistung oder Kulanz sollte Casey an einen Menschen übergeben oder eine Freigabe anfordern."
 ---
 
-Dieser Beitrag betrachtet zwei Arten von Hilfe in der Salesforce Service Cloud: Casey, einen KI-Agenten, der Kunden direkt antwortet, und den Service Rep Assistant, der Servicemitarbeitende während eines Falls unterstützt. Im Oktober 2026 hat Salesforce außerdem Agentforce Contact Center in Europa als allgemein verfügbar angekündigt. Für Hersteller mit B2B-Service können diese Neuerungen Antwortzeiten verkürzen und Serviceteams entlasten, aber nur, wenn das Wissen dahinter verlässlich ist und die Regeln für die Übergabe an Menschen klar sind. Es folgen ein Überblick über die Neuerungen und eine Einschätzung aus Kundensicht.
+Casey ist der KI-Help-Agent von Salesforce und antwortet Kunden direkt; der Service Rep Assistant ist das Gegenstück für Servicemitarbeitende und unterstützt sie während eines Falls. Im Oktober 2026 hat Salesforce außerdem Agentforce Contact Center in Europa als allgemein verfügbar angekündigt. Für Hersteller mit B2B-Service können diese Neuerungen Antwortzeiten verkürzen und Serviceteams entlasten, aber nur, wenn das Wissen dahinter verlässlich ist und die Regeln für die Übergabe an Menschen klar sind. Es folgen ein Überblick über die Neuerungen und eine Einschätzung aus Kundensicht.
 
 ## Ausgewählte Neuerungen in der Service Cloud vom 13. Oktober 2026
 

@@ -3,6 +3,7 @@ title: "Switching Salesforce partners without a standstill"
 metaTitle: "Switch Salesforce Partner: Handover Checklist and Process"
 description: "How to switch your Salesforce implementation partner without stopping the programme: process, handover checklist and what you must own before giving notice."
 pubDate: 2026-11-10
+updatedDate: 2026-11-23
 lang: en
 slug: switching-salesforce-implementation-partner
 translationKey: switch-salesforce-partner
@@ -27,6 +28,8 @@ faq:
     a: "I recommend a hard cut: from a fixed date the new partner is accountable for the org. After that, the old partner only finishes its open tickets and is available for questions, but gets no new work. A gradual phase-out in which both partners take on new work blurs accountability."
   - q: "Should the new partner run the org assessment?"
     a: "Better not alone. A new partner has an interest in finding a lot to rebuild. Have the assessment run from the client side and give the result to the new partner."
+  - q: "Can a new Salesforce partner take over an unfinished implementation?"
+    a: "Yes, even mid-implementation, but it takes longer than after go-live. The new partner needs the repository with history, the pipeline, the open branches and stories, and an org assessment from the client side. It works best as a hard cut after a stable release, with a short overlap in which the old partner finishes its open tickets and answers questions. Without that overlap the first change often takes weeks instead of days."
 draft: false
 ---
 
