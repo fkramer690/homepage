@@ -19,15 +19,8 @@ out.us = locs.find((l) => l.location_code === 2840)?.available_languages?.filter
 const deGoogle = !!out.germany?.available_languages?.some((l) => l.language_code === 'de' && l.available_platforms.includes('google'));
 const B = 'https://www.fk-sd.de';
 const tests = [
-  { name: 'EN DX MCP Server', url: `${B}/en/blog/salesforce-dx-mcp-server-end-of-life/` },
-  { name: 'EN sfdx-hardis', url: `${B}/en/blog/sfdx-hardis-open-source-salesforce-devops/` },
-  { name: 'EN Agent Context Engine', url: `${B}/en/blog/salesforce-agent-context-engine-explained/` },
-  { name: 'EN FS Scheduling Console', url: `${B}/en/blog/field-service-scheduling-console-dispatchers/` },
-  { name: 'EN /en/blog/ subpaths', url: `${B}/en/blog/`, sub: true },
-  { name: 'DE Change-Kurve', url: `${B}/blog/change-kurve/`, de: true },
-  { name: 'DE DX MCP Server', url: `${B}/blog/salesforce-dx-mcp-server-ende/`, de: true },
-  { name: 'DE /blog/ subpaths', url: `${B}/blog/`, sub: true, de: true },
-  { name: 'Domain fk-sd.de (baseline)', domain: 'fk-sd.de' },
+  { name: 'Control: salesforceben.com subpaths', url: 'https://www.salesforceben.com/', sub: true, limit: 3 },
+  { name: 'Control: DE google sfmike.de domain', domain: 'sfmike.de', de: true, limit: 3 },
 ];
 out.tests = [];
 for (const t of tests) {
@@ -35,7 +28,7 @@ for (const t of tests) {
   const target = t.domain
     ? [{ domain: t.domain, include_subdomains: true }]
     : [{ url: t.url, include_subpaths: !!t.sub }];
-  const task = { target, limit: 20 };
+  const task = { target, limit: t.limit || 20 };
   if (t.de) Object.assign(task, { platform: 'google', location_code: 2276, language_code: 'de' });
   const r = await call('ai_optimization/llm_mentions/search_mentions/live', [task]);
   const tk = r.tasks?.[0] || {};
