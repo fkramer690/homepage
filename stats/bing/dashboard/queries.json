@@ -54,22 +54,16 @@
   "position": 10
  },
  {
-  "query": "veränderungskurve kühn-rosch",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 6
- },
- {
   "query": "salesforce fehlende sicht berechtigung",
   "clicks": 0,
   "impressions": 3,
   "position": 10
  },
  {
-  "query": "well architected framework salesforce",
+  "query": "veränderungskurve kühn-rosch",
   "clicks": 0,
   "impressions": 3,
-  "position": 6.3
+  "position": 6
  },
  {
   "query": "does the salesforce agent context engine allow me to configure my company's semantics and terminology?",
@@ -78,16 +72,22 @@
   "position": 3.3
  },
  {
-  "query": "fk solution design gmbh",
+  "query": "well architected framework salesforce",
   "clicks": 0,
   "impressions": 3,
-  "position": 1
+  "position": 6.3
  },
  {
   "query": "change-kurve y-achse, kompetenz, energie",
   "clicks": 0,
   "impressions": 3,
   "position": 3
+ },
+ {
+  "query": "fk solution design gmbh",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 1
  },
  {
   "query": "germany works council ai tools",
@@ -102,10 +102,10 @@
   "position": 9
  },
  {
-  "query": "scheduling console salesforce",
+  "query": "暴食后第二天轻断食有用吗",
   "clicks": 0,
   "impressions": 2,
-  "position": 8
+  "position": 4
  },
  {
   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
@@ -114,19 +114,25 @@
   "position": 2
  },
  {
+  "query": "4-seiten-analyse nach stakeholder meetings",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
   "query": "salesforce well architected framework architect agent",
   "clicks": 0,
   "impressions": 2,
   "position": 7
  },
  {
-  "query": "暴食后第二天轻断食有用吗",
+  "query": "changekonzept nach lewin",
   "clicks": 0,
   "impressions": 2,
-  "position": 4
+  "position": 8
  },
  {
-  "query": "4-seiten-analyse nach stakeholder meetings",
+  "query": "scheduling console salesforce",
   "clicks": 0,
   "impressions": 2,
   "position": 8
@@ -138,16 +144,40 @@
   "position": 10
  },
  {
-  "query": "changekonzept nach lewin",
+  "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7.5
+ },
+ {
+  "query": "comparison between change management models lewin kotter adkar",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "query": "what is an fk in salesforce?",
   "clicks": 0,
   "impressions": 2,
   "position": 8
  },
  {
-  "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
+  "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
   "clicks": 0,
   "impressions": 2,
-  "position": 7.5
+  "position": 4
+ },
+ {
+  "query": "change kurve team",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
+ },
+ {
+  "query": "sfdxhardis training",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5
  },
  {
   "query": "sfdx hardis badges",
@@ -168,34 +198,16 @@
   "position": 2
  },
  {
-  "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "query": "change kurve team",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
-  "query": "comparison between change management models lewin kotter adkar",
+  "query": "salesforce meshmesh",
   "clicks": 0,
   "impressions": 2,
   "position": 10
  },
  {
-  "query": "what is an fk in salesforce?",
+  "query": "salesforce dx mcp is end of life?",
   "clicks": 0,
   "impressions": 2,
-  "position": 8
- },
- {
-  "query": "sfdxhardis training",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 5
+  "position": 6
  },
  {
   "query": "mcp server personenbezogene daten",
@@ -208,24 +220,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 4
- },
- {
-  "query": "salesforce dx mcp is end of life?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
-  "query": "fk solution design",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
- },
- {
-  "query": "salesforce meshmesh",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
  },
  {
   "query": "was ist salesforce b2b ecommerce lwr?",
@@ -246,10 +240,10 @@
   "position": 4
  },
  {
-  "query": "salesforce gmv",
-  "clicks": 1,
-  "impressions": 1,
-  "position": 4
+  "query": "fk solution design",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 2
  },
  {
   "query": "unterschiede adkar und drei phasen modell von lewis",
@@ -258,45 +252,51 @@
   "position": 2
  },
  {
+  "query": "salesforce gmv",
+  "clicks": 1,
+  "impressions": 1,
+  "position": 4
+ },
+ {
   "query": "what is rca latest name for by salesforce",
   "clicks": 0,
   "impressions": 1,
   "position": 4
  },
  {
-  "query": "difference between devops centre and salesforce dx  and copado",
+  "query": "migrate list views scheudling console sfdc",
   "clicks": 0,
   "impressions": 1,
-  "position": 9
+  "position": 3
  },
  {
-  "query": "i don't see classic dispatcher console in salesforce",
+  "query": "hardifs",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "difference between devops centre and salesforce dx",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
+  "query": "adjust duration in new cheudling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "trailhead scheduling console",
   "clicks": 0,
   "impressions": 1,
   "position": 6
  },
  {
-  "query": "salesforce new dispatch console",
+  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
   "clicks": 0,
   "impressions": 1,
-  "position": 6
- },
- {
-  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
-  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "query": "salesforce b2b commerce extension",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
+  "position": 10
  }
 ]

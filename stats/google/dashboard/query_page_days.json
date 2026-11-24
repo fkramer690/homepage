@@ -13297,11 +13297,35 @@
  },
  {
   "day": "2026-11-23",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 36
+ },
+ {
+  "day": "2026-11-23",
+  "query": "field service application software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 64.7
+ },
+ {
+  "day": "2026-11-23",
   "query": "projekte in salesforce verwalten",
   "page": "https://www.fk-sd.de/blog/",
   "clicks": 0,
   "impressions": 3,
   "position": 29
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 9.7
  },
  {
   "day": "2026-11-23",
@@ -13321,19 +13345,11 @@
  },
  {
   "day": "2026-11-23",
-  "query": "fertigung salesforce",
-  "page": "https://www.fk-sd.de/masterclass/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 34.5
- },
- {
-  "day": "2026-11-23",
-  "query": "field service application software",
+  "query": "field service management cloud",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 2,
-  "position": 64
+  "position": 46.5
  },
  {
   "day": "2026-11-23",
@@ -13353,19 +13369,19 @@
  },
  {
   "day": "2026-11-23",
-  "query": "salesforce commerce product data",
-  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "day": "2026-11-23",
   "query": "salesforce erp schnittstelle",
   "page": "https://www.fk-sd.de/leistungen/salesforce-schnittstellen/",
   "clicks": 0,
   "impressions": 2,
   "position": 28
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42
  },
  {
   "day": "2026-11-23",
@@ -13401,6 +13417,14 @@
  },
  {
   "day": "2026-11-23",
+  "query": "cloud field service management",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-23",
   "query": "cpq upgraden",
   "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
   "clicks": 0,
@@ -13425,11 +13449,19 @@
  },
  {
   "day": "2026-11-23",
-  "query": "field service management cloud",
-  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "query": "field service agent builder",
+  "page": "https://www.fk-sd.de/en/blog/field-service-ai-agents-what-works-today/",
   "clicks": 0,
   "impressions": 1,
-  "position": 46
+  "position": 26
+ },
+ {
+  "day": "2026-11-23",
+  "query": "field service agent builder",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-ai-agents-rollout/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
  },
  {
   "day": "2026-11-23",
@@ -13449,11 +13481,35 @@
  },
  {
   "day": "2026-11-23",
+  "query": "manufacturing cloud implementeren",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 69
+ },
+ {
+  "day": "2026-11-23",
   "query": "manufacturing cloud vs service cloud",
   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
   "clicks": 0,
   "impressions": 1,
   "position": 3
+ },
+ {
+  "day": "2026-11-23",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 38
+ },
+ {
+  "day": "2026-11-23",
+  "query": "offline field service app",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-app-offline-data/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 52
  },
  {
   "day": "2026-11-23",
@@ -13481,11 +13537,19 @@
  },
  {
   "day": "2026-11-23",
-  "query": "salesforce manufacturing cloud",
-  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "query": "salesforce custom development nearshore",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
   "clicks": 0,
   "impressions": 1,
-  "position": 35
+  "position": 100
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce konfiguration",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 29
  },
  {
   "day": "2026-11-23",
@@ -13534,6 +13598,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 32
+ },
+ {
+  "day": "2026-11-23",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
  },
  {
   "day": "2026-11-23",
@@ -13646,5 +13718,37 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "day": "2026-11-23",
+  "query": "zertifizierte cloud-architektur",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-24",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 7
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce architektur salzburg",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce core edition",
+  "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
  }
 ]

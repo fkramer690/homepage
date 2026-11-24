@@ -16,7 +16,7 @@
  {
   "url": "https://www.fk-sd.de/blog/account-forecasting-absatzprognose-vertrieb/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -114,7 +114,7 @@
  {
   "url": "https://www.fk-sd.de/blog/agentforce-sap-auftragsstatus/",
   "verdict": "NEUTRAL",
-  "coverage": "URL is unknown to Google",
+  "coverage": "Discovered - currently not indexed",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -149,7 +149,7 @@
  {
   "url": "https://www.fk-sd.de/blog/angebot-zu-sales-agreement-produktkonfigurator/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -366,7 +366,7 @@
  {
   "url": "https://www.fk-sd.de/blog/data-360-kosten-fuer-ki-agenten/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -569,14 +569,14 @@
  {
   "url": "https://www.fk-sd.de/blog/garantieansprueche-haendler-salesforce/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
  {
   "url": "https://www.fk-sd.de/blog/gearset-copado-alternativen/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -611,7 +611,7 @@
  {
   "url": "https://www.fk-sd.de/blog/ki-agenten-aussendienst-field-service/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -625,14 +625,14 @@
  {
   "url": "https://www.fk-sd.de/blog/ki-coding-betriebsrat-dsgvo/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
  {
   "url": "https://www.fk-sd.de/blog/ki-coding-kosten-salesforce-projekt/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -716,7 +716,7 @@
  {
   "url": "https://www.fk-sd.de/blog/manufacturing-cloud-kundenportal/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -814,7 +814,7 @@
  {
   "url": "https://www.fk-sd.de/blog/partner-ki-coding-regeln-vertrag/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -884,7 +884,7 @@
  {
   "url": "https://www.fk-sd.de/blog/rebate-management-haendlerboni/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -1010,7 +1010,7 @@
  {
   "url": "https://www.fk-sd.de/blog/sales-agreements-abnahmemengen-erp/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -1115,14 +1115,14 @@
  {
   "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
  {
   "url": "https://www.fk-sd.de/blog/salesforce-field-service-ersatzteile-erp/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -1143,7 +1143,7 @@
  {
   "url": "https://www.fk-sd.de/blog/salesforce-field-service-servicepartner/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -1157,7 +1157,7 @@
  {
   "url": "https://www.fk-sd.de/blog/salesforce-field-service-terminplanung-automatisieren/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -1255,7 +1255,7 @@
  {
   "url": "https://www.fk-sd.de/blog/salesforce-releases-fachbereich-kommunizieren/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -1285,6 +1285,13 @@
   "verdict": "PASS",
   "coverage": "Submitted and indexed",
   "lastCrawl": "2026-10-30",
+  "googleCanonical": null
+ },
+ {
+  "url": "https://www.fk-sd.de/blog/salesforce-ui-tests-ki-agent/",
+  "verdict": "NEUTRAL",
+  "coverage": "URL is unknown to Google",
+  "lastCrawl": null,
   "googleCanonical": null
  },
  {
@@ -1584,14 +1591,14 @@
  {
   "url": "https://www.fk-sd.de/en/blog/agentforce-vibes-claude-code-copilot/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
  {
   "url": "https://www.fk-sd.de/en/blog/agentforce-yes-or-no-manufacturers/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -1773,7 +1780,7 @@
  {
   "url": "https://www.fk-sd.de/en/blog/b2b-store-orders-to-erp/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -2060,7 +2067,7 @@
  {
   "url": "https://www.fk-sd.de/en/blog/field-service-multiday-jobs-crews-commissioning/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -2480,14 +2487,14 @@
  {
   "url": "https://www.fk-sd.de/en/blog/salesforce-architect-vs-system-integrator/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
  {
   "url": "https://www.fk-sd.de/en/blog/salesforce-architecture-decision-log/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -2746,7 +2753,14 @@
  {
   "url": "https://www.fk-sd.de/en/blog/salesforce-uat-business-acceptance-testing/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
+  "lastCrawl": null,
+  "googleCanonical": null
+ },
+ {
+  "url": "https://www.fk-sd.de/en/blog/salesforce-ui-testing-ai-agent/",
+  "verdict": "NEUTRAL",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -2928,7 +2942,7 @@
  {
   "url": "https://www.fk-sd.de/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -3103,7 +3117,7 @@
  {
   "url": "https://www.fk-sd.de/en/masterclass/change-management/measure-adoption-and-reinforce/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -3593,14 +3607,14 @@
  {
   "url": "https://www.fk-sd.de/masterclass/change-management/nutzung-messen-und-verankern/",
   "verdict": "NEUTRAL",
-  "coverage": "URL is unknown to Google",
+  "coverage": "Discovered - currently not indexed",
   "lastCrawl": null,
   "googleCanonical": null
  },
  {
   "url": "https://www.fk-sd.de/masterclass/change-management/sponsor-und-kommunikation/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -3747,7 +3761,7 @@
  {
   "url": "https://www.fk-sd.de/masterclass/ki-salesforce/best-practices-ki-code/",
   "verdict": "NEUTRAL",
-  "coverage": "URL is unknown to Google",
+  "coverage": "Discovered - currently not indexed",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -3782,7 +3796,7 @@
  {
   "url": "https://www.fk-sd.de/masterclass/ki-salesforce/mcp-und-schnittstellen/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },
@@ -3915,7 +3929,7 @@
  {
   "url": "https://www.fk-sd.de/salesforce-ki-readiness-check/",
   "verdict": "NEUTRAL",
-  "coverage": "Discovered - currently not indexed",
+  "coverage": "URL is unknown to Google",
   "lastCrawl": null,
   "googleCanonical": null
  },

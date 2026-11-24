@@ -10319,6 +10319,13 @@
  },
  {
   "day": "2026-11-23",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 30.8
+ },
+ {
+  "day": "2026-11-23",
   "query": "what does a typical salesforce devops rollout look like?",
   "clicks": 0,
   "impressions": 4,
@@ -10326,10 +10333,10 @@
  },
  {
   "day": "2026-11-23",
-  "query": "fertigung salesforce",
+  "query": "field service application software",
   "clicks": 0,
   "impressions": 3,
-  "position": 28
+  "position": 64.7
  },
  {
   "day": "2026-11-23",
@@ -10347,6 +10354,13 @@
  },
  {
   "day": "2026-11-23",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 9.7
+ },
+ {
+  "day": "2026-11-23",
   "query": "change management salesforce projekt",
   "clicks": 0,
   "impressions": 2,
@@ -10361,10 +10375,17 @@
  },
  {
   "day": "2026-11-23",
-  "query": "field service application software",
+  "query": "field service agent builder",
   "clicks": 0,
   "impressions": 2,
-  "position": 64
+  "position": 44
+ },
+ {
+  "day": "2026-11-23",
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 46.5
  },
  {
   "day": "2026-11-23",
@@ -10375,17 +10396,17 @@
  },
  {
   "day": "2026-11-23",
-  "query": "salesforce commerce product data",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "day": "2026-11-23",
   "query": "salesforce erp schnittstelle",
   "clicks": 0,
   "impressions": 2,
   "position": 28
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42
  },
  {
   "day": "2026-11-23",
@@ -10431,6 +10452,13 @@
  },
  {
   "day": "2026-11-23",
+  "query": "cloud field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-23",
   "query": "cpq upgraden",
   "clicks": 0,
   "impressions": 1,
@@ -10445,13 +10473,6 @@
  },
  {
   "day": "2026-11-23",
-  "query": "field service management cloud",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 46
- },
- {
-  "day": "2026-11-23",
   "query": "field services software",
   "clicks": 0,
   "impressions": 1,
@@ -10459,10 +10480,31 @@
  },
  {
   "day": "2026-11-23",
+  "query": "manufacturing cloud implementeren",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 69
+ },
+ {
+  "day": "2026-11-23",
   "query": "manufacturing cloud vs service cloud",
   "clicks": 0,
   "impressions": 1,
   "position": 3
+ },
+ {
+  "day": "2026-11-23",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 38
+ },
+ {
+  "day": "2026-11-23",
+  "query": "offline field service app",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 52
  },
  {
   "day": "2026-11-23",
@@ -10487,10 +10529,17 @@
  },
  {
   "day": "2026-11-23",
-  "query": "salesforce manufacturing cloud",
+  "query": "salesforce custom development nearshore",
   "clicks": 0,
   "impressions": 1,
-  "position": 35
+  "position": 100
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce konfiguration",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 29
  },
  {
   "day": "2026-11-23",
@@ -10536,6 +10585,13 @@
  },
  {
   "day": "2026-11-23",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-23",
   "query": "sx.e salesforce warranty claim handoff",
   "clicks": 0,
   "impressions": 1,
@@ -10547,5 +10603,33 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "day": "2026-11-23",
+  "query": "zertifizierte cloud-architektur",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-24",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 7
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce architektur salzburg",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce core edition",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
  }
 ]
