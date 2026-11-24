@@ -1975,6 +1975,19 @@ const drawings: Record<string, Drawing> = {
     ${check(226, 106)}${t(238, 112, l('client decides', 'Kunde entscheidet'), { fill: C, size: 7 })}
     ${cross(24, 140)}${t(36, 143, l('no new permissions in profiles', 'keine neuen Rechte im Profil'), { size: 7 })}`,
 
+  'salesforce-ui-testing-ai-agent': (l) => `
+    ${t(18, 20, l('SCREEN AND DATA · 17 TEST CASES', 'BILDSCHIRM UND DATEN · 17 TESTFÄLLE'), { fill: D, size: 7 })}
+    ${box(18, 32, 120, 62)}${t(28, 48, l('SCREEN', 'BILDSCHIRM'), { fill: D, size: 7.5 })}
+    ${check(28, 58, G)}${t(42, 64, l('page says saved', 'Seite: gespeichert'), { size: 7 })}
+    ${cross(32, 78)}${t(42, 82, l('2x old screen', '2x alter Screen'), { size: 7 })}
+    ${arrow(140, 62, 180, C)}
+    ${box(182, 32, 120, 62, C)}${t(192, 48, l('QUERY', 'ABFRAGE'), { fill: C, size: 7.5 })}
+    ${check(192, 58)}${t(206, 64, l('value in record', 'Wert im Datensatz'), { size: 7 })}
+    ${check(192, 76)}${t(206, 82, l('by: test user', 'von: Testnutzer'), { size: 7 })}
+    <path d="M18 108H302" stroke="${L}"/>
+    ${t(18, 124, l('rule tests as normal user, no bypass', 'Regeltests als normaler Nutzer, ohne Bypass'), { size: 7 })}
+    ${tag(18, 134, 120, l('cleanup by record Id', 'Aufräumen per Id'))}`,
+
   'salesforce-uat-business-testing': (l) => `
     ${t(18, 20, l('SYSTEM TEST BEFORE UAT · BUSINESS DECIDES', 'SYSTEMTEST VOR UAT · FACHBEREICH ENTSCHEIDET'), { fill: D, size: 7 })}
     ${[[l('Test cases', 'Testfälle'), l('business', 'Fachbereich')], [l('System test', 'Systemtest'), 'Partner'], ['UAT', l('business', 'Fachbereich')], ['Go/No-Go', l('business', 'Fachbereich')]].map(([s, o], i) => box(18 + i * 74, 32, 62, 28, i === 2 ? C : G) + t(49 + i * 74, 50, s, { fill: i === 2 ? C : G, size: 7, anchor: 'middle' }) + t(49 + i * 74, 74, o, { size: 6.5, anchor: 'middle' })).join('')}
