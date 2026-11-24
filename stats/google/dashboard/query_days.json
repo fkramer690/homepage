@@ -10307,8 +10307,22 @@
   "day": "2026-11-23",
   "query": "erp system field service",
   "clicks": 0,
-  "impressions": 3,
-  "position": 23
+  "impressions": 6,
+  "position": 21.2
+ },
+ {
+  "day": "2026-11-23",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 5.2
+ },
+ {
+  "day": "2026-11-23",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 6.3
  },
  {
   "day": "2026-11-23",
@@ -10319,6 +10333,111 @@
  },
  {
   "day": "2026-11-23",
+  "query": "manufacturing cloud",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 38.3
+ },
+ {
+  "day": "2026-11-23",
+  "query": "projekte in salesforce verwalten",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 29
+ },
+ {
+  "day": "2026-11-23",
+  "query": "change management salesforce projekt",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "day": "2026-11-23",
+  "query": "click field service management software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 53.5
+ },
+ {
+  "day": "2026-11-23",
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 64
+ },
+ {
+  "day": "2026-11-23",
+  "query": "ki chatbot audit trail",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 94
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce erp schnittstelle",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 28
+ },
+ {
+  "day": "2026-11-23",
+  "query": "sfdx hardis",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5.5
+ },
+ {
+  "day": "2026-11-23",
+  "query": "wechsel von cpq zu revenue cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 20.5
+ },
+ {
+  "day": "2026-11-23",
+  "query": "are all salesforce devops tools basically the same?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-23",
+  "query": "can agentforce agents be tested and monitored before going live?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-23",
+  "query": "click field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 49
+ },
+ {
+  "day": "2026-11-23",
+  "query": "click field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 63
+ },
+ {
+  "day": "2026-11-23",
+  "query": "cpq upgraden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-23",
   "query": "field service",
   "clicks": 0,
   "impressions": 1,
@@ -10326,10 +10445,101 @@
  },
  {
   "day": "2026-11-23",
-  "query": "sfdx hardis",
+  "query": "field service management cloud",
   "clicks": 0,
   "impressions": 1,
-  "position": 6
+  "position": 46
+ },
+ {
+  "day": "2026-11-23",
+  "query": "field services software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
+ },
+ {
+  "day": "2026-11-23",
+  "query": "manufacturing cloud vs service cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-23",
+  "query": "predictive maintenance salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "day": "2026-11-23",
+  "query": "proalpha anbindung salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 37
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce architektur klagenfurt",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 35
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce manufacturing cloud implementation",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 63
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce manufacturing cloud partner",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 44
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 42
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce nearshore pdo",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 86
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce release update",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-23",
+  "query": "salesforce zertifizierte experten",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 32
+ },
+ {
+  "day": "2026-11-23",
+  "query": "sx.e salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
  },
  {
   "day": "2026-11-23",

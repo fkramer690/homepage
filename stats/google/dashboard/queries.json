@@ -8,19 +8,19 @@
  {
   "query": "manufacturing cloud",
   "clicks": 0,
-  "impressions": 67,
-  "position": 43.7
+  "impressions": 70,
+  "position": 43.5
  },
  {
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "clicks": 0,
-  "impressions": 58,
-  "position": 5.9
+  "impressions": 63,
+  "position": 5.8
  },
  {
   "query": "what does a typical salesforce devops rollout look like?",
   "clicks": 0,
-  "impressions": 57,
+  "impressions": 61,
   "position": 6.9
  },
  {
@@ -32,8 +32,8 @@
  {
   "query": "salesforce commerce product data",
   "clicks": 0,
-  "impressions": 54,
-  "position": 50.1
+  "impressions": 56,
+  "position": 48.6
  },
  {
   "query": "field engineer scheduling",
@@ -44,14 +44,14 @@
  {
   "query": "field service application software",
   "clicks": 0,
-  "impressions": 46,
-  "position": 59.5
+  "impressions": 48,
+  "position": 59.6
  },
  {
   "query": "click field service management software",
   "clicks": 0,
-  "impressions": 37,
-  "position": 64.1
+  "impressions": 39,
+  "position": 63.6
  },
  {
   "query": "field service shift planning",
@@ -90,22 +90,22 @@
   "position": 73.1
  },
  {
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 29,
+  "position": 69.3
+ },
+ {
   "query": "field service pricing",
   "clicks": 0,
   "impressions": 29,
   "position": 88.3
  },
  {
-  "query": "field service management cloud",
-  "clicks": 0,
-  "impressions": 28,
-  "position": 70.2
- },
- {
   "query": "salesforce manufacturing cloud",
   "clicks": 0,
-  "impressions": 28,
-  "position": 57.3
+  "impressions": 29,
+  "position": 56.6
  },
  {
   "query": "services scheduling dispatch",
@@ -118,6 +118,12 @@
   "clicks": 0,
   "impressions": 27,
   "position": 56.6
+ },
+ {
+  "query": "wechsel von cpq zu revenue cloud",
+  "clicks": 0,
+  "impressions": 25,
+  "position": 13.1
  },
  {
   "query": "cad vertriebsdaten",
@@ -138,10 +144,10 @@
   "position": 72.7
  },
  {
-  "query": "wechsel von cpq zu revenue cloud",
+  "query": "ki chatbot audit trail",
   "clicks": 0,
-  "impressions": 23,
-  "position": 12.4
+  "impressions": 20,
+  "position": 82.1
  },
  {
   "query": "kommunikationsplan",
@@ -184,12 +190,6 @@
   "clicks": 0,
   "impressions": 18,
   "position": 9.9
- },
- {
-  "query": "ki chatbot audit trail",
-  "clicks": 0,
-  "impressions": 18,
-  "position": 80.8
  },
  {
   "query": "service pro vs ptc servicemax",
@@ -240,34 +240,46 @@
   "position": 22.6
  },
  {
+  "query": "field services software",
+  "clicks": 0,
+  "impressions": 14,
+  "position": 47.2
+ },
+ {
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 14,
+  "position": 57
+ },
+ {
+  "query": "salesforce zertifizierte experten",
+  "clicks": 0,
+  "impressions": 14,
+  "position": 35.2
+ },
+ {
   "query": "field service schedule",
   "clicks": 0,
   "impressions": 13,
   "position": 87.2
  },
  {
-  "query": "field services software",
-  "clicks": 0,
-  "impressions": 13,
-  "position": 49.5
- },
- {
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 13,
-  "position": 58.2
- },
- {
-  "query": "salesforce zertifizierte experten",
-  "clicks": 0,
-  "impressions": 13,
-  "position": 35.5
- },
- {
   "query": "what software manages preferred supplier lists in field service?",
   "clicks": 0,
   "impressions": 13,
   "position": 40
+ },
+ {
+  "query": "change management salesforce projekt",
+  "clicks": 0,
+  "impressions": 12,
+  "position": 13.2
+ },
+ {
+  "query": "cpq upgraden",
+  "clicks": 0,
+  "impressions": 12,
+  "position": 34.8
  },
  {
   "query": "field service app",
@@ -288,6 +300,12 @@
   "position": 78.2
  },
  {
+  "query": "salesforce manufacturing cloud partner",
+  "clicks": 0,
+  "impressions": 12,
+  "position": 54.1
+ },
+ {
   "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
   "clicks": 0,
   "impressions": 11,
@@ -298,12 +316,6 @@
   "clicks": 0,
   "impressions": 11,
   "position": 37.9
- },
- {
-  "query": "cpq upgraden",
-  "clicks": 0,
-  "impressions": 11,
-  "position": 35.3
  },
  {
   "query": "dispatching field service",
@@ -330,12 +342,6 @@
   "position": 22.4
  },
  {
-  "query": "salesforce manufacturing cloud partner",
-  "clicks": 0,
-  "impressions": 11,
-  "position": 55
- },
- {
   "query": "scalable b2b headless commerce",
   "clicks": 0,
   "impressions": 11,
@@ -348,16 +354,22 @@
   "position": 9.3
  },
  {
+  "query": "sfdx hardis",
+  "clicks": 2,
+  "impressions": 10,
+  "position": 8.4
+ },
+ {
   "query": "b2b commerce platform with negotiable quotes",
   "clicks": 0,
   "impressions": 10,
   "position": 62.2
  },
  {
-  "query": "change management salesforce projekt",
+  "query": "click field service",
   "clicks": 0,
   "impressions": 10,
-  "position": 14.2
+  "position": 63.2
  },
  {
   "query": "cloud field service management",
@@ -390,12 +402,6 @@
   "position": 68.7
  },
  {
-  "query": "sfdx hardis",
-  "clicks": 2,
-  "impressions": 9,
-  "position": 8.8
- },
- {
   "query": "b2b checkout",
   "clicks": 0,
   "impressions": 9,
@@ -406,12 +412,6 @@
   "clicks": 0,
   "impressions": 9,
   "position": 62.3
- },
- {
-  "query": "click field service",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 64.8
  },
  {
   "query": "clicksoftware field service",
@@ -444,6 +444,18 @@
   "position": 73
  },
  {
+  "query": "manufacturing cloud vs service cloud",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 3.6
+ },
+ {
+  "query": "predictive maintenance salesforce",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 13.6
+ },
+ {
   "query": "revenue cloud advanced vs revenue cloud",
   "clicks": 0,
   "impressions": 9,
@@ -454,6 +466,12 @@
   "clicks": 0,
   "impressions": 9,
   "position": 25.9
+ },
+ {
+  "query": "salesforce manufacturing cloud implementation",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 76.9
  },
  {
   "query": "click field service edge",
@@ -472,24 +490,6 @@
   "clicks": 0,
   "impressions": 8,
   "position": 75.6
- },
- {
-  "query": "manufacturing cloud vs service cloud",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 3.6
- },
- {
-  "query": "predictive maintenance salesforce",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 13.5
- },
- {
-  "query": "salesforce manufacturing cloud implementation",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 78.6
  },
  {
   "query": "salesforce release management tools",
@@ -522,6 +522,18 @@
   "position": 55
  },
  {
+  "query": "can agentforce agents be tested and monitored before going live?",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 3.7
+ },
+ {
+  "query": "click field service management",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 71.4
+ },
+ {
   "query": "epicor kinetic salesforce warranty claim handoff",
   "clicks": 0,
   "impressions": 7,
@@ -538,6 +550,12 @@
   "clicks": 0,
   "impressions": 7,
   "position": 16.1
+ },
+ {
+  "query": "projekte in salesforce verwalten",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 27.3
  },
  {
   "query": "salesforce core edition",
@@ -582,16 +600,10 @@
   "position": 32.3
  },
  {
-  "query": "can agentforce agents be tested and monitored before going live?",
+  "query": "erp system field service",
   "clicks": 0,
   "impressions": 6,
-  "position": 3.5
- },
- {
-  "query": "click field service management",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 72.8
+  "position": 21.2
  },
  {
   "query": "field service planning",
@@ -640,6 +652,12 @@
   "clicks": 0,
   "impressions": 6,
   "position": 11.3
+ },
+ {
+  "query": "salesforce nearshore pdo",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 83.5
  },
  {
   "query": "salesforce release cycle",
@@ -732,6 +750,12 @@
   "position": 51.6
  },
  {
+  "query": "salesforce architektur klagenfurt",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 17.4
+ },
+ {
   "query": "salesforce contracts",
   "clicks": 0,
   "impressions": 5,
@@ -744,16 +768,16 @@
   "position": 35.4
  },
  {
-  "query": "salesforce nearshore pdo",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 83
- },
- {
   "query": "salesforce revenue cloud advanced",
   "clicks": 0,
   "impressions": 5,
   "position": 63.8
+ },
+ {
+  "query": "sx.e salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 10.2
  },
  {
   "query": "wo kann ich eine demo für f&e software anfragen",
@@ -888,10 +912,10 @@
   "position": 69.5
  },
  {
-  "query": "projekte in salesforce verwalten",
+  "query": "proalpha anbindung salesforce",
   "clicks": 0,
   "impressions": 4,
-  "position": 26
+  "position": 38.3
  },
  {
   "query": "recurring field service coverage",
@@ -916,12 +940,6 @@
   "clicks": 0,
   "impressions": 4,
   "position": 23.5
- },
- {
-  "query": "salesforce architektur klagenfurt",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 18
  },
  {
   "query": "salesforce architektur salzburg",
@@ -954,6 +972,12 @@
   "position": 23.3
  },
  {
+  "query": "salesforce erp schnittstelle",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 26.3
+ },
+ {
   "query": "salesforce field service",
   "clicks": 0,
   "impressions": 4,
@@ -982,12 +1006,6 @@
   "clicks": 0,
   "impressions": 4,
   "position": 58.3
- },
- {
-  "query": "sx.e salesforce warranty claim handoff",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 9.3
  },
  {
   "query": "was passiert mit kundendaten, wenn ein teil des vertriebsteams ein anderes crm und ein anderer teil salesforce nutzt?",
@@ -1042,12 +1060,6 @@
   "clicks": 0,
   "impressions": 3,
   "position": 17.3
- },
- {
-  "query": "erp system field service",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 23
  },
  {
   "query": "fakturierung cloud",
@@ -1114,12 +1126,6 @@
   "clicks": 0,
   "impressions": 3,
   "position": 71.7
- },
- {
-  "query": "proalpha anbindung salesforce",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 38.7
  },
  {
   "query": "replace drs scheduling",
@@ -1258,6 +1264,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 18.5
+ },
+ {
+  "query": "are all salesforce devops tools basically the same?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7.5
  },
  {
   "query": "b2b kundeportal",
@@ -1530,12 +1542,6 @@
   "position": 16.5
  },
  {
-  "query": "salesforce erp schnittstelle",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 24.5
- },
- {
   "query": "salesforce key user training",
   "clicks": 0,
   "impressions": 2,
@@ -1762,12 +1768,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 26
- },
- {
-  "query": "are all salesforce devops tools basically the same?",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 11
  },
  {
   "query": "asset 360",
@@ -2704,6 +2704,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 38
+ },
+ {
+  "query": "salesforce release update",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
  },
  {
   "query": "salesforce releases in a year",

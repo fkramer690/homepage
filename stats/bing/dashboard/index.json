@@ -142,5 +142,11 @@
   "inIndex": 488,
   "crawledPages": 64,
   "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-23",
+  "inIndex": 494,
+  "crawledPages": 96,
+  "crawlErrors": 0
  }
 ]
