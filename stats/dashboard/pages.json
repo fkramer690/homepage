@@ -30,14 +30,14 @@
   "visits": 50
  },
  {
-  "page": "/en/blog/salesforce-forward-deployed-engineer/",
-  "pageviews": 70,
-  "visits": 70
- },
- {
   "page": "/en/masterclass/ai-salesforce/",
   "pageviews": 70,
   "visits": 50
+ },
+ {
+  "page": "/en/blog/salesforce-forward-deployed-engineer/",
+  "pageviews": 70,
+  "visits": 70
  },
  {
   "page": "/fragen/",

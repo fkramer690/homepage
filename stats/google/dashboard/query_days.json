@@ -10361,6 +10361,13 @@
  },
  {
   "day": "2026-11-23",
+  "query": "sfdx hardis",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
+ },
+ {
+  "day": "2026-11-23",
   "query": "change management salesforce projekt",
   "clicks": 0,
   "impressions": 2,
@@ -10407,13 +10414,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 42
- },
- {
-  "day": "2026-11-23",
-  "query": "sfdx hardis",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 5.5
  },
  {
   "day": "2026-11-23",
@@ -10613,10 +10613,136 @@
  },
  {
   "day": "2026-11-24",
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 65
+ },
+ {
+  "day": "2026-11-24",
+  "query": "manufacturing cloud",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 53.3
+ },
+ {
+  "day": "2026-11-24",
   "query": "what does a typical salesforce devops rollout look like?",
   "clicks": 0,
   "impressions": 3,
   "position": 7
+ },
+ {
+  "day": "2026-11-24",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 4.7
+ },
+ {
+  "day": "2026-11-24",
+  "query": "ki chatbot audit trail",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 80.5
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce core edition",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 43
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42
+ },
+ {
+  "day": "2026-11-24",
+  "query": "wechsel von cpq zu revenue cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 21
+ },
+ {
+  "day": "2026-11-24",
+  "query": "click field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-24",
+  "query": "cpq upgraden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 31
+ },
+ {
+  "day": "2026-11-24",
+  "query": "devops release management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 38
+ },
+ {
+  "day": "2026-11-24",
+  "query": "epicor kinetic salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-24",
+  "query": "erp field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 75
+ },
+ {
+  "day": "2026-11-24",
+  "query": "field management solutions",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
+ },
+ {
+  "day": "2026-11-24",
+  "query": "field service cases",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
+ },
+ {
+  "day": "2026-11-24",
+  "query": "field services software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
+ },
+ {
+  "day": "2026-11-24",
+  "query": "proalpha anbindung salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 37
+ },
+ {
+  "day": "2026-11-24",
+  "query": "proalpha schnittstelle salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 87
  },
  {
   "day": "2026-11-24",
@@ -10627,9 +10753,65 @@
  },
  {
   "day": "2026-11-24",
-  "query": "salesforce core edition",
+  "query": "salesforce b2b commerce manufacturer",
   "clicks": 0,
   "impressions": 1,
-  "position": 5
+  "position": 46
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce integration middleware",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 28
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce manufacturing cloud implementation",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 60
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce manufacturing cloud partner",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce maschinenbau",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
+ },
+ {
+  "day": "2026-11-24",
+  "query": "salesforce nearshore pdo",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 86
+ },
+ {
+  "day": "2026-11-24",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "day": "2026-11-24",
+  "query": "software für field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 76
  }
 ]

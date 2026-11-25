@@ -8,8 +8,14 @@
  {
   "query": "manufacturing cloud",
   "clicks": 0,
-  "impressions": 70,
-  "position": 43.5
+  "impressions": 73,
+  "position": 43.9
+ },
+ {
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 66,
+  "position": 5.8
  },
  {
   "query": "what does a typical salesforce devops rollout look like?",
@@ -18,16 +24,10 @@
   "position": 6.9
  },
  {
-  "query": "what makes a salesforce devops platform enterprise-ready?",
-  "clicks": 0,
-  "impressions": 63,
-  "position": 5.8
- },
- {
   "query": "salesforce commerce product data",
   "clicks": 0,
-  "impressions": 57,
-  "position": 47.9
+  "impressions": 58,
+  "position": 47.3
  },
  {
   "query": "how to automate technician scheduling and dispatch?",
@@ -36,16 +36,16 @@
   "position": 37.8
  },
  {
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 53,
+  "position": 60.2
+ },
+ {
   "query": "field engineer scheduling",
   "clicks": 0,
   "impressions": 49,
   "position": 94.5
- },
- {
-  "query": "field service application software",
-  "clicks": 0,
-  "impressions": 49,
-  "position": 59.8
  },
  {
   "query": "click field service management software",
@@ -84,6 +84,12 @@
   "position": 89.1
  },
  {
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 32,
+  "position": 55.5
+ },
+ {
   "query": "b2b portal",
   "clicks": 0,
   "impressions": 30,
@@ -94,12 +100,6 @@
   "clicks": 0,
   "impressions": 30,
   "position": 68.6
- },
- {
-  "query": "salesforce manufacturing cloud",
-  "clicks": 0,
-  "impressions": 30,
-  "position": 56.3
  },
  {
   "query": "field service pricing",
@@ -122,8 +122,8 @@
  {
   "query": "wechsel von cpq zu revenue cloud",
   "clicks": 0,
-  "impressions": 25,
-  "position": 13.1
+  "impressions": 27,
+  "position": 13.7
  },
  {
   "query": "cad vertriebsdaten",
@@ -132,22 +132,22 @@
   "position": 68.2
  },
  {
+  "query": "erp field service",
+  "clicks": 0,
+  "impressions": 24,
+  "position": 72.8
+ },
+ {
   "query": "field service dispatcher",
   "clicks": 0,
   "impressions": 24,
   "position": 80.5
  },
  {
-  "query": "erp field service",
-  "clicks": 0,
-  "impressions": 23,
-  "position": 72.7
- },
- {
   "query": "ki chatbot audit trail",
   "clicks": 0,
-  "impressions": 20,
-  "position": 82.1
+  "impressions": 22,
+  "position": 82
  },
  {
   "query": "kommunikationsplan",
@@ -198,10 +198,22 @@
   "position": 8.5
  },
  {
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 16,
+  "position": 55.1
+ },
+ {
   "query": "b2b dealer portal",
   "clicks": 0,
   "impressions": 15,
   "position": 81.3
+ },
+ {
+  "query": "field services software",
+  "clicks": 0,
+  "impressions": 15,
+  "position": 45.3
  },
  {
   "query": "field software",
@@ -240,28 +252,28 @@
   "position": 22.6
  },
  {
-  "query": "field services software",
-  "clicks": 0,
-  "impressions": 14,
-  "position": 47.2
- },
- {
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 14,
-  "position": 57
- },
- {
   "query": "salesforce zertifizierte experten",
   "clicks": 0,
   "impressions": 14,
   "position": 35.2
  },
  {
+  "query": "cpq upgraden",
+  "clicks": 0,
+  "impressions": 13,
+  "position": 34.5
+ },
+ {
   "query": "field service schedule",
   "clicks": 0,
   "impressions": 13,
   "position": 87.2
+ },
+ {
+  "query": "salesforce manufacturing cloud partner",
+  "clicks": 0,
+  "impressions": 13,
+  "position": 53.2
  },
  {
   "query": "what software manages preferred supplier lists in field service?",
@@ -274,12 +286,6 @@
   "clicks": 0,
   "impressions": 12,
   "position": 13.2
- },
- {
-  "query": "cpq upgraden",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 34.8
  },
  {
   "query": "field service app",
@@ -306,10 +312,10 @@
   "position": 22.9
  },
  {
-  "query": "salesforce manufacturing cloud partner",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 54.1
+  "query": "sfdx hardis",
+  "clicks": 2,
+  "impressions": 11,
+  "position": 8.3
  },
  {
   "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
@@ -360,12 +366,6 @@
   "position": 9.3
  },
  {
-  "query": "sfdx hardis",
-  "clicks": 2,
-  "impressions": 10,
-  "position": 8.4
- },
- {
   "query": "b2b commerce platform with negotiable quotes",
   "clicks": 0,
   "impressions": 10,
@@ -382,6 +382,12 @@
   "clicks": 0,
   "impressions": 10,
   "position": 54.3
+ },
+ {
+  "query": "devops release management",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 60.8
  },
  {
   "query": "field service system",
@@ -402,6 +408,18 @@
   "position": 68.7
  },
  {
+  "query": "salesforce manufacturing cloud implementation",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 75.2
+ },
+ {
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 12.5
+ },
+ {
   "query": "b2b checkout",
   "clicks": 0,
   "impressions": 9,
@@ -418,12 +436,6 @@
   "clicks": 0,
   "impressions": 9,
   "position": 73.6
- },
- {
-  "query": "devops release management",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 63.3
  },
  {
   "query": "field service management application",
@@ -468,16 +480,10 @@
   "position": 25.9
  },
  {
-  "query": "salesforce manufacturing cloud implementation",
+  "query": "salesforce core edition",
   "clicks": 0,
   "impressions": 9,
-  "position": 76.9
- },
- {
-  "query": "sap order in mulesoft",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 12.6
+  "position": 5.9
  },
  {
   "query": "click field service edge",
@@ -486,22 +492,28 @@
   "position": 74.1
  },
  {
+  "query": "click field service management",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 68.4
+ },
+ {
   "query": "cpq revenue cloud integration",
   "clicks": 0,
   "impressions": 8,
   "position": 81.6
  },
  {
+  "query": "epicor kinetic salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 16.8
+ },
+ {
   "query": "field service",
   "clicks": 0,
   "impressions": 8,
   "position": 75.6
- },
- {
-  "query": "salesforce core edition",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 6
  },
  {
   "query": "salesforce release management tools",
@@ -534,18 +546,6 @@
   "position": 3.7
  },
  {
-  "query": "click field service management",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 71.4
- },
- {
-  "query": "epicor kinetic salesforce warranty claim handoff",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 17.6
- },
- {
   "query": "field service mobile flow limitations",
   "clicks": 0,
   "impressions": 7,
@@ -574,6 +574,12 @@
   "clicks": 0,
   "impressions": 7,
   "position": 27.3
+ },
+ {
+  "query": "salesforce nearshore pdo",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 83.9
  },
  {
   "query": "salesforce revenue cloud advanced implementierung",
@@ -654,12 +660,6 @@
   "position": 11.3
  },
  {
-  "query": "salesforce nearshore pdo",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 83.5
- },
- {
   "query": "salesforce release cycle",
   "clicks": 0,
   "impressions": 6,
@@ -736,6 +736,12 @@
   "clicks": 0,
   "impressions": 5,
   "position": 29.2
+ },
+ {
+  "query": "proalpha anbindung salesforce",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 38
  },
  {
   "query": "produktstammdaten handel",
@@ -924,12 +930,6 @@
   "position": 69.5
  },
  {
-  "query": "proalpha anbindung salesforce",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 38.3
- },
- {
   "query": "recurring field service coverage",
   "clicks": 0,
   "impressions": 4,
@@ -1068,6 +1068,12 @@
   "position": 27.7
  },
  {
+  "query": "field management solutions",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 48.3
+ },
+ {
   "query": "field service agent builder",
   "clicks": 0,
   "impressions": 3,
@@ -1168,6 +1174,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 94.3
+ },
+ {
+  "query": "salesforce maschinenbau",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 19
  },
  {
   "query": "salesforce middleware",
@@ -1398,16 +1410,16 @@
   "position": 72
  },
  {
-  "query": "field management solutions",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 52.5
- },
- {
   "query": "field service agreement",
   "clicks": 0,
   "impressions": 2,
   "position": 84
+ },
+ {
+  "query": "field service cases",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 61
  },
  {
   "query": "field service data",
@@ -1554,6 +1566,12 @@
   "position": 16.5
  },
  {
+  "query": "salesforce integration middleware",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 45
+ },
+ {
   "query": "salesforce key user training",
   "clicks": 0,
   "impressions": 2,
@@ -1570,12 +1588,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 80.5
- },
- {
-  "query": "salesforce maschinenbau",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 19.5
  },
  {
   "query": "salesforce project rescue company",
@@ -1990,12 +2002,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 54
- },
- {
-  "query": "field service cases",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 64
  },
  {
   "query": "field service cloud software",
@@ -2418,6 +2424,12 @@
   "position": 19
  },
  {
+  "query": "proalpha schnittstelle salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 87
+ },
+ {
   "query": "quote to cash process sap",
   "clicks": 0,
   "impressions": 1,
@@ -2512,6 +2524,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 17
+ },
+ {
+  "query": "salesforce b2b commerce manufacturer",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
  },
  {
   "query": "salesforce billing",
@@ -2620,12 +2638,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 61
- },
- {
-  "query": "salesforce integration middleware",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 62
  },
  {
   "query": "salesforce lizenzen",
@@ -2818,6 +2830,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 80
+ },
+ {
+  "query": "software für field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 76
  },
  {
   "query": "sollte ein unternehmen ab 500 mitarbeitenden bei field-service-management-software eine speziallösung oder eine all-in-one-plattform wählen?",
