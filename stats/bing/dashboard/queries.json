@@ -30,16 +30,16 @@
   "position": 4
  },
  {
-  "query": "sfdx hardis",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 6
- },
- {
   "query": "salesforce dx mcp end of life",
   "clicks": 0,
   "impressions": 4,
   "position": 8
+ },
+ {
+  "query": "sfdx hardis",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 6
  },
  {
   "query": "salesforce well architected framework",
@@ -54,16 +54,16 @@
   "position": 10
  },
  {
-  "query": "veränderungskurve kühn-rosch",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 6
- },
- {
   "query": "salesforce fehlende sicht berechtigung",
   "clicks": 0,
   "impressions": 3,
   "position": 10
+ },
+ {
+  "query": "veränderungskurve kühn-rosch",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "query": "well architected framework salesforce",
@@ -78,16 +78,16 @@
   "position": 3.3
  },
  {
-  "query": "fk solution design gmbh",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 1
- },
- {
   "query": "change-kurve y-achse, kompetenz, energie",
   "clicks": 0,
   "impressions": 3,
   "position": 3
+ },
+ {
+  "query": "fk solution design gmbh",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 1
  },
  {
   "query": "germany works council ai tools",
@@ -102,16 +102,10 @@
   "position": 9
  },
  {
-  "query": "changekonzept nach lewin",
+  "query": "salesforce well architected framework architect agent",
   "clicks": 0,
   "impressions": 2,
-  "position": 8
- },
- {
-  "query": "scheduling console salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
+  "position": 7
  },
  {
   "query": "brauch salesforce voice flex credits",
@@ -126,16 +120,10 @@
   "position": 4
  },
  {
-  "query": "4-seiten-analyse nach stakeholder meetings",
+  "query": "changekonzept nach lewin",
   "clicks": 0,
   "impressions": 2,
   "position": 8
- },
- {
-  "query": "salesforce well architected framework architect agent",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
  },
  {
   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
@@ -144,28 +132,28 @@
   "position": 2
  },
  {
+  "query": "scheduling console salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "4-seiten-analyse nach stakeholder meetings",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
   "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
   "clicks": 0,
   "impressions": 2,
   "position": 7.5
  },
  {
-  "query": "comparison between change management models lewin kotter adkar",
+  "query": "fk-sd.de",
   "clicks": 0,
   "impressions": 2,
-  "position": 10
- },
- {
-  "query": "sfdxhardis training",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 5
- },
- {
-  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
+  "position": 2
  },
  {
   "query": "what is an fk in salesforce?",
@@ -174,10 +162,16 @@
   "position": 8
  },
  {
-  "query": "change kurve team",
+  "query": "sfdxhardis training",
   "clicks": 0,
   "impressions": 2,
-  "position": 6
+  "position": 5
+ },
+ {
+  "query": "comparison between change management models lewin kotter adkar",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
  },
  {
   "query": "sfdx hardis badges",
@@ -192,7 +186,25 @@
   "position": 4
  },
  {
-  "query": "fk-sd.de",
+  "query": "change kurve team",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
+ },
+ {
+  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "salesforce meshmesh",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "query": "fk solution design",
   "clicks": 0,
   "impressions": 2,
   "position": 2
@@ -202,6 +214,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 28
+ },
+ {
+  "query": "aela flex credits",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
  },
  {
   "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
@@ -222,28 +240,10 @@
   "position": 9
  },
  {
-  "query": "aela flex credits",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
   "query": "salesforce dx mcp is end of life?",
   "clicks": 0,
   "impressions": 2,
   "position": 6
- },
- {
-  "query": "salesforce meshmesh",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "query": "fk solution design",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
  },
  {
   "query": "unterschiede adkar und drei phasen modell von lewis",
@@ -258,45 +258,45 @@
   "position": 4
  },
  {
-  "query": "what is salesforce devopps now called",
+  "query": "trailhead scheduling console",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "query": "trailhead new dispatch console",
   "clicks": 0,
   "impressions": 1,
   "position": 4
  },
  {
-  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "\"snelstart\" \"verkooporders\" \"post\"",
+  "query": "salesforce scheduling console update service appointment duration on gantt",
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "query": "what is rca latest name for by salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  },
  {
   "query": "migrate list views scheudling console sfdc",
   "clicks": 0,
   "impressions": 1,
   "position": 3
- },
- {
-  "query": "hardifs",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "difference between devops centre and salesforce dx",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 1
- },
- {
-  "query": "adjust duration in new cheudling console salesforce field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
  }
 ]

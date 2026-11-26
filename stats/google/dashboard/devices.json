@@ -1,15 +1,15 @@
 [
  {
   "device": "DESKTOP",
-  "clicks": 33,
-  "impressions": 4319,
-  "position": 31.3
+  "clicks": 34,
+  "impressions": 4365,
+  "position": 31.2
  },
  {
   "device": "MOBILE",
-  "clicks": 12,
-  "impressions": 786,
-  "position": 22
+  "clicks": 13,
+  "impressions": 790,
+  "position": 22.1
  },
  {
   "device": "TABLET",

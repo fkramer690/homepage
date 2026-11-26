@@ -1,12 +1,12 @@
 [
  {
   "page": "/",
-  "pageviews": 360,
-  "visits": 190
+  "pageviews": 370,
+  "visits": 200
  },
  {
   "page": "/en/blog/",
-  "pageviews": 210,
+  "pageviews": 220,
   "visits": 20
  },
  {
@@ -30,14 +30,19 @@
   "visits": 50
  },
  {
+  "page": "/en/blog/ai-native-salesforce-delivery-process/",
+  "pageviews": 70,
+  "visits": 50
+ },
+ {
   "page": "/en/blog/salesforce-forward-deployed-engineer/",
   "pageviews": 70,
   "visits": 70
  },
  {
-  "page": "/en/blog/ai-native-salesforce-delivery-process/",
-  "pageviews": 70,
-  "visits": 50
+  "page": "/masterclass/",
+  "pageviews": 50,
+  "visits": 10
  },
  {
   "page": "/fragen/",
@@ -45,12 +50,17 @@
   "visits": 0
  },
  {
-  "page": "/partner/juliane-winterscheid/",
+  "page": "/en/services/change-management-salesforce/",
   "pageviews": 40,
-  "visits": 10
+  "visits": 30
  },
  {
-  "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
+  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+  "pageviews": 40,
+  "visits": 0
+ },
+ {
+  "page": "/en/blog/what-is-agentforce/",
   "pageviews": 40,
   "visits": 40
  },
@@ -60,9 +70,9 @@
   "visits": 20
  },
  {
-  "page": "/masterclass/",
+  "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
   "pageviews": 40,
-  "visits": 10
+  "visits": 40
  },
  {
   "page": "/en/blog/manufacturing-cloud-global-rollout/",
@@ -70,14 +80,14 @@
   "visits": 40
  },
  {
-  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+  "page": "/partner/juliane-winterscheid/",
   "pageviews": 40,
-  "visits": 0
+  "visits": 10
  },
  {
-  "page": "/en/services/change-management-salesforce/",
-  "pageviews": 40,
-  "visits": 30
+  "page": "/masterclass/ki-salesforce/",
+  "pageviews": 30,
+  "visits": 0
  },
  {
   "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
@@ -85,17 +95,7 @@
   "visits": 30
  },
  {
-  "page": "/en/blog/what-is-agentforce/",
-  "pageviews": 30,
-  "visits": 30
- },
- {
   "page": "/leistungen/salesforce-schnittstellen/",
-  "pageviews": 30,
-  "visits": 30
- },
- {
-  "page": "/masterclass/b2b-commerce/",
   "pageviews": 30,
   "visits": 30
  }

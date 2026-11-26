@@ -22,17 +22,17 @@
  },
  {
   "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 5
- },
- {
-  "period": "2026-10-30",
   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
   "clicks": 0,
   "impressions": 3,
   "position": 4
+ },
+ {
+  "period": "2026-10-30",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 5
  },
  {
   "period": "2026-10-30",
@@ -106,13 +106,6 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-key-user-netzwerk/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 5
- },
- {
-  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
   "clicks": 0,
   "impressions": 3,
@@ -120,38 +113,10 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
+  "page": "https://www.fk-sd.de/blog/salesforce-key-user-netzwerk/",
   "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 9
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
+  "impressions": 3,
+  "position": 5
  },
  {
   "period": "2026-11-06",
@@ -169,10 +134,45 @@
  },
  {
   "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
   "clicks": 0,
   "impressions": 2,
   "position": 7
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 9
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
  },
  {
   "period": "2026-11-06",
@@ -183,10 +183,10 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
+  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 8
  },
  {
   "period": "2026-11-06",
@@ -197,21 +197,21 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
+  "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
   "clicks": 0,
   "impressions": 1,
-  "position": 8
+  "position": 10
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
@@ -246,10 +246,10 @@
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/change-management-models/",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
   "clicks": 0,
   "impressions": 3,
-  "position": 9
+  "position": 6
  },
  {
   "period": "2026-11-13",
@@ -260,16 +260,23 @@
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
+  "page": "https://www.fk-sd.de/en/blog/change-management-models/",
   "clicks": 0,
   "impressions": 3,
-  "position": 6
+  "position": 9
  },
  {
   "period": "2026-11-13",
   "page": "https://www.fk-sd.de/blog/kundenpreise-b2b-commerce-preisbuecher-erp/",
   "clicks": 0,
   "impressions": 3,
+  "position": 3
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 2,
   "position": 3
  },
  {
@@ -288,20 +295,6 @@
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 3
- },
- {
-  "period": "2026-11-13",
   "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
   "clicks": 0,
   "impressions": 2,
@@ -309,31 +302,10 @@
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-well-architected-framework-2026/",
+  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
   "clicks": 0,
-  "impressions": 1,
-  "position": 9
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
-  "clicks": 0,
-  "impressions": 1,
+  "impressions": 2,
   "position": 4
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 2
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 6
  },
  {
   "period": "2026-11-13",
@@ -344,45 +316,17 @@
  },
  {
   "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-well-architected-framework-2026/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "period": "2026-11-13",
   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
   "clicks": 0,
   "impressions": 1,
   "position": 5
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/ai-coding-tools-works-council-gdpr/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/einstein-trust-layer-what-it-protects/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
  },
  {
   "period": "2026-11-13",
@@ -393,38 +337,31 @@
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/b2b-store-aura-to-lwr-migration/",
+  "page": "https://www.fk-sd.de/en/blog/legacy-erp-without-api-ai-agents/",
   "clicks": 0,
   "impressions": 1,
-  "position": 4
+  "position": 3
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 7
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/api-67-apex-user-mode-fewer-records/",
+  "page": "https://www.fk-sd.de/en/blog/einstein-trust-layer-what-it-protects/",
   "clicks": 0,
   "impressions": 1,
   "position": 5
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/blog/b2b-webshop-business-case-hersteller/",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
   "clicks": 0,
   "impressions": 1,
-  "position": 1
- },
- {
-  "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/blog/sfdx-hardis-kostenloses-devops-training/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
+  "position": 4
  },
  {
   "period": "2026-11-13",
@@ -435,6 +372,62 @@
  },
  {
   "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/blog/b2b-webshop-business-case-hersteller/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-kostenloses-devops-training/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/en/blog/api-67-apex-user-mode-fewer-records/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "period": "2026-11-13",
   "page": "https://www.fk-sd.de/blog/b2b-commerce-lizenzen-kaeufer/",
   "clicks": 0,
   "impressions": 1,
@@ -442,7 +435,14 @@
  },
  {
   "period": "2026-11-13",
-  "page": "https://www.fk-sd.de/en/blog/legacy-erp-without-api-ai-agents/",
+  "page": "https://www.fk-sd.de/en/blog/b2b-store-aura-to-lwr-migration/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "period": "2026-11-13",
+  "page": "https://www.fk-sd.de/en/blog/ai-coding-tools-works-council-gdpr/",
   "clicks": 0,
   "impressions": 1,
   "position": 3
@@ -484,13 +484,6 @@
  },
  {
   "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/kosten-und-token/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 10
- },
- {
-  "period": "2026-11-20",
   "page": "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
   "clicks": 0,
   "impressions": 3,
@@ -498,24 +491,17 @@
  },
  {
   "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/kosten-und-token/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 10
+ },
+ {
+  "period": "2026-11-20",
   "page": "https://www.fk-sd.de/en/blog/ai-coding-tools-works-council-gdpr/",
   "clicks": 1,
   "impressions": 2,
   "position": 4
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
  },
  {
   "period": "2026-11-20",
@@ -533,6 +519,13 @@
  },
  {
   "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
+ },
+ {
+  "period": "2026-11-20",
   "page": "https://www.fk-sd.de/en/blog/einstein-bots-to-agentforce-upgrade/",
   "clicks": 0,
   "impressions": 2,
@@ -540,10 +533,10 @@
  },
  {
   "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/blog/salesforce-hosted-mcp-server-datenzugriff/",
+  "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
   "clicks": 0,
   "impressions": 2,
-  "position": 28
+  "position": 6
  },
  {
   "period": "2026-11-20",
@@ -554,17 +547,10 @@
  },
  {
   "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
+  "page": "https://www.fk-sd.de/blog/salesforce-hosted-mcp-server-datenzugriff/",
   "clicks": 0,
-  "impressions": 1,
-  "position": 1
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
+  "impressions": 2,
+  "position": 28
  },
  {
   "period": "2026-11-20",
@@ -575,10 +561,52 @@
  },
  {
   "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "page": "https://www.fk-sd.de/en/",
   "clicks": 0,
   "impressions": 1,
-  "position": 4
+  "position": 1
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/penny-perfect-pricing-erp-prices/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  },
  {
   "period": "2026-11-20",
@@ -589,7 +617,21 @@
  },
  {
   "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/penny-perfect-pricing-erp-prices/",
+  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/blog/aela-agentforce-pauschale-oder-credits/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "period": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/spare-parts-shop-parts-per-machine/",
   "clicks": 0,
   "impressions": 1,
   "position": 8
@@ -617,13 +659,6 @@
  },
  {
   "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 9
- },
- {
-  "period": "2026-11-20",
   "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
   "clicks": 0,
   "impressions": 1,
@@ -631,45 +666,10 @@
  },
  {
   "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/spare-parts-shop-parts-per-machine/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/",
+  "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
   "clicks": 0,
   "impressions": 1,
   "position": 1
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/blog/aela-agentforce-pauschale-oder-credits/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
- },
- {
-  "period": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
  },
  {
   "period": "2026-11-20",

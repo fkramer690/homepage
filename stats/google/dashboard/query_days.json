@@ -10788,6 +10788,13 @@
  },
  {
   "day": "2026-11-24",
+  "query": "meshmesh beta",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-24",
   "query": "nearshore teams",
   "clicks": 0,
   "impressions": 1,
@@ -10900,10 +10907,45 @@
  },
  {
   "day": "2026-11-25",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 27
+ },
+ {
+  "day": "2026-11-25",
+  "query": "salesforce release schedule",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 21.3
+ },
+ {
+  "day": "2026-11-25",
   "query": "agentforce maschinenbau",
   "clicks": 0,
   "impressions": 3,
   "position": 11.3
+ },
+ {
+  "day": "2026-11-25",
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 65
+ },
+ {
+  "day": "2026-11-25",
+  "query": "manufacturing cloud",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 40.3
+ },
+ {
+  "day": "2026-11-25",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 10
  },
  {
   "day": "2026-11-25",
@@ -10914,24 +10956,31 @@
  },
  {
   "day": "2026-11-25",
-  "query": "fertigung salesforce",
+  "query": "salesforce nearshore development",
   "clicks": 0,
-  "impressions": 2,
-  "position": 27
+  "impressions": 3,
+  "position": 44.3
  },
  {
   "day": "2026-11-25",
-  "query": "field service application software",
+  "query": "symfony salesforce integration",
   "clicks": 0,
-  "impressions": 2,
-  "position": 65
+  "impressions": 3,
+  "position": 75.7
  },
  {
   "day": "2026-11-25",
-  "query": "manufacturing cloud",
+  "query": "field service management cloud",
   "clicks": 0,
   "impressions": 2,
-  "position": 31.5
+  "position": 52
+ },
+ {
+  "day": "2026-11-25",
+  "query": "nearshore teamerweiterung",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 68
  },
  {
   "day": "2026-11-25",
@@ -10946,13 +10995,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 35
- },
- {
-  "day": "2026-11-25",
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 41.5
  },
  {
   "day": "2026-11-25",
@@ -10988,6 +11030,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 48
+ },
+ {
+  "day": "2026-11-25",
+  "query": "click field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 49
  },
  {
   "day": "2026-11-25",
@@ -11033,13 +11082,6 @@
  },
  {
   "day": "2026-11-25",
-  "query": "field service management cloud",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 49
- },
- {
-  "day": "2026-11-25",
   "query": "field services software",
   "clicks": 0,
   "impressions": 1,
@@ -11068,6 +11110,34 @@
  },
  {
   "day": "2026-11-25",
+  "query": "manufacturing cloud implementeren",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 70
+ },
+ {
+  "day": "2026-11-25",
+  "query": "nearshore team",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-25",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 37
+ },
+ {
+  "day": "2026-11-25",
+  "query": "offline field service app",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 67
+ },
+ {
+  "day": "2026-11-25",
   "query": "predictive maintenance salesforce",
   "clicks": 0,
   "impressions": 1,
@@ -11089,10 +11159,10 @@
  },
  {
   "day": "2026-11-25",
-  "query": "salesforce commerce product data",
+  "query": "salesforce custom development nearshore",
   "clicks": 0,
   "impressions": 1,
-  "position": 9
+  "position": 39
  },
  {
   "day": "2026-11-25",
@@ -11117,10 +11187,38 @@
  },
  {
   "day": "2026-11-25",
-  "query": "symfony salesforce integration",
+  "query": "salesforce middleware integration",
   "clicks": 0,
   "impressions": 1,
-  "position": 71
+  "position": 35
+ },
+ {
+  "day": "2026-11-25",
+  "query": "salesforce projektmanagement",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 48
+ },
+ {
+  "day": "2026-11-25",
+  "query": "salesforce release dates",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-25",
+  "query": "salesforce releases",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "day": "2026-11-25",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
  },
  {
   "day": "2026-11-25",
@@ -11128,5 +11226,19 @@
   "clicks": 0,
   "impressions": 1,
   "position": 7
+ },
+ {
+  "day": "2026-11-26",
+  "query": "salesforce beratung maschinenbau",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 11
+ },
+ {
+  "day": "2026-11-26",
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 63
  }
 ]
