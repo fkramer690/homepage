@@ -50,7 +50,8 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   `--fs-xs`. Links ("Mehr erfahren"), meta lines, captions, tags, filter texts,
   back links and proof bar labels are set in Sora. In blocks the same: notes
   under a block, pills, link names, legends and badges are Sora.
-- **No spaced capitals** (AI-slop review 2026-11-26): eyebrows and labels ("Das Wichtigste in Kürze",
+- **No spaced capitals** (AI-slop review 2026-11-26, Fabian chose
+  "B + Zahlen in Mono"): eyebrows and labels ("Das Wichtigste in Kürze",
   "Inhalt", "Passende Leistung", footer heads, block labels) are written in
   normal case, Sora 600 at `--fs-sm`, without letter-spacing. No
   `text-transform: uppercase`, no letter-spacing above 0.05em, no
