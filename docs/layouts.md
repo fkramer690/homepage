@@ -443,16 +443,19 @@ for every service page.
 
 ## Profile card ("Steckbrief", start page About)
 
-Chosen 2026-10-29 (variant C of three) for "Über mich" and "Warum zuerst 30
-Minuten?" on the start page; built in `src/components/Home.astro`, texts in
-`about.blocks` and `firstCall` of the i18n files.
+Chosen 2026-10-29 (variant C of three) for "Über mich" on the start page;
+built in `src/components/Home.astro`, texts in `about.blocks` of the i18n files.
 
 - About: left column (`--side`) with the portrait and the facts as small white
   cards (small label, one line). Right label, name, subtitle, then three short
   blocks between dashed lines, each with a small Sora label ("Was ich
-  mache", "Projekte" as ✓ list, "Warum unabhängig"), then the links.
-- First call: two columns, text and button left, the questions right as
-  numbered grey cards with a cyan left border.
+  mache", "Warum unabhängig", "Warum Kundenseite"), then the links. The block
+  "Projekte" was dropped on 2026-11-26: it only pointed back up to the
+  references.
+- First call: since 2026-11-26 no section of its own. The questions
+  (`firstCall` in the i18n files) stand as numbered dark cards in the left
+  column of the contact block, between the intro text and the booking button,
+  so the page ends once (reference comparison, Penrod pattern).
 - Below 860px everything stacks; the portrait keeps at most 360px.
 - Fits: person or company profiles, short "who and why" sections.
 

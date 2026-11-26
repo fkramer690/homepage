@@ -58,10 +58,16 @@ export const en = {
   hero: {
     eyebrow: 'FK Solution Design GmbH · Cologne',
     title: 'Salesforce architecture for manufacturers, on the client side.',
-    focus: ['After-Sales', 'Service', 'Field Service', 'B2B Sales'],
+    focus: [
+      { text: 'After-Sales', path: 'salesforce-for-machinery-manufacturers/' },
+      { text: 'Service', path: 'salesforce-for-machinery-manufacturers/#areas' },
+      { text: 'Field Service', path: 'salesforce-field-service-consultant/' },
+      { text: 'B2B Sales', path: 'masterclass/manufacturing-cloud/' },
+    ],
     lead: 'The central architectural authority between your business, your IT and your implementation partners.',
     ctaPrimary: 'Book a 30-minute call',
     ctaSecondary: 'See references',
+    ctaCheck: { text: 'AI readiness check at a fixed price', path: 'salesforce-ai-readiness-check/' },
     mailSubject: 'Salesforce architecture: first call',
   },
   proof: [
@@ -143,13 +149,6 @@ export const en = {
       { order: 7, text: 'Does it belong in Salesforce? Assess alternatives and license costs before deciding.' },
       { order: 8, text: 'Bring a Salesforce project that has gone off track back on course.' },
     ],
-    focusLabel: 'Focus areas',
-    focus: [
-      'After-sales & service',
-      'Field Service',
-      'Customer & partner portals',
-      'B2B sales: Manufacturing Cloud, CPQ, B2B Commerce',
-    ],
   },
   references: {
     label: 'References',
@@ -226,19 +225,12 @@ export const en = {
     ],
   },
   firstCall: {
-    label: 'First call',
-    title: 'Why start with 30 minutes?',
-    paragraphs: [
-      'Most Salesforce programs have ten problems. Tackling all of them at once fixes none of them for good.',
-      'In the first call we find out which problem costs the most and where the first step pays off. And we work out what it takes for the result to last. A health check with a clean-up achieves little if the same problems reappear two weeks later.',
-    ],
     listTitle: 'What we clarify in the call',
     items: [
       'Is the project just starting, or are you already live?',
       'What can your team handle itself, and where is expertise missing?',
       'Do you need a sparring partner who brings ideas, or a fixed role in the project?',
     ],
-    cta: 'Book a 30-minute call',
   },
   about: {
     label: 'About',
@@ -252,11 +244,6 @@ export const en = {
         text: 'I work as the architect on the client side for manufacturing companies that run sales, service and after-sales in Salesforce. What this means for machine builders is shown on the page',
         link: { text: 'Salesforce for machinery manufacturers', href: 'salesforce-for-machinery-manufacturers/' },
         link2: { before: ', and for field service teams on the page', text: 'Salesforce Field Service consultant', href: 'salesforce-field-service-consultant/' },
-      },
-      {
-        head: 'Projects',
-        text: 'Most of my recent work is with German manufacturers operating globally. Five examples are listed above under',
-        link: { text: 'Selected work ↑', href: '#references' },
       },
       {
         head: 'Why independent',
