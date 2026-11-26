@@ -58,11 +58,11 @@ lanes: People | Agent | Pipeline
 ticket: Jira
 Agent | Prepare the workshop | Org analysis, agenda, hypotheses
 People | Discovery workshop | Client, BA, architect; transcript runs
-Agent | Evaluation | Minutes, story drafts with timestamps | Stories created · agent
+Agent | Evaluation | Minutes, story drafts with timestamps | Stories created · Agent
 gate: Client confirms the minutes
 Agent | Prototype | In a scratch org, in hours
 People | Refinement on the prototype | Client clicks through, transcript runs
-Agent | Story diff and impact | Changes, test cases, metadata | Stories updated · agent
+Agent | Story diff and impact | Changes, test cases, metadata | Stories updated · Agent
 gate: BA and architect approve the story | Ready for Agent · BA
 ```
 
@@ -79,9 +79,9 @@ title: Phase 2 of 3 · Build
 lanes: People | Agent | Pipeline
 ticket: Jira
 start: 7 | 3
-Agent | Implementation | Plan, approval, code and tests | In progress · agent
-Agent | Pull request | Description, Jira link, AI review | In review · agent
-Pipeline | CI validation | Check deploy, tests, analyzer before merge | Validated · pipeline
+Agent | Implementation | Plan, approval, code and tests | In progress · Agent
+Agent | Pull request | Description, Jira link, AI review | In review · Agent
+Pipeline | CI validation | Check deploy, tests, analyzer before merge | Validated · Pipeline
 loop: Failure: agent reads the log and fixes, at most 2 attempts
 gate: Developer reviews and merges
 ```
@@ -99,14 +99,14 @@ title: Phase 3 of 3 · Release
 lanes: People | Agent | Pipeline
 ticket: Jira
 start: 10 | 4
-Pipeline | Deploy to UAT | Approved test scripts in the ticket | In UAT · pipeline
+Pipeline | Deploy to UAT | Approved test scripts in the ticket | In UAT · Pipeline
 People | Acceptance test | Client tests, BA supports
-Agent | Feedback triage | Bug, change request or question | Bug or CR created · agent
+Agent | Feedback triage | Bug, change request or question | Bug or CR created · Agent
 gate: BA and client decide on bugs and CRs
 loop: Bugs back to 07, change requests as a new story to 06
 Agent | Release notes and guide | Drafts, BA proofreads
-gate: Client approves the release | Approved · client
-Pipeline | Release to production | Validate in production, quick deploy | Done · pipeline
+gate: Client approves the release | Approved · Client
+Pipeline | Release to production | Validate in production, quick deploy | Done · Pipeline
 note: **Rule:** The agent has no access to production. Only the pipeline deploys there.
 ```
 
