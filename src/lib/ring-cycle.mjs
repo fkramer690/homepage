@@ -81,7 +81,7 @@ export function ringHtml({ id, label, centre, items }) {
   items.forEach((it, i) => {
     const s = segs[i];
     const colour = RING_COLOURS[i % RING_COLOURS.length];
-    const text = (it.label ?? it.name).toUpperCase();
+    const text = it.label ?? it.name;
     svg += `<g class="ar-seg" data-k="${i}" tabindex="0" role="button" aria-pressed="false" aria-label="${esc(`${it.name}: ${it.sub}`)}"${it.href ? ` data-href="${esc(it.href)}"` : ''} style="--c: ${colour}">`
       + `<path class="ar-fill" d="${s.path}"/><circle class="ar-badge" cx="${s.icon.x}" cy="${s.icon.y}" r="${s.icon.r}"/>`
       + `<text class="ar-label" font-size="${size}"><textPath href="#${id}-${i}" startOffset="50%" text-anchor="middle">${esc(text)}</textPath></text></g>`;

@@ -2,7 +2,7 @@
 
 Fourteen building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
 
-Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
+Design: only the site's own colours and forms (cyan, anthracite, greys, labels with a dashed line, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
 Inside a block, `**bold**`, `` `code` `` and `[links](/blog/slug/)` work; external links get the new-tab mark automatically. Write the block in the language of the file (DE keys like `quelle:` and `titel:` in German files, `source:` and `title:` in English ones; both are accepted).
 

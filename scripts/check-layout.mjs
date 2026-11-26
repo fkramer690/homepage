@@ -6,6 +6,9 @@
 // - Wide pages (overviews, start page) carry no running text (.prose).
 // - No CSS rule gives a .container (or a class used together with it inside
 //   <main>) its own width or max-width, so every page uses the same frame.
+// - No spaced capitals (AI-slop review 2026-11-26): no text-transform: uppercase
+//   and no letter-spacing above 0.05em in CSS, inline styles or SVG attributes.
+//   Only the logo subline (.brand-sub) keeps them, it is part of the logo.
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -27,6 +30,9 @@ function walk(dir) {
 function checkPage(path, html) {
   const page = '/' + path.slice(dist.length).replace(/index\.html$/, '');
   for (const [, style] of html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)) css.push([page, style]);
+  for (const [m] of html.matchAll(/letter-spacing="[^"]*"|style="[^"]*(?:letter-spacing|text-transform)[^"]*"/g)) {
+    if (/uppercase/.test(m) || tooWide(m.match(/letter-spacing[=:]\s*"?([^";]*)/)?.[1])) errors.push(`${page}: spaced capitals in the markup (${m.slice(0, 60)}); write labels in normal case without tracking`);
+  }
   const mainStart = html.search(/<main[\s>]/);
   if (mainStart < 0) return; // redirect pages
   pages++;
@@ -54,12 +60,23 @@ function checkPage(path, html) {
   }
 }
 
+// Letter-spacing above 0.05em (em, or px at the 16px root size).
+function tooWide(value = '') {
+  const v = parseFloat(value);
+  if (!(v > 0)) return false;
+  return value.includes('px') || /^[\d.]+$/.test(value.trim()) ? v / 16 > 0.05 : v > 0.05;
+}
+const capsAllowed = new Set(['.brand-sub']);
+
 walk(dist);
 
 // Innermost CSS rules (also those inside @media), selectors without Astro's
 // scoping attributes.
 for (const [file, text] of css) {
   for (const [, selectors, body] of text.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/([^{}]+)\{([^{}]*)\}/g)) {
+    const spaced = /text-transform\s*:\s*uppercase/.test(body) || tooWide(body.match(/letter-spacing\s*:\s*([^;}]+)/)?.[1]);
+    const names = selectors.split(',').map((x) => x.replace(/\[[^\]]*\]/g, '').trim());
+    if (spaced && !names.every((n) => capsAllowed.has(n))) errors.push(`${file}: "${names.join(', ')}" sets spaced capitals (uppercase or letter-spacing above 0.05em); labels are normal case in Sora, see docs/layouts.md`);
     if (!/(^|;|\s)(max-)?width\s*:/.test(body)) continue;
     for (const raw of selectors.split(',')) {
       const selector = raw.replace(/\[[^\]]*\]/g, '').trim();
@@ -75,4 +92,4 @@ if (errors.length) {
   console.error(`Layout check failed:\n${[...new Set(errors)].map((e) => `  - ${e}`).join('\n')}`);
   process.exit(1);
 }
-console.log(`Layout check passed: ${pages} pages follow the width system (one frame, reading pages with ReadingGrid).`);
+console.log(`Layout check passed: ${pages} pages follow the width system (one frame, reading pages with ReadingGrid) and use no spaced capitals.`);

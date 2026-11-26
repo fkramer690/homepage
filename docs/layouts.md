@@ -45,11 +45,19 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   pipeline cards), table cells, captions and notes `--fs-sm`; titles of narrow
   tiles `--fs-ui` (step titles in the arrow band `--fs-sm`); prominent card
   titles `--fs-md`; key figures and stage numbers `--fs-lg` in Sora.
-- **Mono (IBM Plex Mono) only for eyebrows and uppercase labels, numbers,
-  dates and step counters**, always at `--fs-xs`. Links ("Mehr erfahren"),
-  meta lines, captions, tags, filter texts, back links and proof bar labels are
-  set in Sora. In blocks the same: notes under a block, pills, link
-  names, legends and badges are Sora; only labels, numbers and dates stay mono.
+- **Mono (IBM Plex Mono) only for numbers, dates and step counters**
+  ("01", "Tor 1", "Hebel 01", "Seit 2020", "Video · 52 Sek."), always at
+  `--fs-xs`. Links ("Mehr erfahren"), meta lines, captions, tags, filter texts,
+  back links and proof bar labels are set in Sora. In blocks the same: notes
+  under a block, pills, link names, legends and badges are Sora.
+- **No spaced capitals** (AI-slop review 2026-11-26, Fabian chose
+  "B + Zahlen in Mono"): eyebrows and labels ("Das Wichtigste in Kürze",
+  "Inhalt", "Passende Leistung", footer heads, block labels) are written in
+  normal case, Sora 600 at `--fs-sm`, without letter-spacing. No
+  `text-transform: uppercase`, no letter-spacing above 0.05em, no
+  `toUpperCase()` for visible labels, also not in SVG drawings. Only the logo
+  subline ("Salesforce Architecture", `.brand-sub`) keeps its caps, it is part
+  of the logo. `scripts/check-layout.mjs` fails the build on violations.
 - **Eyebrows only where they carry information** (AI-slop review 2026-10-31):
   in a page head (area, category, masterclass name) and as a label for a
   group without its own heading (e.g. "Schwerpunkte"). A section with an h2
@@ -405,7 +413,7 @@ a `coAuthor`. Fabian did not want two author boxes stacked.
 - Author box at the article end (`src/components/AuthorBox.astro` with `coAuthor`):
   one box; on top both round photos overlapping, "Über die Autoren", both names and
   one joint line; below two white cards side by side, one per author, with their
-  part in mono caps ("Architektur und Releases", "Menschen und Veränderung"), name,
+  part as a small Sora label ("Architektur und Releases", "Menschen und Veränderung"), name,
   one short line, LinkedIn and profile link. Below 560px head and cards stack.
 - Blog overview cards: author line with small round photos (28px, overlapping for
   two authors) before the names, for every card.
@@ -440,8 +448,8 @@ Minuten?" on the start page; built in `src/components/Home.astro`, texts in
 `about.blocks` and `firstCall` of the i18n files.
 
 - About: left column (`--side`) with the portrait and the facts as small white
-  cards (mono label, one line). Right label, name, subtitle, then three short
-  blocks between dashed lines, each with a small mono caps heading ("Was ich
+  cards (small label, one line). Right label, name, subtitle, then three short
+  blocks between dashed lines, each with a small Sora label ("Was ich
   mache", "Projekte" as ✓ list, "Warum unabhängig"), then the links.
 - First call: two columns, text and button left, the questions right as
   numbered grey cards with a cyan left border.
