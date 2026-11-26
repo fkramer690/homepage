@@ -1,8 +1,8 @@
 [
  {
   "country": "DE",
-  "pageviews": 1310,
-  "visits": 240
+  "pageviews": 1260,
+  "visits": 210
  },
  {
   "country": "US",
@@ -25,6 +25,16 @@
   "visits": 30
  },
  {
+  "country": "GB",
+  "pageviews": 30,
+  "visits": 20
+ },
+ {
+  "country": "SG",
+  "pageviews": 30,
+  "visits": 10
+ },
+ {
   "country": "ES",
   "pageviews": 30,
   "visits": 0
@@ -35,19 +45,9 @@
   "visits": 20
  },
  {
-  "country": "GB",
-  "pageviews": 20,
-  "visits": 10
- },
- {
   "country": "CA",
   "pageviews": 20,
   "visits": 20
- },
- {
-  "country": "SG",
-  "pageviews": 20,
-  "visits": 0
  },
  {
   "country": "AU",
@@ -61,6 +61,11 @@
  },
  {
   "country": "CN",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "country": "PL",
   "pageviews": 10,
   "visits": 10
  },

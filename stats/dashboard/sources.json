@@ -1,23 +1,28 @@
 [
  {
   "source": "www.fk-sd.de",
-  "pageviews": 1210,
+  "pageviews": 1190,
   "visits": 0
  },
  {
   "source": "Direct",
-  "pageviews": 950,
-  "visits": 950
+  "pageviews": 930,
+  "visits": 930
  },
  {
   "source": "www.linkedin.com",
-  "pageviews": 50,
-  "visits": 50
+  "pageviews": 60,
+  "visits": 60
  },
  {
   "source": "com.linkedin.android",
   "pageviews": 40,
   "visits": 40
+ },
+ {
+  "source": "www.google.com",
+  "pageviews": 20,
+  "visits": 20
  },
  {
   "source": "teams.public.onecdn.static.microsoft",
@@ -26,11 +31,6 @@
  },
  {
   "source": "www.msn.cn",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "source": "www.google.com",
   "pageviews": 10,
   "visits": 10
  },

@@ -1,8 +1,8 @@
 [
  {
   "page": "/",
-  "pageviews": 410,
-  "visits": 220
+  "pageviews": 360,
+  "visits": 190
  },
  {
   "page": "/en/blog/",
@@ -25,11 +25,6 @@
   "visits": 20
  },
  {
-  "page": "/en/blog/ai-native-salesforce-delivery-process/",
-  "pageviews": 70,
-  "visits": 50
- },
- {
   "page": "/en/masterclass/ai-salesforce/",
   "pageviews": 70,
   "visits": 50
@@ -38,6 +33,11 @@
   "page": "/en/blog/salesforce-forward-deployed-engineer/",
   "pageviews": 70,
   "visits": 70
+ },
+ {
+  "page": "/en/blog/ai-native-salesforce-delivery-process/",
+  "pageviews": 70,
+  "visits": 50
  },
  {
   "page": "/fragen/",
@@ -50,14 +50,19 @@
   "visits": 10
  },
  {
-  "page": "/masterclass/",
-  "pageviews": 40,
-  "visits": 10
- },
- {
   "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
   "pageviews": 40,
   "visits": 40
+ },
+ {
+  "page": "/leistungen/salesforce-architektur/",
+  "pageviews": 40,
+  "visits": 20
+ },
+ {
+  "page": "/masterclass/",
+  "pageviews": 40,
+  "visits": 10
  },
  {
   "page": "/en/blog/manufacturing-cloud-global-rollout/",
@@ -75,17 +80,12 @@
   "visits": 30
  },
  {
-  "page": "/leistungen/salesforce-architektur/",
-  "pageviews": 40,
-  "visits": 20
- },
- {
-  "page": "/en/blog/what-is-agentforce/",
+  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
   "pageviews": 30,
   "visits": 30
  },
  {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "page": "/en/blog/what-is-agentforce/",
   "pageviews": 30,
   "visits": 30
  },
