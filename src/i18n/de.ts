@@ -24,10 +24,16 @@ export const de: Dict = {
   hero: {
     eyebrow: 'FK Solution Design GmbH · Köln',
     title: 'Salesforce-Architektur für die Manufacturing-Branche, auf Kundenseite.',
-    focus: ['After-Sales', 'Service', 'Field Service', 'B2B-Vertrieb'],
+    focus: [
+      { text: 'After-Sales', path: 'salesforce-maschinenbau/' },
+      { text: 'Service', path: 'salesforce-maschinenbau/#areas' },
+      { text: 'Field Service', path: 'salesforce-field-service-berater/' },
+      { text: 'B2B-Vertrieb', path: 'masterclass/manufacturing-cloud/' },
+    ],
     lead: 'Die zentrale Architektur-Instanz zwischen Fachbereich, interner IT und Ihren Implementierungspartnern.',
     ctaPrimary: '30-Minuten-Gespräch vereinbaren',
     ctaSecondary: 'Referenzen ansehen',
+    ctaCheck: { text: 'KI-Readiness-Check zum Festpreis', path: 'salesforce-ki-readiness-check/' },
     mailSubject: 'Salesforce-Architektur: Erstgespräch',
   },
   proof: [
@@ -109,13 +115,6 @@ export const de: Dict = {
       { order: 7, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vor der Entscheidung bewerten.' },
       { order: 8, text: 'Ein Salesforce-Projekt, das aus dem Ruder läuft, zurück auf Kurs bringen.' },
     ],
-    focusLabel: 'Schwerpunkte',
-    focus: [
-      'After-Sales & Service',
-      'Field Service',
-      'Kunden- & Partnerportale',
-      'B2B-Vertrieb: Manufacturing Cloud, CPQ, B2B Commerce',
-    ],
   },
   references: {
     label: 'Referenzen',
@@ -192,19 +191,12 @@ export const de: Dict = {
     ],
   },
   firstCall: {
-    label: 'Erstgespräch',
-    title: 'Warum zuerst 30 Minuten?',
-    paragraphs: [
-      'Die meisten Salesforce-Programme haben zehn Probleme. Wer alle gleichzeitig angeht, löst keines davon dauerhaft.',
-      'Im ersten Gespräch finden wir heraus, welches Problem am meisten kostet und wo sich der erste Schritt lohnt. Und wir klären, was nötig ist, damit das Ergebnis hält. Ein Healthcheck mit Cleanup bringt wenig, wenn zwei Wochen später dieselben Probleme wieder entstehen.',
-    ],
     listTitle: 'Was wir im Gespräch klären',
     items: [
       'Startet das Projekt gerade, oder sind Sie schon live?',
       'Was kann Ihr Team selbst leisten, und wo fehlt Expertise?',
       'Brauchen Sie einen Sparringspartner und Ideengeber oder eine feste Rolle im Projekt?',
     ],
-    cta: '30-Minuten-Gespräch vereinbaren',
   },
   about: {
     label: 'Über mich',
@@ -218,11 +210,6 @@ export const de: Dict = {
         text: 'Ich arbeite als Architekt auf Kundenseite für Fertigungsunternehmen, die Vertrieb, Service und After-Sales in Salesforce führen. Was das im Maschinen- und Anlagenbau heißt, beschreibt die Seite',
         link: { text: 'Salesforce für Maschinen- und Anlagenbau', href: 'salesforce-maschinenbau/' },
         link2: { before: ', für den Außendienst mit Field Service die Seite', text: 'Salesforce-Field-Service-Berater', href: 'salesforce-field-service-berater/' },
-      },
-      {
-        head: 'Projekte',
-        text: 'Zuletzt habe ich vor allem für deutsche Hersteller mit globalem Geschäft gearbeitet. Fünf Beispiele stehen oben unter',
-        link: { text: 'Ausgewählte Projekte ↑', href: '#references' },
       },
       {
         head: 'Warum unabhängig',

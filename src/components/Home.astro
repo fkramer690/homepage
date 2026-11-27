@@ -73,12 +73,12 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
         <p class="eyebrow mono">{t.hero.eyebrow}</p>
         <h1>{t.hero.title}</h1>
         <p class="hero-focus">
-          {t.hero.focus.map((f, i) => (<>{i > 0 && <span class="sep" aria-hidden="true">·</span>}<span>{f}</span></>))}
+          {t.hero.focus.map((f, i) => (<>{i > 0 && <span class="sep" aria-hidden="true">·</span>}<a href={localHref(lang, f.path)}>{f.text}</a></>))}
         </p>
         <p class="hero-lead">{t.hero.lead}</p>
         <div class="hero-ctas">
           <a class="btn" href={cta} {...ctaAttrs}>{t.hero.ctaPrimary}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
-          <a class="btn btn-ghost" href="#references">{t.hero.ctaSecondary}</a>
+          <a class="btn btn-ghost" href={localHref(lang, t.hero.ctaCheck.path)}>{t.hero.ctaCheck.text}</a>
         </div>
         </div>
         <figure class="hero-photo is-measured">
@@ -158,12 +158,6 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
             </ul>
           </li>
         </ul>
-        <div class="focus">
-          <p class="label mono">{t.services.focusLabel}</p>
-          <ul class="tags">
-            {t.services.focus.map((f) => <li>{f}</li>)}
-          </ul>
-        </div>
       </div>
     </section>
 
@@ -305,25 +299,6 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
       </div>
     </section>
 
-    <section class="section" id="first-call">
-      <div class="container first-call">
-        <div>
-          <h2>{t.firstCall.title}</h2>
-          {t.firstCall.paragraphs.map((p) => <p class="first-call-text">{p}</p>)}
-          <a class="btn" href={cta} {...ctaAttrs}>{t.firstCall.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
-        </div>
-        <div>
-          <h3>{t.firstCall.listTitle}</h3>
-          <ol class="call-questions">
-            {t.firstCall.items.map((q, i) => (
-              <li><p>{q}</p></li>
-            ))}
-          </ol>
-          <p><a class="text-link" href={`${home}${questionPaths[t.lang]}`}>{questions[t.lang].link} →</a></p>
-        </div>
-      </div>
-    </section>
-
     <section class="contact dark grid-bg" id="contact">
       <div class="container contact-inner">
         <div class="contact-intro">
@@ -332,6 +307,11 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
           </div>
           <h2>{t.contact.title}</h2>
           <p class="contact-text">{t.contact.text}</p>
+          <h3 class="contact-questions-title">{t.firstCall.listTitle}</h3>
+          <ol class="contact-questions">
+            {t.firstCall.items.map((q) => <li>{q}</li>)}
+          </ol>
+          <p class="contact-questions-more"><a class="text-link" href={`${home}${questionPaths[t.lang]}`}>{questions[t.lang].link} →</a></p>
           <a class="btn" href={cta} {...ctaAttrs}>{t.contact.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
           {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
           <dl class="contact-list">
