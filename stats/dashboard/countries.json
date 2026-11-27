@@ -1,102 +1,17 @@
 [
  {
   "country": "DE",
-  "pageviews": 1230,
-  "visits": 220
+  "pageviews": 700,
+  "visits": 200
  },
  {
   "country": "US",
-  "pageviews": 630,
-  "visits": 600
- },
- {
-  "country": "IN",
-  "pageviews": 90,
-  "visits": 90
- },
- {
-  "country": "FR",
-  "pageviews": 60,
-  "visits": 30
+  "pageviews": 600,
+  "visits": 500
  },
  {
   "country": "NL",
-  "pageviews": 50,
-  "visits": 30
- },
- {
-  "country": "GB",
-  "pageviews": 30,
-  "visits": 20
- },
- {
-  "country": "SG",
-  "pageviews": 30,
-  "visits": 10
- },
- {
-  "country": "ES",
-  "pageviews": 30,
-  "visits": 0
- },
- {
-  "country": "SE",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "country": "CA",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "country": "AU",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "ID",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "CN",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "PL",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "LT",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "AL",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "IE",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "CZ",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "country": "BR",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "PH",
-  "pageviews": 10,
-  "visits": 10
+  "pageviews": 100,
+  "visits": 100
  }
 ]

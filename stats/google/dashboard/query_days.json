@@ -11264,6 +11264,13 @@
  },
  {
   "day": "2026-11-26",
+  "query": "salesforce lizenz-verlängerung",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
+ },
+ {
+  "day": "2026-11-26",
   "query": "salesforce manufacturing cloud",
   "clicks": 0,
   "impressions": 3,
@@ -11296,6 +11303,13 @@
   "clicks": 0,
   "impressions": 2,
   "position": 13
+ },
+ {
+  "day": "2026-11-26",
+  "query": "fit gap analyse",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 14.5
  },
  {
   "day": "2026-11-26",
@@ -11390,6 +11404,13 @@
  },
  {
   "day": "2026-11-26",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-26",
   "query": "field service mobile flow limitations",
   "clicks": 0,
   "impressions": 1,
@@ -11439,6 +11460,27 @@
  },
  {
   "day": "2026-11-26",
+  "query": "nearshore team",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-26",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
+ },
+ {
+  "day": "2026-11-26",
+  "query": "offline field service app",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 66
+ },
+ {
+  "day": "2026-11-26",
   "query": "proalpha anbindung salesforce",
   "clicks": 0,
   "impressions": 1,
@@ -11467,10 +11509,10 @@
  },
  {
   "day": "2026-11-26",
-  "query": "salesforce lizenz-verlängerung",
+  "query": "salesforce lizenzen verlängern",
   "clicks": 0,
   "impressions": 1,
-  "position": 7
+  "position": 8
  },
  {
   "day": "2026-11-26",
@@ -11509,6 +11551,13 @@
  },
  {
   "day": "2026-11-26",
+  "query": "salesforce zertifizierte experten",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 36
+ },
+ {
+  "day": "2026-11-26",
   "query": "schedule salesforce help content publish and expire dates",
   "clicks": 0,
   "impressions": 1,
@@ -11520,5 +11569,47 @@
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "day": "2026-11-27",
+  "query": "choose the right qsr cdp implementation partner",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 67
+ },
+ {
+  "day": "2026-11-27",
+  "query": "fit gap analyse",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 21
+ },
+ {
+  "day": "2026-11-27",
+  "query": "manufacturing cloud vs service cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-27",
+  "query": "release management devops",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 51
+ },
+ {
+  "day": "2026-11-27",
+  "query": "salesforce lizenzen verlängern",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-27",
+  "query": "sfdx hardis training",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
  }
 ]

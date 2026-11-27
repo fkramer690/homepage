@@ -78,16 +78,16 @@
   "position": 7
  },
  {
-  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 7
- },
- {
   "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
   "clicks": 0,
   "impressions": 4,
   "position": 6.5
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 7
  },
  {
   "page": "https://www.fk-sd.de/en/blog/meshmesh-salesforce-before-you-connect/",
@@ -120,28 +120,28 @@
   "position": 8
  },
  {
-  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 5.3
- },
- {
   "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
   "clicks": 0,
   "impressions": 3,
   "position": 8.3
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
+  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
   "clicks": 0,
   "impressions": 3,
-  "position": 6
+  "position": 5.3
  },
  {
   "page": "https://www.fk-sd.de/en/blog/change-management-models/",
   "clicks": 0,
   "impressions": 3,
   "position": 9
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
@@ -156,28 +156,28 @@
   "position": 3
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 5
- },
- {
   "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
   "clicks": 0,
   "impressions": 3,
   "position": 5.7
  },
  {
-  "page": "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
+  "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
   "clicks": 0,
   "impressions": 3,
-  "position": 8
+  "position": 5
  },
  {
   "page": "https://www.fk-sd.de/masterclass/ki-salesforce/kosten-und-token/",
   "clicks": 0,
   "impressions": 3,
   "position": 10
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 8
  },
  {
   "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
@@ -204,16 +204,22 @@
   "position": 3
  },
  {
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
   "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
   "clicks": 0,
   "impressions": 2,
   "position": 5.5
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
+  "page": "https://www.fk-sd.de/en/blog/einstein-bots-to-agentforce-upgrade/",
   "clicks": 0,
   "impressions": 2,
-  "position": 7
+  "position": 9
  },
  {
   "page": "https://www.fk-sd.de/blog/salesforce-hosted-mcp-server-datenzugriff/",
@@ -228,12 +234,6 @@
   "position": 10
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/einstein-bots-to-agentforce-upgrade/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 9
- },
- {
   "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
   "clicks": 0,
   "impressions": 1,
@@ -246,13 +246,13 @@
   "position": 8
  },
  {
-  "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
+  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
   "clicks": 0,
   "impressions": 1,
   "position": 10
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+  "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
   "clicks": 0,
   "impressions": 1,
   "position": 10
@@ -264,10 +264,10 @@
   "position": 2
  },
  {
-  "page": "https://www.fk-sd.de/blog/b2b-webshop-business-case-hersteller/",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
   "clicks": 0,
   "impressions": 1,
-  "position": 1
+  "position": 10
  },
  {
   "page": "https://www.fk-sd.de/en/blog/b2b-store-aura-to-lwr-migration/",
@@ -276,27 +276,27 @@
   "position": 4
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 1
- },
- {
   "page": "https://www.fk-sd.de/en/blog/api-67-apex-user-mode-fewer-records/",
   "clicks": 0,
   "impressions": 1,
   "position": 5
  },
  {
+  "page": "https://www.fk-sd.de/blog/b2b-webshop-business-case-hersteller/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
   "page": "https://www.fk-sd.de/en/blog/legacy-erp-without-api-ai-agents/",
   "clicks": 0,
   "impressions": 1,
   "position": 3
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-kostenloses-devops-training/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  }
 ]

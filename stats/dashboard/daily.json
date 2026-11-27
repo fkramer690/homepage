@@ -1,83 +1,83 @@
 [
  {
   "day": "2026-10-28",
-  "pageviews": 50,
+  "pageviews": 0,
   "visits": 0
  },
  {
   "day": "2026-10-29",
-  "pageviews": 220,
-  "visits": 10
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-10-30",
-  "pageviews": 70,
-  "visits": 20
+  "pageviews": 100,
+  "visits": 0
  },
  {
   "day": "2026-10-31",
-  "pageviews": 50,
-  "visits": 20
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-01",
-  "pageviews": 60,
-  "visits": 20
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-02",
-  "pageviews": 40,
-  "visits": 10
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-03",
-  "pageviews": 150,
-  "visits": 50
- },
- {
-  "day": "2026-11-04",
-  "pageviews": 60,
-  "visits": 10
- },
- {
-  "day": "2026-11-05",
-  "pageviews": 260,
-  "visits": 100
- },
- {
-  "day": "2026-11-06",
-  "pageviews": 40,
-  "visits": 10
- },
- {
-  "day": "2026-11-07",
-  "pageviews": 20,
-  "visits": 10
- },
- {
-  "day": "2026-11-08",
-  "pageviews": 20,
-  "visits": 10
- },
- {
-  "day": "2026-11-09",
-  "pageviews": 90,
-  "visits": 90
- },
- {
-  "day": "2026-11-10",
-  "pageviews": 120,
-  "visits": 80
- },
- {
-  "day": "2026-11-11",
-  "pageviews": 330,
+  "pageviews": 300,
   "visits": 300
  },
  {
+  "day": "2026-11-04",
+  "pageviews": 100,
+  "visits": 0
+ },
+ {
+  "day": "2026-11-05",
+  "pageviews": 200,
+  "visits": 0
+ },
+ {
+  "day": "2026-11-06",
+  "pageviews": 0,
+  "visits": 0
+ },
+ {
+  "day": "2026-11-07",
+  "pageviews": 0,
+  "visits": 0
+ },
+ {
+  "day": "2026-11-08",
+  "pageviews": 0,
+  "visits": 0
+ },
+ {
+  "day": "2026-11-09",
+  "pageviews": 200,
+  "visits": 200
+ },
+ {
+  "day": "2026-11-10",
+  "pageviews": 200,
+  "visits": 100
+ },
+ {
+  "day": "2026-11-11",
+  "pageviews": 0,
+  "visits": 0
+ },
+ {
   "day": "2026-11-12",
-  "pageviews": 80,
-  "visits": 60
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-13",
@@ -86,72 +86,72 @@
  },
  {
   "day": "2026-11-14",
-  "pageviews": 30,
-  "visits": 30
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-15",
-  "pageviews": 20,
-  "visits": 20
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-16",
-  "pageviews": 60,
-  "visits": 60
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-17",
-  "pageviews": 30,
-  "visits": 10
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-18",
-  "pageviews": 240,
-  "visits": 10
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-19",
-  "pageviews": 50,
-  "visits": 50
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-20",
-  "pageviews": 30,
-  "visits": 30
+  "pageviews": 100,
+  "visits": 100
  },
  {
   "day": "2026-11-21",
-  "pageviews": 10,
+  "pageviews": 100,
   "visits": 0
  },
  {
   "day": "2026-11-22",
-  "pageviews": 20,
-  "visits": 20
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-23",
-  "pageviews": 20,
-  "visits": 10
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-24",
-  "pageviews": 20,
-  "visits": 20
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-25",
-  "pageviews": 30,
-  "visits": 30
+  "pageviews": 0,
+  "visits": 0
  },
  {
   "day": "2026-11-26",
-  "pageviews": 60,
-  "visits": 30
+  "pageviews": 100,
+  "visits": 100
  },
  {
   "day": "2026-11-27",
-  "pageviews": 10,
-  "visits": 10
+  "pageviews": 0,
+  "visits": 0
  }
 ]

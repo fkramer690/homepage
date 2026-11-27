@@ -14529,6 +14529,14 @@
  },
  {
   "day": "2026-11-26",
+  "query": "salesforce lizenz-verlängerung",
+  "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-verhandeln/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
+ },
+ {
+  "day": "2026-11-26",
   "query": "salesforce manufacturing cloud",
   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
   "clicks": 0,
@@ -14566,6 +14574,14 @@
   "clicks": 0,
   "impressions": 2,
   "position": 13
+ },
+ {
+  "day": "2026-11-26",
+  "query": "fit gap analyse",
+  "page": "https://www.fk-sd.de/blog/fit-gap-analyse-salesforce/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 14.5
  },
  {
   "day": "2026-11-26",
@@ -14657,6 +14673,14 @@
  },
  {
   "day": "2026-11-26",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-26",
   "query": "field service mobile flow limitations",
   "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
   "clicks": 0,
@@ -14721,6 +14745,14 @@
  },
  {
   "day": "2026-11-26",
+  "query": "nearshore team",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-26",
   "query": "nearshore teamerweiterung",
   "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
   "clicks": 0,
@@ -14734,6 +14766,22 @@
   "clicks": 0,
   "impressions": 1,
   "position": 81
+ },
+ {
+  "day": "2026-11-26",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
+ },
+ {
+  "day": "2026-11-26",
+  "query": "offline field service app",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-app-offline-data/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 66
  },
  {
   "day": "2026-11-26",
@@ -14769,11 +14817,11 @@
  },
  {
   "day": "2026-11-26",
-  "query": "salesforce lizenz-verlängerung",
+  "query": "salesforce lizenzen verlängern",
   "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-verhandeln/",
   "clicks": 0,
   "impressions": 1,
-  "position": 7
+  "position": 8
  },
  {
   "day": "2026-11-26",
@@ -14833,6 +14881,14 @@
  },
  {
   "day": "2026-11-26",
+  "query": "salesforce zertifizierte experten",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 36
+ },
+ {
+  "day": "2026-11-26",
   "query": "schedule salesforce help content publish and expire dates",
   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
   "clicks": 0,
@@ -14862,5 +14918,53 @@
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "day": "2026-11-27",
+  "query": "choose the right qsr cdp implementation partner",
+  "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 67
+ },
+ {
+  "day": "2026-11-27",
+  "query": "fit gap analyse",
+  "page": "https://www.fk-sd.de/blog/fit-gap-analyse-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 21
+ },
+ {
+  "day": "2026-11-27",
+  "query": "manufacturing cloud vs service cloud",
+  "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-27",
+  "query": "release management devops",
+  "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 51
+ },
+ {
+  "day": "2026-11-27",
+  "query": "salesforce lizenzen verlängern",
+  "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-verhandeln/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-27",
+  "query": "sfdx hardis training",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
  }
 ]
