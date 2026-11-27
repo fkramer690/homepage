@@ -315,6 +315,8 @@
     "og:statisch": {"title": "Standard-Vorschaubild", "proposal": 3, "rating": 3, "ratedOn": "2026-10-30", "note": "please fix wording", "todo": "docs/backlog.md G4 (erledigt)"},
     "page:arbeitsweise": {"title": "Arbeitsweise mit Fortschrittslinie (Fotos entfernt 2026-10-30)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "page:blueprint": {"title": "Blueprint-Deko (Maßlinien, Fadenkreuz), seit 2026-10-31 nur noch im Hero der Startseite", "proposal": 1, "rating": null},
+    "page:weitere-artikel-karten": {"title": "Blogartikel: Weitere Artikel als drei Karten mit Skizze", "proposal": 1, "rating": null, "note": "Designkritik V3, 27.11.2026"},
+    "page:einsatz-konditionen": {"title": "Leistungsseiten: Einsatz und Konditionen als Karte", "proposal": 1, "rating": null, "note": "Designkritik V4, 27.11.2026"},
     "page:artikel-zum-thema": {"title": "Leistungsseiten: Artikel zum Thema (nummerierte Liste in weißer Box, Masterclass-Zeile darunter)", "proposal": 2, "rating": null, "note": "Backlog U3, 07.11.2026"},
     "page:tiefe": {"title": "Tiefe: Höhenstufen mit Schatten, Milchglas-Kopfzeile, Kennzahlen-Karte über dem Kopf, versetzte Blätter hinter Fotos und Listen", "proposal": 1, "rating": null, "note": "Variante A + B ohne Zitat-Rahmen, 17.11.2026"},
     "page:footer": {"title": "Footer zweistufig (Leistungen, Masterclasses, Wissen & mehr, Rechtliches)", "proposal": 2, "rating": null, "note": "Polished-Design-Paket F, 31.10.2026"},

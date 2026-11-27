@@ -397,7 +397,7 @@ export const de: Dict = {
     ],
   },
   servicePage: {
-    engagement: 'Typischer Einsatz',
+    terms: 'Einsatz und Konditionen',
     engagementRows: [
       { t: 'Tagessatz', d: '1.200 Euro netto bei Arbeit remote. Für Einsätze vor Ort berechne ich zusätzlich eine Pauschale oder die Reisekosten.' },
       { t: 'Umfang', d: 'Mindestens 2 Tage pro Woche, zu Beginn eines Programms auch 5, je nach Projektsituation.' },

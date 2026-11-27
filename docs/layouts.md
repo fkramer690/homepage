@@ -436,10 +436,11 @@ for every service page.
   ReadingGrid.
 - Few frames in the reading column (variant A "ruhiger", chosen 2026-11-11 after
   the AI-slop re-audit, finding ND1): typical situations, "Was Sie erhalten",
-  the reading list with its masterclass row, "Woran Sie Fortschritt sehen" and
-  "Typischer Einsatz" stand without box, border or tint, separated only by
-  dashed lines. Only "Projekt im Fokus", the content blocks in the body and the
-  author box keep a frame, so they stand out.
+  the reading list with its masterclass row and "Woran Sie Fortschritt sehen"
+  stand without box, border or tint, separated only by dashed lines. Only
+  "Projekt im Fokus", the content blocks in the body, the card "Einsatz und
+  Konditionen" (Fabian 2026-11-27: the facts a CIO looks for get one card) and
+  the author box keep a frame, so they stand out.
 
 ## Profile card ("Steckbrief", start page About)
 

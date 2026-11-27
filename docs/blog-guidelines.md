@@ -45,7 +45,7 @@ Every article page is built by `src/components/BlogPost.astro` and looks the sam
 4. FAQ, collapsible (from frontmatter), heading "Häufig gestellte Fragen" in German and "Frequently asked questions" in English
 5. Author box (`src/components/AuthorBox.astro`)
 6. Series box, only for articles in a series (see below)
-7. Related articles
+7. Related articles: three cards with the card drawing of the overview (titles only on phones)
 8. Contact section with "Book a call" and the contact form. Heading, text and the two lists "What to bring" / "What we clarify" come from `src/lib/contact-briefs.ts`: by default the brief of the article's main category (the first in `categories`); set `contactBrief` in the frontmatter when another brief fits the topic better (e.g. `licences` for licence and pricing articles, `partner-governance` for partner topics). Add a new brief there instead of writing a CTA in the article.
 
 Two call hints sit inside the article body (`src/components/CallHint.astro`, placed by `src/components/ProseWithHints.astro`): one before the first H2 with at least 20 % of the words above it, one before the first later H2 at 40 %. Hint 1 shows the title and text of the article's contact brief, hint 2 the second item of its "What to bring" list; both have the booking button. Because of them, article pages have no booking box in the side column. Never write a call hint into the Markdown.
