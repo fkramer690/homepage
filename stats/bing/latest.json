@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-26T15:08:32.689Z",
+ "generatedAt": "2026-11-27T04:48:25.119Z",
  "siteUrl": "https://www.fk-sd.de/",
  "daily": [
   {
@@ -141,6 +141,11 @@
    "day": "2026-11-24",
    "clicks": 0,
    "impressions": 40
+  },
+  {
+   "day": "2026-11-25",
+   "clicks": 0,
+   "impressions": 29
   }
  ],
  "queries": [
@@ -199,16 +204,16 @@
    "position": 10
   },
   {
-   "query": "salesforce fehlende sicht berechtigung",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 10
-  },
-  {
    "query": "veränderungskurve kühn-rosch",
    "clicks": 0,
    "impressions": 3,
    "position": 6
+  },
+  {
+   "query": "salesforce fehlende sicht berechtigung",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 10
   },
   {
    "query": "well architected framework salesforce",
@@ -223,16 +228,16 @@
    "position": 3.3
   },
   {
-   "query": "change-kurve y-achse, kompetenz, energie",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 3
-  },
-  {
    "query": "fk solution design gmbh",
    "clicks": 0,
    "impressions": 3,
    "position": 1
+  },
+  {
+   "query": "change-kurve y-achse, kompetenz, energie",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 3
   },
   {
    "query": "germany works council ai tools",
@@ -247,25 +252,7 @@
    "position": 9
   },
   {
-   "query": "salesforce well architected framework architect agent",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 7
-  },
-  {
-   "query": "brauch salesforce voice flex credits",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
-  },
-  {
-   "query": "暴食后第二天轻断食有用吗",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4
-  },
-  {
-   "query": "changekonzept nach lewin",
+   "query": "4-seiten-analyse nach stakeholder meetings",
    "clicks": 0,
    "impressions": 2,
    "position": 8
@@ -283,10 +270,28 @@
    "position": 8
   },
   {
-   "query": "4-seiten-analyse nach stakeholder meetings",
+   "query": "salesforce well architected framework architect agent",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 7
+  },
+  {
+   "query": "暴食后第二天轻断食有用吗",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 4
+  },
+  {
+   "query": "changekonzept nach lewin",
    "clicks": 0,
    "impressions": 2,
    "position": 8
+  },
+  {
+   "query": "brauch salesforce voice flex credits",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
   },
   {
    "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
@@ -295,13 +300,13 @@
    "position": 7.5
   },
   {
-   "query": "fk-sd.de",
+   "query": "sfdx hardis badges",
    "clicks": 0,
    "impressions": 2,
-   "position": 2
+   "position": 10
   },
   {
-   "query": "what is an fk in salesforce?",
+   "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
    "clicks": 0,
    "impressions": 2,
    "position": 8
@@ -311,18 +316,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 5
-  },
-  {
-   "query": "comparison between change management models lewin kotter adkar",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
-  },
-  {
-   "query": "sfdx hardis badges",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
   },
   {
    "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
@@ -337,16 +330,34 @@
    "position": 6
   },
   {
-   "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
+   "query": "comparison between change management models lewin kotter adkar",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
+  },
+  {
+   "query": "fk-sd.de",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 2
+  },
+  {
+   "query": "what is an fk in salesforce?",
    "clicks": 0,
    "impressions": 2,
    "position": 8
   },
   {
-   "query": "salesforce meshmesh",
+   "query": "aela flex credits",
    "clicks": 0,
    "impressions": 2,
-   "position": 10
+   "position": 4
+  },
+  {
+   "query": "salesforce dx mcp is end of life?",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 6
   },
   {
    "query": "fk solution design",
@@ -361,16 +372,10 @@
    "position": 28
   },
   {
-   "query": "aela flex credits",
+   "query": "salesforce meshmesh",
    "clicks": 0,
    "impressions": 2,
-   "position": 4
-  },
-  {
-   "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4
+   "position": 10
   },
   {
    "query": "was ist salesforce b2b ecommerce lwr?",
@@ -385,16 +390,10 @@
    "position": 9
   },
   {
-   "query": "salesforce dx mcp is end of life?",
+   "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
    "clicks": 0,
    "impressions": 2,
-   "position": 6
-  },
-  {
-   "query": "unterschiede adkar und drei phasen modell von lewis",
-   "clicks": 1,
-   "impressions": 1,
-   "position": 2
+   "position": 4
   },
   {
    "query": "salesforce gmv",
@@ -403,34 +402,10 @@
    "position": 4
   },
   {
-   "query": "trailhead scheduling console",
-   "clicks": 0,
+   "query": "unterschiede adkar und drei phasen modell von lewis",
+   "clicks": 1,
    "impressions": 1,
-   "position": 6
-  },
-  {
-   "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "query": "trailhead new dispatch console",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "query": "salesforce scheduling console update service appointment duration on gantt",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
+   "position": 2
   },
   {
    "query": "what is rca latest name for by salesforce",
@@ -439,10 +414,40 @@
    "position": 4
   },
   {
-   "query": "migrate list views scheudling console sfdc",
+   "query": "salesforce b2b commerce extension",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "query": "change management definition kotter lewin widerstand organisation",
    "clicks": 0,
    "impressions": 1,
    "position": 3
+  },
+  {
+   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "query": "trailhead new dispatch console",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "query": "trailhead scheduling console",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
   }
  ],
  "pages": [
@@ -585,16 +590,16 @@
    "position": 6
   },
   {
-   "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 4
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/change-management-models/",
    "clicks": 0,
    "impressions": 3,
    "position": 9
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4
   },
   {
    "page": "https://www.fk-sd.de/blog/kundenpreise-b2b-commerce-preisbuecher-erp/",
@@ -651,22 +656,22 @@
    "position": 3
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 7
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
    "clicks": 0,
    "impressions": 2,
    "position": 5.5
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/einstein-bots-to-agentforce-upgrade/",
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
    "clicks": 0,
    "impressions": 2,
-   "position": 9
+   "position": 7
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/salesforce-hosted-mcp-server-datenzugriff/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 28
   },
   {
    "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
@@ -675,10 +680,10 @@
    "position": 10
   },
   {
-   "page": "https://www.fk-sd.de/blog/salesforce-hosted-mcp-server-datenzugriff/",
+   "page": "https://www.fk-sd.de/en/blog/einstein-bots-to-agentforce-upgrade/",
    "clicks": 0,
    "impressions": 2,
-   "position": 28
+   "position": 9
   },
   {
    "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
@@ -699,28 +704,16 @@
    "position": 10
   },
   {
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 2
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
    "clicks": 0,
    "impressions": 1,
    "position": 10
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/legacy-erp-without-api-ai-agents/",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
    "clicks": 0,
    "impressions": 1,
-   "position": 3
-  },
-  {
-   "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 1
+   "position": 2
   },
   {
    "page": "https://www.fk-sd.de/blog/b2b-webshop-business-case-hersteller/",
@@ -729,22 +722,34 @@
    "position": 1
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/b2b-store-aura-to-lwr-migration/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
    "clicks": 0,
    "impressions": 1,
    "position": 10
   },
   {
-   "page": "https://www.fk-sd.de/blog/sfdx-hardis-kostenloses-devops-training/",
+   "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
+   "position": 1
   },
   {
    "page": "https://www.fk-sd.de/en/blog/api-67-apex-user-mode-fewer-records/",
    "clicks": 0,
    "impressions": 1,
    "position": 5
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/legacy-erp-without-api-ai-agents/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 3
   }
  ],
  "index": [
@@ -909,6 +914,12 @@
    "inIndex": 501,
    "crawledPages": 57,
    "crawlErrors": 0
+  },
+  {
+   "day": "2026-11-26",
+   "inIndex": 505,
+   "crawledPages": 122,
+   "crawlErrors": 0
   }
  ],
  "query_periods": [
@@ -935,6 +946,48 @@
   },
   {
    "period": "2026-10-30",
+   "query": "what is rca latest name for by salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-10-30",
+   "query": "salesforce b2b commerce extension",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "period": "2026-10-30",
+   "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-10-30",
+   "query": "change management definition kotter lewin widerstand organisation",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 3
+  },
+  {
+   "period": "2026-10-30",
+   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "period": "2026-10-30",
+   "query": "trailhead new dispatch console",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-10-30",
    "query": "trailhead scheduling console",
    "clicks": 0,
    "impressions": 1,
@@ -949,10 +1002,10 @@
   },
   {
    "period": "2026-10-30",
-   "query": "trailhead new dispatch console",
+   "query": "new dispatch console salesforce",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
+   "position": 5
   },
   {
    "period": "2026-10-30",
@@ -960,27 +1013,6 @@
    "clicks": 0,
    "impressions": 1,
    "position": 10
-  },
-  {
-   "period": "2026-10-30",
-   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "period": "2026-10-30",
-   "query": "what is rca latest name for by salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-10-30",
-   "query": "migrate list views scheudling console sfdc",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
   },
   {
    "period": "2026-10-30",
@@ -998,24 +1030,17 @@
   },
   {
    "period": "2026-10-30",
-   "query": "what is salesforce devopps now called",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-10-30",
-   "query": "salesforce b2b commerce extension",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "period": "2026-10-30",
    "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
    "clicks": 0,
    "impressions": 1,
    "position": 8
+  },
+  {
+   "period": "2026-10-30",
+   "query": "what is salesforce devopps now called",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
   },
   {
    "period": "2026-10-30",
@@ -1040,21 +1065,7 @@
   },
   {
    "period": "2026-10-30",
-   "query": "new dispatch console salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
-   "period": "2026-10-30",
-   "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-10-30",
-   "query": "change management definition kotter lewin widerstand organisation",
+   "query": "migrate list views scheudling console sfdc",
    "clicks": 0,
    "impressions": 1,
    "position": 3
@@ -1103,13 +1114,6 @@
   },
   {
    "period": "2026-11-06",
-   "query": "salesforce fehlende sicht berechtigung",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 10
-  },
-  {
-   "period": "2026-11-06",
    "query": "veränderungskurve kühn-rosch",
    "clicks": 0,
    "impressions": 3,
@@ -1117,10 +1121,73 @@
   },
   {
    "period": "2026-11-06",
+   "query": "salesforce fehlende sicht berechtigung",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 10
+  },
+  {
+   "period": "2026-11-06",
+   "query": "4-seiten-analyse nach stakeholder meetings",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 8
+  },
+  {
+   "period": "2026-11-06",
+   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 2
+  },
+  {
+   "period": "2026-11-06",
+   "query": "new scheduling console",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 4
+  },
+  {
+   "period": "2026-11-06",
+   "query": "scheduling console salesforce",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 8
+  },
+  {
+   "period": "2026-11-06",
+   "query": "salesforce well architected framework architect agent",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 7
+  },
+  {
+   "period": "2026-11-06",
+   "query": "暴食后第二天轻断食有用吗",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 4
+  },
+  {
+   "period": "2026-11-06",
    "query": "salesforce well architected framework",
    "clicks": 0,
    "impressions": 2,
    "position": 8
+  },
+  {
+   "period": "2026-11-06",
+   "query": "changekonzept nach lewin",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 8
+  },
+  {
+   "period": "2026-11-06",
+   "query": "brauch salesforce voice flex credits",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
   },
   {
    "period": "2026-11-06",
@@ -1138,59 +1205,10 @@
   },
   {
    "period": "2026-11-06",
-   "query": "new scheduling console",
-   "clicks": 0,
-   "impressions": 2,
+   "query": "salesforce gmv",
+   "clicks": 1,
+   "impressions": 1,
    "position": 4
-  },
-  {
-   "period": "2026-11-06",
-   "query": "salesforce well architected framework architect agent",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 7
-  },
-  {
-   "period": "2026-11-06",
-   "query": "brauch salesforce voice flex credits",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
-  },
-  {
-   "period": "2026-11-06",
-   "query": "暴食后第二天轻断食有用吗",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4
-  },
-  {
-   "period": "2026-11-06",
-   "query": "changekonzept nach lewin",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 8
-  },
-  {
-   "period": "2026-11-06",
-   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 2
-  },
-  {
-   "period": "2026-11-06",
-   "query": "scheduling console salesforce",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 8
-  },
-  {
-   "period": "2026-11-06",
-   "query": "4-seiten-analyse nach stakeholder meetings",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 8
   },
   {
    "period": "2026-11-06",
@@ -1201,24 +1219,38 @@
   },
   {
    "period": "2026-11-06",
-   "query": "salesforce gmv",
-   "clicks": 1,
+   "query": "changekurve team 4 stufen",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2
+  },
+  {
+   "period": "2026-11-06",
+   "query": "salesforce dx mcp server retirement",
+   "clicks": 0,
    "impressions": 1,
    "position": 4
   },
   {
    "period": "2026-11-06",
-   "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
+   "query": "salesforce agent context engine",
    "clicks": 0,
    "impressions": 1,
-   "position": 9
+   "position": 4
   },
   {
    "period": "2026-11-06",
-   "query": "salesforce well architecture",
+   "query": "model viom lewin und kotter",
    "clicks": 0,
    "impressions": 1,
-   "position": 6
+   "position": 3
+  },
+  {
+   "period": "2026-11-06",
+   "query": "what does active hypercare in salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
   },
   {
    "period": "2026-11-06",
@@ -1226,6 +1258,20 @@
    "clicks": 0,
    "impressions": 1,
    "position": 8
+  },
+  {
+   "period": "2026-11-06",
+   "query": "what it is new on salesforce well architected framework ?",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-06",
+   "query": "salesforce well architecture",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
   },
   {
    "period": "2026-11-06",
@@ -1257,35 +1303,35 @@
   },
   {
    "period": "2026-11-06",
-   "query": "what it is new on salesforce well architected framework ?",
+   "query": "360 blog salesforce context engine",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
+   "position": 3
   },
   {
    "period": "2026-11-06",
-   "query": "16 days hypercare after go-live",
+   "query": "veränderungskurve management",
    "clicks": 0,
    "impressions": 1,
    "position": 9
   },
   {
    "period": "2026-11-06",
-   "query": "agent context engine salesforce",
+   "query": "buyer groups and entitlement policies in salesforce cpq",
    "clicks": 0,
    "impressions": 1,
-   "position": 6
+   "position": 2
   },
   {
    "period": "2026-11-06",
-   "query": "die veränderungskurve steich",
+   "query": "weiterentwicklungsfade",
    "clicks": 0,
    "impressions": 1,
    "position": 5
   },
   {
    "period": "2026-11-06",
-   "query": "siforce meaning",
+   "query": "how to add scheduling console to salesforce page",
    "clicks": 0,
    "impressions": 1,
    "position": 10
@@ -1313,6 +1359,20 @@
   },
   {
    "period": "2026-11-06",
+   "query": "16 days hypercare after go-live",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "period": "2026-11-06",
+   "query": "agent context engine salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-11-06",
    "query": "agentforce flexcredits voice minutes",
    "clicks": 0,
    "impressions": 1,
@@ -1320,59 +1380,17 @@
   },
   {
    "period": "2026-11-06",
-   "query": "salesforce agent context engine",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-06",
-   "query": "model viom lewin und kotter",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-11-06",
-   "query": "what does active hypercare in salesforce",
+   "query": "die veränderungskurve steich",
    "clicks": 0,
    "impressions": 1,
    "position": 5
   },
   {
    "period": "2026-11-06",
-   "query": "how to add scheduling console to salesforce page",
+   "query": "siforce meaning",
    "clicks": 0,
    "impressions": 1,
    "position": 10
-  },
-  {
-   "period": "2026-11-06",
-   "query": "hypercare-autorenchat",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 9
-  },
-  {
-   "period": "2026-11-06",
-   "query": "changekurve team 4 stufen",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 2
-  },
-  {
-   "period": "2026-11-06",
-   "query": "salesforce dx mcp server retirement",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-06",
-   "query": "weiterentwicklungsfade",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
   },
   {
    "period": "2026-11-06",
@@ -1383,31 +1401,17 @@
   },
   {
    "period": "2026-11-06",
-   "query": "360 blog salesforce context engine",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-11-06",
-   "query": "veränderungskurve management",
+   "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
    "clicks": 0,
    "impressions": 1,
    "position": 9
   },
   {
    "period": "2026-11-06",
-   "query": "buyer groups and entitlement policies in salesforce cpq",
+   "query": "hypercare-autorenchat",
    "clicks": 0,
    "impressions": 1,
-   "position": 2
-  },
-  {
-   "period": "2026-11-13",
-   "query": "change-kurve y-achse, kompetenz, energie",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 3
+   "position": 9
   },
   {
    "period": "2026-11-13",
@@ -1418,14 +1422,21 @@
   },
   {
    "period": "2026-11-13",
-   "query": "fk-sd.de",
+   "query": "change-kurve y-achse, kompetenz, energie",
    "clicks": 0,
-   "impressions": 2,
-   "position": 2
+   "impressions": 3,
+   "position": 3
   },
   {
    "period": "2026-11-13",
-   "query": "what is an fk in salesforce?",
+   "query": "sfdx hardis badges",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
+  },
+  {
+   "period": "2026-11-13",
+   "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
    "clicks": 0,
    "impressions": 2,
    "position": 8
@@ -1436,20 +1447,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 5
-  },
-  {
-   "period": "2026-11-13",
-   "query": "comparison between change management models lewin kotter adkar",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
-  },
-  {
-   "period": "2026-11-13",
-   "query": "sfdx hardis badges",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
   },
   {
    "period": "2026-11-13",
@@ -1467,17 +1464,80 @@
   },
   {
    "period": "2026-11-13",
-   "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
+   "query": "comparison between change management models lewin kotter adkar",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
+  },
+  {
+   "period": "2026-11-13",
+   "query": "fk-sd.de",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 2
+  },
+  {
+   "period": "2026-11-13",
+   "query": "what is an fk in salesforce?",
    "clicks": 0,
    "impressions": 2,
    "position": 8
   },
   {
    "period": "2026-11-13",
-   "query": "trauerkurve change was hilft in welcher phase?",
+   "query": "does the salesforce agent context engine allow me to configure my company's semantics and terminology?",
    "clicks": 0,
    "impressions": 1,
-   "position": 3
+   "position": 4
+  },
+  {
+   "period": "2026-11-13",
+   "query": "agentforce einstein trust layer audit trail data 360 session tracing siem",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "period": "2026-11-13",
+   "query": "stakeholder analyse führung",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-11-13",
+   "query": "uat salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "period": "2026-11-13",
+   "query": "was ist eine stakeholder analyse im falle ikea und willow, es geht um die näheungsverschwendungsreduziering und das soll aber weitgehend auf eine eigene innerbetriebliche betriebliche analyse aussein nicht eine zwischenbetriebliche",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2
+  },
+  {
+   "period": "2026-11-13",
+   "query": "b2b commerce lwr experience cloud cart-export-job-list route metadata",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-13",
+   "query": "lewin, kotter and adkar",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-11-13",
+   "query": "what does aela stand for in salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
   },
   {
    "period": "2026-11-13",
@@ -1485,27 +1545,6 @@
    "clicks": 0,
    "impressions": 1,
    "position": 8
-  },
-  {
-   "period": "2026-11-13",
-   "query": "salesforce hypercare channel",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "period": "2026-11-13",
-   "query": "implementierungspartner salesforce fachwort",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 1
-  },
-  {
-   "period": "2026-11-13",
-   "query": "saleforce architect well architected framework",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 9
   },
   {
    "period": "2026-11-13",
@@ -1520,6 +1559,83 @@
    "clicks": 0,
    "impressions": 1,
    "position": 6
+  },
+  {
+   "period": "2026-11-13",
+   "query": "trauerkurve change was hilft in welcher phase?",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 3
+  },
+  {
+   "period": "2026-11-13",
+   "query": "implementierungspartner salesforce fachwort",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "period": "2026-11-13",
+   "query": "was ist b2b lizenz",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "period": "2026-11-13",
+   "query": "in api version 67.0 classes without an ẽplicit sharing declaration run in with sharing mode",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "period": "2026-11-13",
+   "query": "what is aura and lwr? under managed package by trade centric",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "period": "2026-11-13",
+   "query": "wann endet eine hypercare-phase?",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-11-13",
+   "query": "salesforce developer changelog november 2026 mcp cli",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-11-13",
+   "query": "ship and debit deutschland",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-11-13",
+   "query": "widerstand im veränderungsprozess teamumstrukturierung kotter adkar führung",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 3
+  },
+  {
+   "period": "2026-11-13",
+   "query": "darstellung changekurve",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-11-13",
+   "query": "saleforce architect well architected framework",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
   },
   {
    "period": "2026-11-13",
@@ -1551,38 +1667,10 @@
   },
   {
    "period": "2026-11-13",
-   "query": "does the salesforce agent context engine allow me to configure my company's semantics and terminology?",
+   "query": "prosci communication plan change management audience sender message channel frequency official",
    "clicks": 0,
    "impressions": 1,
    "position": 4
-  },
-  {
-   "period": "2026-11-13",
-   "query": "wann endet eine hypercare-phase?",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
-  },
-  {
-   "period": "2026-11-13",
-   "query": "widerstand im veränderungsprozess teamumstrukturierung kotter adkar führung",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-11-13",
-   "query": "darstellung changekurve",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
-  },
-  {
-   "period": "2026-11-13",
-   "query": "in api version 67.0 classes without an ẽplicit sharing declaration run in with sharing mode",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
   },
   {
    "period": "2026-11-13",
@@ -1593,17 +1681,10 @@
   },
   {
    "period": "2026-11-13",
-   "query": "is servicemax written on salesforce",
+   "query": "change veränderungskurve emotional",
    "clicks": 0,
    "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-11-13",
-   "query": "sfdx hardis delta deployment",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
+   "position": 4
   },
   {
    "period": "2026-11-13",
@@ -1614,17 +1695,10 @@
   },
   {
    "period": "2026-11-13",
-   "query": "prosci communication plan change management audience sender message channel frequency official",
+   "query": "salesforce hypercare channel",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-13",
-   "query": "lewin, kotter and adkar",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
+   "position": 7
   },
   {
    "period": "2026-11-13",
@@ -1642,62 +1716,6 @@
   },
   {
    "period": "2026-11-13",
-   "query": "is servicemax owned by salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-11-13",
-   "query": "what does aela stand for in salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 9
-  },
-  {
-   "period": "2026-11-13",
-   "query": "change veränderungskurve emotional",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-13",
-   "query": "stakeholder analyse führung",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "period": "2026-11-13",
-   "query": "agentforce einstein trust layer audit trail data 360 session tracing siem",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
-   "period": "2026-11-13",
-   "query": "was ist eine stakeholder analyse im falle ikea und willow, es geht um die näheungsverschwendungsreduziering und das soll aber weitgehend auf eine eigene innerbetriebliche betriebliche analyse aussein nicht eine zwischenbetriebliche",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 2
-  },
-  {
-   "period": "2026-11-13",
-   "query": "b2b commerce lwr experience cloud cart-export-job-list route metadata",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-13",
-   "query": "uat salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 9
-  },
-  {
-   "period": "2026-11-13",
    "query": "scheduling console vs classic dispatch console",
    "clicks": 0,
    "impressions": 1,
@@ -1705,31 +1723,24 @@
   },
   {
    "period": "2026-11-13",
-   "query": "what is aura and lwr? under managed package by trade centric",
+   "query": "is servicemax owned by salesforce",
    "clicks": 0,
    "impressions": 1,
-   "position": 7
+   "position": 3
   },
   {
    "period": "2026-11-13",
-   "query": "salesforce developer changelog november 2026 mcp cli",
+   "query": "is servicemax written on salesforce",
    "clicks": 0,
    "impressions": 1,
-   "position": 6
+   "position": 3
   },
   {
    "period": "2026-11-13",
-   "query": "ship and debit deutschland",
+   "query": "sfdx hardis delta deployment",
    "clicks": 0,
    "impressions": 1,
    "position": 10
-  },
-  {
-   "period": "2026-11-13",
-   "query": "was ist b2b lizenz",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
   },
   {
    "period": "2026-11-20",
@@ -1761,10 +1772,24 @@
   },
   {
    "period": "2026-11-20",
-   "query": "salesforce meshmesh",
+   "query": "salesforce well architected framework",
    "clicks": 0,
    "impressions": 2,
-   "position": 10
+   "position": 6
+  },
+  {
+   "period": "2026-11-20",
+   "query": "aela flex credits",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 4
+  },
+  {
+   "period": "2026-11-20",
+   "query": "salesforce dx mcp is end of life?",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 6
   },
   {
    "period": "2026-11-20",
@@ -1782,24 +1807,10 @@
   },
   {
    "period": "2026-11-20",
-   "query": "aela flex credits",
+   "query": "salesforce meshmesh",
    "clicks": 0,
    "impressions": 2,
-   "position": 4
-  },
-  {
-   "period": "2026-11-20",
-   "query": "salesforce well architected framework",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 6
-  },
-  {
-   "period": "2026-11-20",
-   "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4
+   "position": 10
   },
   {
    "period": "2026-11-20",
@@ -1817,10 +1828,52 @@
   },
   {
    "period": "2026-11-20",
-   "query": "salesforce dx mcp is end of life?",
+   "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
    "clicks": 0,
    "impressions": 2,
+   "position": 4
+  },
+  {
+   "period": "2026-11-20",
+   "query": "well architected framework salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "period": "2026-11-20",
+   "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
+   "clicks": 0,
+   "impressions": 1,
    "position": 6
+  },
+  {
+   "period": "2026-11-20",
+   "query": "salesforce well-architected framework",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 8
+  },
+  {
+   "period": "2026-11-20",
+   "query": "how many buyer groups can an account have in salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-20",
+   "query": "how are servicemax and salesforce related?",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "period": "2026-11-20",
+   "query": "hypercare, salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
   },
   {
    "period": "2026-11-20",
@@ -1828,34 +1881,6 @@
    "clicks": 0,
    "impressions": 1,
    "position": 7
-  },
-  {
-   "period": "2026-11-20",
-   "query": "meshmesm salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
-  },
-  {
-   "period": "2026-11-20",
-   "query": "wie funktioniert das lizenzmodell von salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "period": "2026-11-20",
-   "query": "template strategy and entity/country deviations was ist damit gemeint",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-20",
-   "query": "veränderungskurve emotionaler reaktionen",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
   },
   {
    "period": "2026-11-20",
@@ -1880,17 +1905,17 @@
   },
   {
    "period": "2026-11-20",
-   "query": "how many buyer groups can an account have in salesforce",
+   "query": "is there a cost for meshmesh salesforce product",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
+   "position": 5
   },
   {
    "period": "2026-11-20",
-   "query": "agent context engine in snowflake vs salesforce data 360",
+   "query": "salesforce spares parts",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
+   "position": 8
   },
   {
    "period": "2026-11-20",
@@ -1908,20 +1933,6 @@
   },
   {
    "period": "2026-11-20",
-   "query": "well architected framework salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "period": "2026-11-20",
-   "query": "prosci change modelle",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
-  },
-  {
-   "period": "2026-11-20",
    "query": "penny perfect meaning in sales",
    "clicks": 0,
    "impressions": 1,
@@ -1929,10 +1940,31 @@
   },
   {
    "period": "2026-11-20",
-   "query": "is there a cost for meshmesh salesforce product",
+   "query": "wie funktioniert das lizenzmodell von salesforce",
    "clicks": 0,
    "impressions": 1,
-   "position": 5
+   "position": 7
+  },
+  {
+   "period": "2026-11-20",
+   "query": "template strategy and entity/country deviations was ist damit gemeint",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-20",
+   "query": "preisliste salesforce revenue cloud und sales cloud",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-20",
+   "query": "salesforce no longer support username-password integration",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
   },
   {
    "period": "2026-11-20",
@@ -1957,27 +1989,6 @@
   },
   {
    "period": "2026-11-20",
-   "query": "lifecycle center in sfdc . is t a replacement to evops?",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "period": "2026-11-20",
-   "query": "preisliste salesforce revenue cloud und sales cloud",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-20",
-   "query": "salesforce no longer support username-password integration",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 9
-  },
-  {
-   "period": "2026-11-20",
    "query": "b2b gmv",
    "clicks": 0,
    "impressions": 1,
@@ -1985,10 +1996,24 @@
   },
   {
    "period": "2026-11-20",
-   "query": "how are servicemax and salesforce related?",
+   "query": "salesforce dx mcp server reaches end of life on nov",
    "clicks": 0,
    "impressions": 1,
-   "position": 9
+   "position": 5
+  },
+  {
+   "period": "2026-11-20",
+   "query": "change manegement kommunikationsplan",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 3
+  },
+  {
+   "period": "2026-11-20",
+   "query": "veränderungskurve emotionaler reaktionen",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
   },
   {
    "period": "2026-11-20",
@@ -2013,17 +2038,17 @@
   },
   {
    "period": "2026-11-20",
-   "query": "hypercare, salesforce",
+   "query": "prosci change modelle",
    "clicks": 0,
    "impressions": 1,
-   "position": 7
+   "position": 6
   },
   {
    "period": "2026-11-20",
-   "query": "salesforce dx mcp server reaches end of life on nov",
+   "query": "meshmesm salesforce",
    "clicks": 0,
    "impressions": 1,
-   "position": 5
+   "position": 6
   },
   {
    "period": "2026-11-20",
@@ -2034,38 +2059,24 @@
   },
   {
    "period": "2026-11-20",
+   "query": "agent context engine in snowflake vs salesforce data 360",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-11-20",
+   "query": "lifecycle center in sfdc . is t a replacement to evops?",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-11-20",
    "query": "meshmesh salesforce",
    "clicks": 0,
    "impressions": 1,
    "position": 9
-  },
-  {
-   "period": "2026-11-20",
-   "query": "salesforce well-architected framework",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 8
-  },
-  {
-   "period": "2026-11-20",
-   "query": "salesforce spares parts",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 8
-  },
-  {
-   "period": "2026-11-20",
-   "query": "change manegement kommunikationsplan",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-11-20",
-   "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
   }
  ],
  "page_periods": [
@@ -2092,17 +2103,17 @@
   },
   {
    "period": "2026-10-30",
-   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 4
-  },
-  {
-   "period": "2026-10-30",
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
    "clicks": 0,
    "impressions": 3,
    "position": 5
+  },
+  {
+   "period": "2026-10-30",
+   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4
   },
   {
    "period": "2026-10-30",
@@ -2190,27 +2201,6 @@
   },
   {
    "period": "2026-11-06",
-   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 8
-  },
-  {
-   "period": "2026-11-06",
-   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4
-  },
-  {
-   "period": "2026-11-06",
-   "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4
-  },
-  {
-   "period": "2026-11-06",
    "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
    "clicks": 0,
    "impressions": 2,
@@ -2225,6 +2215,20 @@
   },
   {
    "period": "2026-11-06",
+   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 8
+  },
+  {
+   "period": "2026-11-06",
+   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 4
+  },
+  {
+   "period": "2026-11-06",
    "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
    "clicks": 0,
    "impressions": 2,
@@ -2236,6 +2240,13 @@
    "clicks": 0,
    "impressions": 2,
    "position": 7
+  },
+  {
+   "period": "2026-11-06",
+   "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 4
   },
   {
    "period": "2026-11-06",
@@ -2281,17 +2292,17 @@
   },
   {
    "period": "2026-11-06",
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 2
-  },
-  {
-   "period": "2026-11-06",
    "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
    "clicks": 0,
    "impressions": 1,
    "position": 10
+  },
+  {
+   "period": "2026-11-06",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2
   },
   {
    "period": "2026-11-13",
@@ -2323,17 +2334,17 @@
   },
   {
    "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 4
-  },
-  {
-   "period": "2026-11-13",
    "page": "https://www.fk-sd.de/en/blog/change-management-models/",
    "clicks": 0,
    "impressions": 3,
    "position": 9
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4
   },
   {
    "period": "2026-11-13",
@@ -2344,20 +2355,6 @@
   },
   {
    "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 3
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/blog/hypercare-phase-salesforce-go-live/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 7
-  },
-  {
-   "period": "2026-11-13",
    "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
    "clicks": 0,
    "impressions": 2,
@@ -2365,10 +2362,10 @@
   },
   {
    "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
+   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
    "clicks": 0,
    "impressions": 2,
-   "position": 7
+   "position": 3
   },
   {
    "period": "2026-11-13",
@@ -2379,44 +2376,16 @@
   },
   {
    "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+   "page": "https://www.fk-sd.de/blog/hypercare-phase-salesforce-go-live/",
    "clicks": 0,
-   "impressions": 1,
-   "position": 6
+   "impressions": 2,
+   "position": 7
   },
   {
    "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-well-architected-framework-2026/",
+   "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
    "clicks": 0,
-   "impressions": 1,
-   "position": 9
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-names-rlm-rca/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/legacy-erp-without-api-ai-agents/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
-   "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "position": 7
   },
   {
@@ -2428,24 +2397,10 @@
   },
   {
    "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-well-architected-framework-2026/",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 1
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
+   "position": 9
   },
   {
    "period": "2026-11-13",
@@ -2456,49 +2411,7 @@
   },
   {
    "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 2
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/blog/sfdx-hardis-kostenloses-devops-training/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/en/blog/api-67-apex-user-mode-fewer-records/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
-   "period": "2026-11-13",
-   "page": "https://www.fk-sd.de/blog/b2b-commerce-lizenzen-kaeufer/",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
    "clicks": 0,
    "impressions": 1,
    "position": 7
@@ -2516,6 +2429,104 @@
    "clicks": 0,
    "impressions": 1,
    "position": 3
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/api-67-apex-user-mode-fewer-records/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-names-rlm-rca/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/legacy-erp-without-api-ai-agents/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 3
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/blog/sfdx-hardis-kostenloses-devops-training/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/blog/b2b-commerce-lizenzen-kaeufer/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "period": "2026-11-13",
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
   },
   {
    "period": "2026-11-20",
@@ -2582,6 +2593,20 @@
   },
   {
    "period": "2026-11-20",
+   "page": "https://www.fk-sd.de/blog/salesforce-hosted-mcp-server-datenzugriff/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 28
+  },
+  {
+   "period": "2026-11-20",
+   "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
+  },
+  {
+   "period": "2026-11-20",
    "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
    "clicks": 0,
    "impressions": 2,
@@ -2607,27 +2632,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 6
-  },
-  {
-   "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
-  },
-  {
-   "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/blog/salesforce-hosted-mcp-server-datenzugriff/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 28
-  },
-  {
-   "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
   },
   {
    "period": "2026-11-20",
@@ -2659,13 +2663,6 @@
   },
   {
    "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "period": "2026-11-20",
    "page": "https://www.fk-sd.de/en/blog/change-management-communication-plan/",
    "clicks": 0,
    "impressions": 1,
@@ -2673,10 +2670,17 @@
   },
   {
    "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/en/blog/penny-perfect-pricing-erp-prices/",
+   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
    "clicks": 0,
    "impressions": 1,
-   "position": 8
+   "position": 10
+  },
+  {
+   "period": "2026-11-20",
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
   },
   {
    "period": "2026-11-20",
@@ -2687,6 +2691,13 @@
   },
   {
    "period": "2026-11-20",
+   "page": "https://www.fk-sd.de/partner/juliane-winterscheid/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-11-20",
    "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
    "clicks": 0,
    "impressions": 1,
@@ -2694,17 +2705,24 @@
   },
   {
    "period": "2026-11-20",
+   "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "period": "2026-11-20",
+   "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "period": "2026-11-20",
    "page": "https://www.fk-sd.de/blog/aela-agentforce-pauschale-oder-credits/",
    "clicks": 0,
    "impressions": 1,
    "position": 5
-  },
-  {
-   "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/en/blog/spare-parts-shop-parts-per-machine/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 8
   },
   {
    "period": "2026-11-20",
@@ -2729,24 +2747,17 @@
   },
   {
    "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+   "page": "https://www.fk-sd.de/en/blog/spare-parts-shop-parts-per-machine/",
    "clicks": 0,
    "impressions": 1,
-   "position": 7
+   "position": 8
   },
   {
    "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
+   "page": "https://www.fk-sd.de/en/blog/penny-perfect-pricing-erp-prices/",
    "clicks": 0,
    "impressions": 1,
-   "position": 1
-  },
-  {
-   "period": "2026-11-20",
-   "page": "https://www.fk-sd.de/partner/juliane-winterscheid/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
+   "position": 8
   }
  ]
 }

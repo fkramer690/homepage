@@ -1,20 +1,20 @@
 [
  {
   "device": "DESKTOP",
-  "clicks": 34,
-  "impressions": 4365,
-  "position": 31.2
+  "clicks": 36,
+  "impressions": 4476,
+  "position": 31.1
  },
  {
   "device": "MOBILE",
   "clicks": 13,
-  "impressions": 790,
-  "position": 22.1
+  "impressions": 803,
+  "position": 21.8
  },
  {
   "device": "TABLET",
   "clicks": 0,
-  "impressions": 84,
-  "position": 7
+  "impressions": 85,
+  "position": 6.9
  }
 ]
