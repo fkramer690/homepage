@@ -2240,7 +2240,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .prose .cb-steps:has(> li:nth-child(6)) { --gap: 10px; }
 .cb-step-no { grid-row: 2; position: relative; width: 40px; height: 40px; margin: 20px 0 10px; border: 2px solid var(--cyan); border-radius: 50%; background: var(--white); color: var(--cyan-dark); display: grid; place-items: center; font-family: var(--mono); font-size: var(--fs-xs); font-weight: 600; }
 .cb-step-no::before { content: ''; position: absolute; left: 50%; top: -22px; height: 18px; border-left: 1px dashed var(--line); }
-.cb-step-meta { grid-row: 3; font-family: var(--mono); font-size: var(--fs-xs); color: var(--cyan-dark); margin: 0 0 6px !important; }
+.cb-step-meta { grid-row: 3; justify-self: stretch; min-width: 0; hyphens: auto; overflow-wrap: anywhere; font-family: var(--mono); font-size: var(--fs-xs); color: var(--cyan-dark); margin: 0 0 6px !important; }
 .cb-step-text { grid-row: 4; justify-self: stretch; min-width: 0; font-size: var(--fs-sm); line-height: 1.5; color: var(--text-2); margin: 0 !important; hyphens: auto; hyphenate-limit-chars: 12 5 5; overflow-wrap: break-word; }
 @media (max-width: 640px) {
   .prose .cb-steps { grid-auto-flow: row; grid-template-rows: none; grid-template-columns: minmax(0, 1fr); gap: 6px; }
