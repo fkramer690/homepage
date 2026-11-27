@@ -432,7 +432,7 @@ export const en = {
     ],
   },
   servicePage: {
-    engagement: 'Typical engagement',
+    terms: 'Engagement and terms',
     engagementRows: [
       { t: 'Day rate', d: 'EUR 1,200 net for remote work. For on-site work, I also charge a flat fee or travel expenses.' },
       { t: 'Scope', d: 'At least 2 days a week, up to 5 at the start of a program, depending on the project situation.' },

@@ -1,4 +1,5 @@
 ---
+import CardDrawing from './CardDrawing.astro';
 import { withBrand } from '../lib/page-title.mjs';
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
@@ -198,8 +199,15 @@ const schema = {
         {related.length > 0 && (
           <nav class="post-related" aria-label={t.blog.related}>
             <p class="label mono">{t.blog.related}</p>
-            <ul>
-              {related.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+            <ul class="related-cards">
+              {related.map((p) => (
+                <li>
+                  <a href={postHref(p)}>
+                    <span class="related-media"><CardDrawing translationKey={p.data.translationKey} topic={p.data.topic} lang={lang} /></span>
+                    <span class="related-title">{p.data.title}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
         )}

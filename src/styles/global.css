@@ -658,11 +658,12 @@ a:hover { color: var(--anthracite); }
 /* One hover for every linked card (docs/layouts.md "Hover, focus and motion"):
    cyan border, soft shadow, title in cyan; nothing moves. Keyboard focus shows the
    same state plus the cyan ring, drawn around the whole card so it follows its corners. */
-.card-link, .post-tile a, .post-card, .q-topic, .post-service, .video-card {
+.card-link, .post-tile a, .related-cards a, .post-card, .q-topic, .post-service, .video-card {
   transition: border-color var(--t-fast), box-shadow var(--t-fast);
 }
 .card-link:hover, .card-link:has(a:focus-visible),
 .post-tile a:hover, .post-tile a:focus-visible,
+.related-cards a:hover, .related-cards a:focus-visible,
 .post-card:hover, .post-card:focus-visible,
 .q-topic:hover, .q-topic:focus-visible,
 .post-service:hover, .post-service:focus-visible,
@@ -671,9 +672,10 @@ a:hover { color: var(--anthracite); }
   box-shadow: var(--shadow-lift);
   color: var(--text);
 }
-.card-link .card-title, .post-tile .post-title, .post-card .post-title, .q-topic-title, .post-service-title, .video-card-title { transition: color var(--t-fast); }
+.card-link .card-title, .post-tile .post-title, .related-cards .related-title, .post-card .post-title, .q-topic-title, .post-service-title, .video-card-title { transition: color var(--t-fast); }
 .card-link:hover .card-title, .card-link:has(a:focus-visible) .card-title,
 .post-tile a:hover .post-title, .post-tile a:focus-visible .post-title,
+.related-cards a:hover .related-title, .related-cards a:focus-visible .related-title,
 .post-card:hover .post-title, .post-card:focus-visible .post-title,
 .q-topic:hover .q-topic-title, .q-topic:focus-visible .q-topic-title,
 .post-service:hover .post-service-title, .post-service:focus-visible .post-service-title,
@@ -1202,6 +1204,17 @@ a.card-more:hover,
 .post-series-note { font-weight: 400; color: var(--text-2); }
 p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .post-related ul { margin: 0; padding-left: 1.2em; }
+/* Related articles under a blog article (design critique V3, 2026-11-27): three cards
+   with the card drawing of the blog overview; phones show the titles only, like the overview. */
+.post-related ul.related-cards { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.related-cards li { margin: 0; }
+.related-cards a { display: flex; flex-direction: column; height: 100%; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--elev-1); overflow: hidden; color: var(--text); text-decoration: none; }
+.related-media { position: relative; display: block; aspect-ratio: 2 / 1; background: var(--bg); border-bottom: 1px solid var(--line); }
+.related-title { display: block; padding: 12px 14px 16px; font-weight: 600; font-size: var(--fs-ui); line-height: 1.35; }
+@media (max-width: 700px) {
+  .post-related ul.related-cards { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .related-media { display: none; }
+}
 .post-author {
   display: flex;
   gap: clamp(18px, 3vw, 32px);
@@ -2877,6 +2890,12 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .svc-progress-n { grid-row: span 2; font-size: var(--fs-xs); color: var(--cyan-dark); }
 .svc-progress strong { font-weight: 600; font-size: var(--fs-ui); }
 .svc-progress span:last-child { font-size: var(--fs-sm); color: var(--text-2); }
+/* Engagement and terms as one card (design critique V4, 2026-11-27). */
+.svc-terms-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--elev-1); padding: 8px 24px 22px; }
+.svc-terms-card .svc-terms { margin-bottom: 0; }
+.svc-terms-card h3 { margin: 1em 0 0.4em; padding-top: 1em; border-top: 1px solid var(--line); }
+.svc-terms-card p { margin: 0; }
+@media (max-width: 640px) { .svc-terms-card { padding: 6px 16px 18px; } }
 .svc-terms { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 0 18px; margin: 0 0 1.2em; padding: 0; }
 .svc-terms dt, .svc-terms dd { margin: 0; padding: 11px 0; }
 .svc-terms dt { font-weight: 600; font-size: var(--fs-ui); }
