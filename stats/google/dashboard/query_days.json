@@ -11635,6 +11635,13 @@
  },
  {
   "day": "2026-11-27",
+  "query": "choose the right qsr cdp implementation partner",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 62.5
+ },
+ {
+  "day": "2026-11-27",
   "query": "field service management cloud",
   "clicks": 0,
   "impressions": 2,
@@ -11691,6 +11698,13 @@
  },
  {
   "day": "2026-11-27",
+  "query": "top salesforce ci/cd tools compared",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 92
+ },
+ {
+  "day": "2026-11-27",
   "query": "agentforce maschinenbau",
   "clicks": 0,
   "impressions": 1,
@@ -11702,13 +11716,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 6
- },
- {
-  "day": "2026-11-27",
-  "query": "choose the right qsr cdp implementation partner",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 67
  },
  {
   "day": "2026-11-27",
@@ -11754,6 +11761,13 @@
  },
  {
   "day": "2026-11-27",
+  "query": "erp salesforce integration",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 33
+ },
+ {
+  "day": "2026-11-27",
   "query": "field service cloud software",
   "clicks": 0,
   "impressions": 1,
@@ -11779,6 +11793,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 55
+ },
+ {
+  "day": "2026-11-27",
+  "query": "fields service erp",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 99
  },
  {
   "day": "2026-11-27",
@@ -11814,6 +11835,20 @@
   "clicks": 0,
   "impressions": 1,
   "position": 77
+ },
+ {
+  "day": "2026-11-27",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 41
+ },
+ {
+  "day": "2026-11-27",
+  "query": "offline field service app",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 71
  },
  {
   "day": "2026-11-27",
@@ -11901,6 +11936,13 @@
  },
  {
   "day": "2026-11-27",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-27",
   "query": "schedule salesforce help content publish and expire dates",
   "clicks": 0,
   "impressions": 1,
@@ -11908,9 +11950,51 @@
  },
  {
   "day": "2026-11-27",
+  "query": "sfdx hardis",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-27",
   "query": "sfdx hardis training",
   "clicks": 0,
   "impressions": 1,
   "position": 6
+ },
+ {
+  "day": "2026-11-28",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 27.5
+ },
+ {
+  "day": "2026-11-28",
+  "query": "symfony salesforce integration",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 76
+ },
+ {
+  "day": "2026-11-28",
+  "query": "fit gap analyse",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 22
+ },
+ {
+  "day": "2026-11-28",
+  "query": "lösungsdesign",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 99
+ },
+ {
+  "day": "2026-11-28",
+  "query": "salesforce maschinenbau",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  }
 ]

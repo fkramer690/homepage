@@ -14985,6 +14985,14 @@
  },
  {
   "day": "2026-11-27",
+  "query": "choose the right qsr cdp implementation partner",
+  "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 62.5
+ },
+ {
+  "day": "2026-11-27",
   "query": "field service management cloud",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -15049,6 +15057,14 @@
  },
  {
   "day": "2026-11-27",
+  "query": "top salesforce ci/cd tools compared",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 92
+ },
+ {
+  "day": "2026-11-27",
   "query": "agentforce maschinenbau",
   "page": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
   "clicks": 0,
@@ -15062,14 +15078,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 6
- },
- {
-  "day": "2026-11-27",
-  "query": "choose the right qsr cdp implementation partner",
-  "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 67
  },
  {
   "day": "2026-11-27",
@@ -15121,6 +15129,14 @@
  },
  {
   "day": "2026-11-27",
+  "query": "erp salesforce integration",
+  "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 33
+ },
+ {
+  "day": "2026-11-27",
   "query": "field service cloud software",
   "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
   "clicks": 0,
@@ -15150,6 +15166,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 55
+ },
+ {
+  "day": "2026-11-27",
+  "query": "fields service erp",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 99
  },
  {
   "day": "2026-11-27",
@@ -15198,6 +15222,22 @@
   "clicks": 0,
   "impressions": 1,
   "position": 77
+ },
+ {
+  "day": "2026-11-27",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 41
+ },
+ {
+  "day": "2026-11-27",
+  "query": "offline field service app",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-app-offline-data/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 71
  },
  {
   "day": "2026-11-27",
@@ -15321,6 +15361,14 @@
  },
  {
   "day": "2026-11-27",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-27",
   "query": "schedule salesforce help content publish and expire dates",
   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
   "clicks": 0,
@@ -15329,10 +15377,66 @@
  },
  {
   "day": "2026-11-27",
+  "query": "sfdx hardis",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-27",
   "query": "sfdx hardis training",
   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
   "clicks": 0,
   "impressions": 1,
   "position": 6
+ },
+ {
+  "day": "2026-11-28",
+  "query": "symfony salesforce integration",
+  "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 76
+ },
+ {
+  "day": "2026-11-28",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
+ },
+ {
+  "day": "2026-11-28",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-28",
+  "query": "fit gap analyse",
+  "page": "https://www.fk-sd.de/blog/fit-gap-analyse-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 22
+ },
+ {
+  "day": "2026-11-28",
+  "query": "lösungsdesign",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 99
+ },
+ {
+  "day": "2026-11-28",
+  "query": "salesforce maschinenbau",
+  "page": "https://www.fk-sd.de/salesforce-maschinenbau/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  }
 ]

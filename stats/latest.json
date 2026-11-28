@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-28T04:48:21.130Z",
+  "generatedAt": "2026-11-28T14:09:31.006Z",
   "range": {
     "start": "2026-10-29",
     "end": "2026-11-28"
@@ -601,6 +601,15 @@
     {
       "count": 70,
       "dimensions": {
+        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
+      },
+      "sum": {
+        "visits": 50
+      }
+    },
+    {
+      "count": 70,
+      "dimensions": {
         "requestPath": "/en/masterclass/ai-salesforce/"
       },
       "sum": {
@@ -614,15 +623,6 @@
       },
       "sum": {
         "visits": 70
-      }
-    },
-    {
-      "count": 70,
-      "dimensions": {
-        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
-      },
-      "sum": {
-        "visits": 50
       }
     },
     {
@@ -655,6 +655,15 @@
     {
       "count": 40,
       "dimensions": {
+        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
         "requestPath": "/blog/account-forecasting-absatzprognose-vertrieb/"
       },
       "sum": {
@@ -668,15 +677,6 @@
       },
       "sum": {
         "visits": 40
-      }
-    },
-    {
-      "count": 40,
-      "dimensions": {
-        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
-      },
-      "sum": {
-        "visits": 0
       }
     },
     {
