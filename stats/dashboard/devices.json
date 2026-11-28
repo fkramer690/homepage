@@ -1,12 +1,12 @@
 [
  {
-  "device": "mobile",
-  "pageviews": 900,
-  "visits": 500
+  "device": "desktop",
+  "pageviews": 1670,
+  "visits": 840
  },
  {
-  "device": "desktop",
-  "pageviews": 500,
-  "visits": 300
+  "device": "mobile",
+  "pageviews": 600,
+  "visits": 320
  }
 ]

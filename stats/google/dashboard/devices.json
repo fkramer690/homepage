@@ -2,19 +2,19 @@
  {
   "device": "DESKTOP",
   "clicks": 36,
-  "impressions": 4522,
-  "position": 30.9
+  "impressions": 4631,
+  "position": 30.7
  },
  {
   "device": "MOBILE",
   "clicks": 13,
-  "impressions": 867,
-  "position": 23
+  "impressions": 882,
+  "position": 22.8
  },
  {
   "device": "TABLET",
   "clicks": 0,
-  "impressions": 85,
+  "impressions": 87,
   "position": 6.9
  }
 ]

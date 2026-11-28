@@ -8,32 +8,32 @@
  {
   "query": "manufacturing cloud",
   "clicks": 0,
-  "impressions": 79,
-  "position": 43.5
+  "impressions": 85,
+  "position": 42.9
  },
  {
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "clicks": 0,
-  "impressions": 70,
-  "position": 5.6
- },
- {
-  "query": "what does a typical salesforce devops rollout look like?",
-  "clicks": 0,
-  "impressions": 67,
-  "position": 7
+  "impressions": 73,
+  "position": 5.5
  },
  {
   "query": "salesforce commerce product data",
   "clicks": 0,
-  "impressions": 65,
-  "position": 43.4
+  "impressions": 70,
+  "position": 41
+ },
+ {
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 70,
+  "position": 7
  },
  {
   "query": "field service application software",
   "clicks": 0,
-  "impressions": 58,
-  "position": 60.5
+  "impressions": 62,
+  "position": 60.9
  },
  {
   "query": "how to automate technician scheduling and dispatch?",
@@ -50,8 +50,14 @@
  {
   "query": "click field service management software",
   "clicks": 0,
-  "impressions": 44,
-  "position": 61.5
+  "impressions": 47,
+  "position": 60
+ },
+ {
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 40,
+  "position": 53.6
  },
  {
   "query": "fertigung salesforce",
@@ -60,28 +66,22 @@
   "position": 28.1
  },
  {
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 38,
+  "position": 65.2
+ },
+ {
   "query": "field service shift planning",
   "clicks": 0,
   "impressions": 37,
   "position": 74.8
  },
  {
-  "query": "salesforce manufacturing cloud",
-  "clicks": 0,
-  "impressions": 37,
-  "position": 54
- },
- {
   "query": "sfdx-hardis",
   "clicks": 1,
   "impressions": 36,
   "position": 10.5
- },
- {
-  "query": "field service management cloud",
-  "clicks": 0,
-  "impressions": 36,
-  "position": 65.9
  },
  {
   "query": "field service scheduling and dispatch",
@@ -92,8 +92,8 @@
  {
   "query": "nearshore teamerweiterung",
   "clicks": 0,
-  "impressions": 33,
-  "position": 58.5
+  "impressions": 34,
+  "position": 59.1
  },
  {
   "query": "field service scheduling",
@@ -132,6 +132,12 @@
   "position": 72.5
  },
  {
+  "query": "ki chatbot audit trail",
+  "clicks": 0,
+  "impressions": 25,
+  "position": 82.9
+ },
+ {
   "query": "cad vertriebsdaten",
   "clicks": 0,
   "impressions": 24,
@@ -144,28 +150,22 @@
   "position": 80.5
  },
  {
-  "query": "ki chatbot audit trail",
-  "clicks": 0,
-  "impressions": 24,
-  "position": 82.6
- },
- {
   "query": "nearshore teams",
   "clicks": 0,
   "impressions": 23,
   "position": 47.3
  },
  {
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 23,
+  "position": 51
+ },
+ {
   "query": "salesforce release schedule",
   "clicks": 0,
   "impressions": 22,
   "position": 24.6
- },
- {
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 21,
-  "position": 51.9
  },
  {
   "query": "salesforce release dates",
@@ -216,6 +216,18 @@
   "position": 8.5
  },
  {
+  "query": "cpq upgraden",
+  "clicks": 0,
+  "impressions": 16,
+  "position": 34.7
+ },
+ {
+  "query": "salesforce manufacturing cloud partner",
+  "clicks": 0,
+  "impressions": 16,
+  "position": 51.7
+ },
+ {
   "query": "salesforce zertifizierte experten",
   "clicks": 0,
   "impressions": 16,
@@ -228,22 +240,10 @@
   "position": 81.3
  },
  {
-  "query": "cpq upgraden",
-  "clicks": 0,
-  "impressions": 15,
-  "position": 34.1
- },
- {
   "query": "field software",
   "clicks": 0,
   "impressions": 15,
   "position": 70.3
- },
- {
-  "query": "salesforce manufacturing cloud partner",
-  "clicks": 0,
-  "impressions": 15,
-  "position": 51.7
  },
  {
   "query": "stakeholder analysis matrix",
@@ -272,8 +272,26 @@
  {
   "query": "change management salesforce projekt",
   "clicks": 0,
+  "impressions": 14,
+  "position": 11.8
+ },
+ {
+  "query": "click field service",
+  "clicks": 0,
   "impressions": 13,
-  "position": 12.2
+  "position": 61
+ },
+ {
+  "query": "cloud field service management",
+  "clicks": 0,
+  "impressions": 13,
+  "position": 60.8
+ },
+ {
+  "query": "devops release management",
+  "clicks": 0,
+  "impressions": 13,
+  "position": 55.5
  },
  {
   "query": "field service schedule",
@@ -288,28 +306,22 @@
   "position": 5.8
  },
  {
+  "query": "salesforce konfiguration",
+  "clicks": 0,
+  "impressions": 13,
+  "position": 23.4
+ },
+ {
+  "query": "salesforce manufacturing cloud implementation",
+  "clicks": 0,
+  "impressions": 13,
+  "position": 71.1
+ },
+ {
   "query": "what software manages preferred supplier lists in field service?",
   "clicks": 0,
   "impressions": 13,
   "position": 40
- },
- {
-  "query": "click field service",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 60.6
- },
- {
-  "query": "cloud field service management",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 62.1
- },
- {
-  "query": "devops release management",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 57
  },
  {
   "query": "epicor kinetic salesforce warranty claim handoff",
@@ -336,16 +348,10 @@
   "position": 78.2
  },
  {
-  "query": "salesforce konfiguration",
+  "query": "predictive maintenance salesforce",
   "clicks": 0,
   "impressions": 12,
-  "position": 22.9
- },
- {
-  "query": "salesforce manufacturing cloud implementation",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 72.3
+  "position": 13.8
  },
  {
   "query": "sfdx hardis",
@@ -384,6 +390,12 @@
   "position": 69
  },
  {
+  "query": "field service mobile flow limitations",
+  "clicks": 0,
+  "impressions": 11,
+  "position": 5.2
+ },
+ {
   "query": "sap order in mulesoft",
   "clicks": 0,
   "impressions": 11,
@@ -414,12 +426,6 @@
   "position": 54.3
  },
  {
-  "query": "field service mobile flow limitations",
-  "clicks": 0,
-  "impressions": 10,
-  "position": 5.4
- },
- {
   "query": "field service system",
   "clicks": 0,
   "impressions": 10,
@@ -432,6 +438,12 @@
   "position": 81.3
  },
  {
+  "query": "manufacturing cloud implementeren",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 64.1
+ },
+ {
   "query": "manufacturing cloud vs service cloud",
   "clicks": 0,
   "impressions": 10,
@@ -442,12 +454,6 @@
   "clicks": 0,
   "impressions": 10,
   "position": 60.6
- },
- {
-  "query": "predictive maintenance salesforce",
-  "clicks": 0,
-  "impressions": 10,
-  "position": 13.6
  },
  {
   "query": "revenue cloud",
@@ -498,12 +504,6 @@
   "position": 73
  },
  {
-  "query": "manufacturing cloud implementeren",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 64
- },
- {
   "query": "revenue cloud advanced vs revenue cloud",
   "clicks": 0,
   "impressions": 9,
@@ -514,6 +514,24 @@
   "clicks": 0,
   "impressions": 9,
   "position": 25.9
+ },
+ {
+  "query": "salesforce custom development nearshore",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 66.4
+ },
+ {
+  "query": "salesforce maschinenbau",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 29.9
+ },
+ {
+  "query": "salesforce nearshore pdo",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 83.1
  },
  {
   "query": "click field service edge",
@@ -540,16 +558,22 @@
   "position": 79.6
  },
  {
+  "query": "gearset vs copado",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 23.8
+ },
+ {
+  "query": "proalpha anbindung salesforce",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 37.5
+ },
+ {
   "query": "salesforce beratung maschinenbau",
   "clicks": 0,
   "impressions": 8,
   "position": 11.3
- },
- {
-  "query": "salesforce custom development nearshore",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 66.9
  },
  {
   "query": "salesforce release management tools",
@@ -588,28 +612,16 @@
   "position": 16.1
  },
  {
-  "query": "proalpha anbindung salesforce",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 38.1
- },
- {
   "query": "projekte in salesforce verwalten",
   "clicks": 0,
   "impressions": 7,
   "position": 27.3
  },
  {
-  "query": "salesforce maschinenbau",
+  "query": "salesforce architektur salzburg",
   "clicks": 0,
   "impressions": 7,
-  "position": 28.7
- },
- {
-  "query": "salesforce nearshore pdo",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 83.9
+  "position": 16.9
  },
  {
   "query": "salesforce revenue cloud advanced implementierung",
@@ -654,10 +666,28 @@
   "position": 32.3
  },
  {
+  "query": "copado alternative",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 15.8
+ },
+ {
+  "query": "copado vs gearset",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 20.3
+ },
+ {
   "query": "erp system field service",
   "clicks": 0,
   "impressions": 6,
   "position": 21.2
+ },
+ {
+  "query": "field services",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 61
  },
  {
   "query": "kundeportal b2b",
@@ -726,16 +756,16 @@
   "position": 67.4
  },
  {
-  "query": "copado alternative",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 17.4
- },
- {
   "query": "cpq revenue cloud migration",
   "clicks": 0,
   "impressions": 5,
   "position": 37.4
+ },
+ {
+  "query": "field service crm",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 33.6
  },
  {
   "query": "field service kpi",
@@ -744,16 +774,10 @@
   "position": 72.4
  },
  {
-  "query": "field services",
+  "query": "flosum vs gearset",
   "clicks": 0,
   "impressions": 5,
-  "position": 62.2
- },
- {
-  "query": "gearset vs copado",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 26.2
+  "position": 21
  },
  {
   "query": "kommunikationsplan vorlage",
@@ -778,12 +802,6 @@
   "clicks": 0,
   "impressions": 5,
   "position": 17.4
- },
- {
-  "query": "salesforce architektur salzburg",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 21
  },
  {
   "query": "salesforce contracts",
@@ -844,6 +862,12 @@
   "clicks": 0,
   "impressions": 4,
   "position": 38
+ },
+ {
+  "query": "agentforce maschinenbau",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 12
  },
  {
   "query": "ai code review tools salesforce",
@@ -912,12 +936,6 @@
   "position": 27.8
  },
  {
-  "query": "field service crm",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 37.3
- },
- {
   "query": "field service mobile solutions",
   "clicks": 0,
   "impressions": 4,
@@ -928,6 +946,12 @@
   "clicks": 0,
   "impressions": 4,
   "position": 79.3
+ },
+ {
+  "query": "fit gap analyse",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 18.3
  },
  {
   "query": "headless commerce b2b",
@@ -1068,12 +1092,6 @@
   "position": 21.3
  },
  {
-  "query": "agentforce maschinenbau",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 11.3
- },
- {
   "query": "b2b ersatzteilservice",
   "clicks": 0,
   "impressions": 3,
@@ -1102,6 +1120,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 17.3
+ },
+ {
+  "query": "core edition salesforce",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 8.3
  },
  {
   "query": "fakturierung cloud",
@@ -1150,18 +1174,6 @@
   "clicks": 0,
   "impressions": 3,
   "position": 58.7
- },
- {
-  "query": "fit gap analyse",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 16.7
- },
- {
-  "query": "flosum vs gearset",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 22
  },
  {
   "query": "gearset alternatives",
@@ -1236,6 +1248,12 @@
   "position": 94.3
  },
  {
+  "query": "salesforce integration middleware",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 39.3
+ },
+ {
   "query": "salesforce lizenz-verlängerung",
   "clicks": 0,
   "impressions": 3,
@@ -1264,6 +1282,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 19.3
+ },
+ {
+  "query": "schedule salesforce help content publish and expire dates",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 17
  },
  {
   "query": "servicemax integration with salesforce",
@@ -1422,18 +1446,6 @@
   "position": 50.5
  },
  {
-  "query": "copado vs gearset",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 23
- },
- {
-  "query": "core edition salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
   "query": "cpq anpassung",
   "clicks": 0,
   "impressions": 2,
@@ -1462,6 +1474,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 61
+ },
+ {
+  "query": "field service cloud software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 49
  },
  {
   "query": "field service data",
@@ -1626,12 +1644,6 @@
   "position": 16.5
  },
  {
-  "query": "salesforce integration middleware",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 45
- },
- {
   "query": "salesforce key user training",
   "clicks": 0,
   "impressions": 2,
@@ -1678,12 +1690,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 78
- },
- {
-  "query": "schedule salesforce help content publish and expire dates",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 16
  },
  {
   "query": "servicemax",
@@ -2082,12 +2088,6 @@
   "position": 54
  },
  {
-  "query": "field service cloud software",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 50
- },
- {
   "query": "field service dispatcher console",
   "clicks": 0,
   "impressions": 1,
@@ -2272,6 +2272,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 69
+ },
+ {
+  "query": "fk consulting services",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
  },
  {
   "query": "fk solutions",
@@ -2544,6 +2550,12 @@
   "position": 6
  },
  {
+  "query": "revenue cloud pricing",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 61
+ },
+ {
   "query": "rlm",
   "clicks": 0,
   "impressions": 1,
@@ -2658,6 +2670,12 @@
   "position": 74
  },
  {
+  "query": "salesforce consultancy nearshore",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 75
+ },
+ {
   "query": "salesforce contract",
   "clicks": 0,
   "impressions": 1,
@@ -2668,6 +2686,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 51
+ },
+ {
+  "query": "salesforce data architecture and management designer certification",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
  },
  {
   "query": "salesforce devops for finance",
@@ -2758,6 +2782,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "query": "salesforce manufacturing cloud pricing",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 23
  },
  {
   "query": "salesforce max",

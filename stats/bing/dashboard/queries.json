@@ -2,7 +2,7 @@
  {
   "query": "change kurve",
   "clicks": 0,
-  "impressions": 18,
+  "impressions": 22,
   "position": 9
  },
  {
@@ -18,10 +18,28 @@
   "position": 8
  },
  {
+  "query": "salesforce well architected framework",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 7.2
+ },
+ {
+  "query": "agent context engine salesforce",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 4.4
+ },
+ {
   "query": "salesforce well architected",
   "clicks": 0,
   "impressions": 5,
   "position": 9
+ },
+ {
+  "query": "stakeholder analyse changemanagement",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 7
  },
  {
   "query": "new scheduling console",
@@ -42,21 +60,21 @@
   "position": 8
  },
  {
-  "query": "salesforce well architected framework",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 7
- },
- {
   "query": "flex credits salesforce verbrauch kosten",
   "clicks": 0,
   "impressions": 4,
   "position": 10
  },
  {
-  "query": "veränderungskurve kühn-rosch",
+  "query": "aela flex credits",
   "clicks": 0,
-  "impressions": 3,
+  "impressions": 4,
+  "position": 4
+ },
+ {
+  "query": "änderung salesforce oauth 2.0 username-password flow",
+  "clicks": 0,
+  "impressions": 4,
   "position": 6
  },
  {
@@ -64,6 +82,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 10
+ },
+ {
+  "query": "veränderungskurve kühn-rosch",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "query": "does the salesforce agent context engine allow me to configure my company's semantics and terminology?",
@@ -78,16 +102,28 @@
   "position": 6.3
  },
  {
+  "query": "change-kurve y-achse, kompetenz, energie",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 3
+ },
+ {
   "query": "fk solution design gmbh",
   "clicks": 0,
   "impressions": 3,
   "position": 1
  },
  {
-  "query": "change-kurve y-achse, kompetenz, energie",
+  "query": "salesforce meshmesh",
   "clicks": 0,
   "impressions": 3,
-  "position": 3
+  "position": 9.3
+ },
+ {
+  "query": "agentforce llm models reside in uae on hyperforce",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "query": "germany works council ai tools",
@@ -102,34 +138,16 @@
   "position": 9
  },
  {
-  "query": "scheduling console salesforce",
+  "query": "salesforce well architected framework architect agent",
   "clicks": 0,
   "impressions": 2,
-  "position": 8
- },
- {
-  "query": "4-seiten-analyse nach stakeholder meetings",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
+  "position": 7
  },
  {
   "query": "暴食后第二天轻断食有用吗",
   "clicks": 0,
   "impressions": 2,
   "position": 4
- },
- {
-  "query": "changekonzept nach lewin",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "salesforce well architected framework architect agent",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
  },
  {
   "query": "brauch salesforce voice flex credits",
@@ -144,22 +162,34 @@
   "position": 2
  },
  {
+  "query": "changekonzept nach lewin",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "4-seiten-analyse nach stakeholder meetings",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "scheduling console salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
   "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
   "clicks": 0,
   "impressions": 2,
   "position": 7.5
  },
  {
-  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
+  "query": "fk-sd.de",
   "clicks": 0,
   "impressions": 2,
-  "position": 8
- },
- {
-  "query": "sfdx hardis badges",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
+  "position": 2
  },
  {
   "query": "what is an fk in salesforce?",
@@ -174,16 +204,10 @@
   "position": 5
  },
  {
-  "query": "fk-sd.de",
+  "query": "change kurve team",
   "clicks": 0,
   "impressions": 2,
-  "position": 2
- },
- {
-  "query": "comparison between change management models lewin kotter adkar",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
+  "position": 6
  },
  {
   "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
@@ -192,22 +216,28 @@
   "position": 4
  },
  {
-  "query": "change kurve team",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
-  "query": "aela flex credits",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "query": "salesforce meshmesh",
+  "query": "comparison between change management models lewin kotter adkar",
   "clicks": 0,
   "impressions": 2,
   "position": 10
+ },
+ {
+  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "sfdx hardis badges",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "query": "fk solution design",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 2
  },
  {
   "query": "was ist salesforce b2b ecommerce lwr?",
@@ -222,16 +252,16 @@
   "position": 9
  },
  {
+  "query": "mcp server personenbezogene daten",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 28
+ },
+ {
   "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
   "clicks": 0,
   "impressions": 2,
   "position": 4
- },
- {
-  "query": "fk solution design",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
  },
  {
   "query": "salesforce dx mcp is end of life?",
@@ -240,63 +270,33 @@
   "position": 6
  },
  {
-  "query": "mcp server personenbezogene daten",
+  "query": "salesforce well-architected framework",
   "clicks": 0,
   "impressions": 2,
-  "position": 28
+  "position": 9
  },
  {
-  "query": "unterschiede adkar und drei phasen modell von lewis",
-  "clicks": 1,
-  "impressions": 1,
-  "position": 2
- },
- {
-  "query": "salesforce gmv",
-  "clicks": 1,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "hardifs",
+  "query": "meshmesh beta salesforce",
   "clicks": 0,
-  "impressions": 1,
-  "position": 5
+  "impressions": 2,
+  "position": 8
  },
  {
-  "query": "difference between devops centre and salesforce dx",
+  "query": "open source sfdx hardis",
   "clicks": 0,
-  "impressions": 1,
-  "position": 1
+  "impressions": 2,
+  "position": 6
  },
  {
-  "query": "adjust duration in new cheudling console salesforce field service",
+  "query": "3 dimensionale stakeholdermatrix",
   "clicks": 0,
-  "impressions": 1,
-  "position": 4
+  "impressions": 2,
+  "position": 9
  },
  {
-  "query": "migrate list views scheudling console sfdc",
+  "query": "salesforce well-architected principles",
   "clicks": 0,
-  "impressions": 1,
-  "position": 3
- },
- {
-  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "\"snelstart\" \"verkooporders\" \"post\"",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "query": "trailhead new dispatch console",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
+  "impressions": 2,
+  "position": 7
  }
 ]
